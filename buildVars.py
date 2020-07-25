@@ -23,7 +23,7 @@ addon_info = {
 	# Author(s)
 	"addon_author": u"Héctor J. Benítez Corredera <xebolax@gmail.com>",
 	# URL for the add-on documentation support
-	"addon_url": None,
+	"addon_url": "https://github.com/hxebolax/Add-on-packer",
 	# Documentation file name
 	"addon_docFileName": "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
