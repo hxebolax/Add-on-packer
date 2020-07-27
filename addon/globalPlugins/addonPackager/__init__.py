@@ -11,8 +11,9 @@ import wx
 import shutil
 import os
 import pickle
-from .pubsub import *
 from threading import Thread
+# Call to the bookstore including pubsub
+from .pubsub import pub
 
 # For translation
 addonHandler.initTranslation()
@@ -29,12 +30,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.generaAddon, self.menuItem)
 
 	def generaAddon(self, event):
+# Calling the main window of the plug-in
 		dlg = MainWindows()
 		dlg.ShowModal()
 
+# List containing all the add-ons
 lista = list(addonHandler.getAvailableAddons())
+# Output directory containment
 directorySave = ""
 
+# definition to check output directory
 def ConfigFile():
 	global directorySave
 	fileConfig = config.getUserDefaultConfigPath() + "/addonPackager.dat"
@@ -51,12 +56,14 @@ def ConfigFile():
 		pickle.dump(directorySave, file)
 		file.close()
 
+# Save the output directory to a configuration file
 def ConfigFileSave():
 	fileConfig = config.getUserDefaultConfigPath() + "/addonPackager.dat"
 	file = open(fileConfig, "wb")
 	pickle.dump(directorySave, file)
 	file.close()
 
+# Creating the Main Window of the Plug-in
 class MainWindows(wx.Dialog):
 	def __init__(self):
 
