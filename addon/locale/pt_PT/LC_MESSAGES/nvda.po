@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 'addonPackager' package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'addonPackager' '0.1'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2020-07-24 11:03+0200\n"
+"PO-Revision-Date: 2020-07-31 20:36+0100\n"
+"Language-Team: Equipa Portuguesa do NVDA; Ângelo Abrantes e Rui fontes\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4\n"
+"Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: pt_PT\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: addon\globalPlugins\addonPackager\__init__.py:28
+msgid "&Add-on packer"
+msgstr "&Empacotador de extras"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: addon\globalPlugins\addonPackager\__init__.py:65 buildVars.py:17
+msgid "Add-on packer"
+msgstr "Empacotador de extras"
+
+#: addon\globalPlugins\addonPackager\__init__.py:72
+msgid "&List of Add-on:"
+msgstr "&Lista de extras:"
+
+#: addon\globalPlugins\addonPackager\__init__.py:78
+msgid "&Select all"
+msgstr "&Seleccionar tudo"
+
+#: addon\globalPlugins\addonPackager\__init__.py:81
+msgid "Deselect &all"
+msgstr "Deseleccion&ar tudo"
+
+#: addon\globalPlugins\addonPackager\__init__.py:84
+msgid "Destination directory:"
+msgstr "Pasta de destino:"
+
+#: addon\globalPlugins\addonPackager\__init__.py:87
+msgid "Select &directory"
+msgstr "Seleccionar &pasta"
+
+#: addon\globalPlugins\addonPackager\__init__.py:90
+msgid "&Generate add-ons"
+msgstr "&Criar extras"
+
+#: addon\globalPlugins\addonPackager\__init__.py:93
+msgid "&Close"
+msgstr "&Fechar"
+
+#: addon\globalPlugins\addonPackager\__init__.py:139
+msgid "Select a directory:"
+msgstr "Seleccione uma pasta"
+
+#: addon\globalPlugins\addonPackager\__init__.py:156
+msgid "You need to select at least one add-on to continue the action."
+msgstr "Precisa de seleccionar pelo menos um extra para continuar com a acção."
+
+#: addon\globalPlugins\addonPackager\__init__.py:156
+#: addon\globalPlugins\addonPackager\__init__.py:160
+#: addon\globalPlugins\addonPackager\__init__.py:230
+msgid "Error"
+msgstr "Erro"
+
+#: addon\globalPlugins\addonPackager\__init__.py:160
+msgid "You need to select an output directory to continue the action."
+msgstr "Necessita de seleccionar uma pasta de saída para continuar com a acção."
+
+#: addon\globalPlugins\addonPackager\__init__.py:191
+msgid "All add-ons were correctly generated."
+msgstr "Todos os extras foram criados correctamente."
+
+#: addon\globalPlugins\addonPackager\__init__.py:193
+msgid "The add-ons could not be generated."
+msgstr "Não foi possível criar os extras."
+
+#: addon\globalPlugins\addonPackager\__init__.py:197
+msgid "Generating add-ons"
+msgstr "A criar os extras"
+
+#: addon\globalPlugins\addonPackager\__init__.py:205
+msgid "Please wait..."
+msgstr "Espere, por favor..."
+
+#: addon\globalPlugins\addonPackager\__init__.py:225
+msgid "Information"
+msgstr "Informação"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:20
+msgid "Back up your add-ons quickly."
+msgstr "Faça rapidamente uma cópia dos seus complementos, deixando-os prontos para voltarem a ser instalados."
