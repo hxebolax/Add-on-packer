@@ -68,8 +68,8 @@ class MainWindows(wx.Dialog):
 	def __init__(self):
 
 		ConfigFile()
-
-		wx.Frame.__init__(self, None, -1, title=_("Add-on packer"), style=wx.MINIMIZE_BOX|wx.SYSTEM_MENU|wx.CAPTION|wx.CLOSE_BOX |wx.CLIP_CHILDREN)
+		super(MainWindows, self).__init__(None, -1, title=_("Add-on packer"), style=wx.MINIMIZE_BOX|wx.SYSTEM_MENU|wx.CAPTION|wx.CLOSE_BOX |wx.CLIP_CHILDREN)
+#		wx.Frame.__init__(self, None, -1, title=_("Add-on packer"), style=wx.MINIMIZE_BOX|wx.SYSTEM_MENU|wx.CAPTION|wx.CLOSE_BOX |wx.CLIP_CHILDREN)
 
 		self.SetSize((800, 600))
 
@@ -172,13 +172,13 @@ class MainWindows(wx.Dialog):
 				dlg.ShowModal()
 
 	def onClose(self, event):
-		if event.GetEventType() == 10012: # EVT_BUTTON
+#		if event.GetEventType() == 10012: # EVT_BUTTON
 			ConfigFileSave()
 			self.DestroyChildren()
 			self.Destroy()
-			self.SetReturnCode(wx.ID_CANCEL)
+#			self.SetReturnCode(wx.ID_CANCEL)
 
-		event.Skip()
+#			event.Skip()
 
 class GeneratingThread(Thread):
 	def __init__(self, value):
@@ -201,7 +201,7 @@ class GeneratingThread(Thread):
 
 class ProgressThread(wx.Dialog):
 	def __init__(self, value):
-		wx.Frame.__init__(self, None, -1, title=_("Generating add-ons"), style=wx.MINIMIZE_BOX|wx.SYSTEM_MENU|wx.CAPTION|wx.CLOSE_BOX |wx.CLIP_CHILDREN)
+		wx.Dialog.__init__(self, None, title=_("Generating add-ons"), style=wx.MINIMIZE_BOX|wx.SYSTEM_MENU|wx.CAPTION|wx.CLOSE_BOX |wx.CLIP_CHILDREN)
 
 		self.Centre()
 
