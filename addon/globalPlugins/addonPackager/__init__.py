@@ -19,12 +19,18 @@ from .pubsub import pub
 # For translation
 addonHandler.initTranslation()
 
+# List containing all the add-ons
+lista = list(addonHandler.getAvailableAddons())
+# Output directory containment
+directorySave = ""
+
 # Creation of a GlobalPlugin class, derived from globalPluginHandler.GlobalPlugin.
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Creating the constructor of the newly created GlobalPlugin class.
-	def __init__(self, *args, **kwargs):
+	def __init__(self):
 		# Call of the constructor of the parent class.
-		super(GlobalPlugin, self).__init__(*args, **kwargs)
+		super(GlobalPlugin, self).__init__()
+		self._MainWindows = None
 
 		if globalVars.appArgs.secure:
 			return
@@ -36,51 +42,47 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def terminate(self):
 		try:
-			self.toolsMenu.Remove(self.menuItem)
-		except:
+			if not self._MainWindows:
+				self._MainWindows.Destroy()
+		except (AttributeError, RuntimeError):
 			pass
 
 	def generaAddon(self, event):
 # Calling the main window of the plug-in
-		gui.mainFrame._popupSettingsDialog(MainWindows)
+		if not self._MainWindows:
+			self._MainWindows = MainWindows(gui.mainFrame)
 
-# List containing all the add-ons
-lista = list(addonHandler.getAvailableAddons())
-# Output directory containment
-directorySave = ""
-
-# definition to check output directory
-def ConfigFile():
-	global directorySave
-	fileConfig = config.getUserDefaultConfigPath() + "/addonPackager.dat"
-	if os.path.isfile(fileConfig):
-		file = open(	fileConfig, 'rb')
-		directorySave = pickle.load(file)
-		file.close()
-		if os.path.exists(directorySave):
-			pass
-		else:
-			directorySave = ""
-	else:
-		file = open(fileConfig, "wb")
-		pickle.dump(directorySave, file)
-		file.close()
-
-# Save the output directory to a configuration file
-def ConfigFileSave():
-	fileConfig = config.getUserDefaultConfigPath() + "/addonPackager.dat"
-	file = open(fileConfig, "wb")
-	pickle.dump(directorySave, file)
-	file.close()
+		if not self._MainWindows.IsShown():
+			gui.mainFrame.prePopup()
+			self._MainWindows.Show()
+			gui.mainFrame.postPopup()
 
 # Creating the Main Window of the Plug-in
 class MainWindows(wx.Dialog):
 
-	_instance = None
+# definition to check output directory
+	def ConfigFile(self):
+		global directorySave
+		fileConfig = config.getUserDefaultConfigPath() + "/addonPackager.dat"
+		if os.path.isfile(fileConfig):
+			file = open(	fileConfig, 'rb')
+			directorySave = pickle.load(file)
+			file.close()
+			if os.path.exists(directorySave):
+				pass
+			else:
+				directorySave = ""
+		else:
+			file = open(fileConfig, "wb")
+			pickle.dump(directorySave, file)
+			file.close()
 
-	def __new__(cls, *args, **kwargs):
-		if MainWindows._instance is None:
-			return super(MainWindows, cls).__new__(cls, *args, **kwargs)
+# Save the output directory to a configuration file
+	def ConfigFileSave(self):
+		fileConfig = config.getUserDefaultConfigPath() + "/addonPackager.dat"
+		file = open(fileConfig, "wb")
+		pickle.dump(directorySave, file)
+		file.close()
 
 	def _calculatePosition(self, width, height):
 		w = wx.SystemSettings.GetMetric(wx.SYS_SCREEN_X)
@@ -94,10 +96,6 @@ class MainWindows(wx.Dialog):
 		return (x, y)
 
 	def __init__(self, parent):
-		if MainWindows._instance is not None:
-			return
-
-		MainWindows._instance = self
 
 		WIDTH = 800
 		HEIGHT = 600
@@ -105,7 +103,7 @@ class MainWindows(wx.Dialog):
 
 		super(MainWindows, self).__init__(parent, -1, title=_("Add-on packer"), pos = pos, size = (WIDTH, HEIGHT))
 
-		ConfigFile()
+		self.ConfigFile()
 
 		Panel = wx.Panel(self)
 
@@ -185,7 +183,7 @@ class MainWindows(wx.Dialog):
 			self.textDirectory.SetValue(dlg.GetPath())
 			global directorySave
 			directorySave =dlg.GetPath()
-			ConfigFileSave()
+			self.ConfigFileSave()
 			dlg.Destroy()
 		else:
 			dlg.Destroy()
@@ -205,9 +203,8 @@ class MainWindows(wx.Dialog):
 				dlg.Show()
 
 	def onClose(self, event):
-		ConfigFileSave()
+		self.ConfigFileSave()
 		self.Destroy()
-		MainWindows._instance = None
 
 class GeneratingThread(Thread):
 	def __init__(self, value):
