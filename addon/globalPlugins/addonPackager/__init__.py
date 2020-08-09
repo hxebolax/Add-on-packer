@@ -6,6 +6,7 @@
 import globalPluginHandler
 import addonHandler
 import gui
+import globalVars
 import config
 import wx
 import shutil
@@ -24,15 +25,24 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self, *args, **kwargs):
 		# Call of the constructor of the parent class.
 		super(GlobalPlugin, self).__init__(*args, **kwargs)
+
+		if globalVars.appArgs.secure:
+			return
+
 		# Creation of our menu.
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
 		self.menuItem = self.toolsMenu.Append(wx.ID_ANY, _("&Add-on packer"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.generaAddon, self.menuItem)
 
+	def terminate(self):
+		try:
+			self.toolsMenu.Remove(self.menuItem)
+		except:
+			pass
+
 	def generaAddon(self, event):
 # Calling the main window of the plug-in
-		dlg = MainWindows()
-		dlg.Show()
+		gui.mainFrame._popupSettingsDialog(MainWindows)
 
 # List containing all the add-ons
 lista = list(addonHandler.getAvailableAddons())
@@ -65,15 +75,38 @@ def ConfigFileSave():
 
 # Creating the Main Window of the Plug-in
 class MainWindows(wx.Dialog):
-	def __init__(self):
 
-		super(MainWindows, self).__init__(None, -1, title=_("Add-on packer"), style=wx.MINIMIZE_BOX|wx.SYSTEM_MENU|wx.CAPTION|wx.CLOSE_BOX |wx.CLIP_CHILDREN)
+	_instance = None
+
+	def __new__(cls, *args, **kwargs):
+		if MainWindows._instance is None:
+			return super(MainWindows, cls).__new__(cls, *args, **kwargs)
+
+	def _calculatePosition(self, width, height):
+		w = wx.SystemSettings.GetMetric(wx.SYS_SCREEN_X)
+		h = wx.SystemSettings.GetMetric(wx.SYS_SCREEN_Y)
+		# Centre of the screen
+		x = w / 2
+		y = h / 2
+		# Minus application offset
+		x -= (width / 2)
+		y -= (height / 2)
+		return (x, y)
+
+	def __init__(self, parent):
+		if MainWindows._instance is not None:
+			return
+
+		MainWindows._instance = self
+
+		WIDTH = 800
+		HEIGHT = 600
+		pos = self._calculatePosition(WIDTH, HEIGHT)
+
+		super(MainWindows, self).__init__(parent, -1, title=_("Add-on packer"), pos = pos, size = (WIDTH, HEIGHT))
 
 		ConfigFile()
 
-		self.SetSize((800, 600))
-
-		self.Centre()
 		Panel = wx.Panel(self)
 
 		label1 = wx.StaticText(Panel, wx.ID_ANY, label=_("&List of Add-on:"))
@@ -172,11 +205,9 @@ class MainWindows(wx.Dialog):
 				dlg.Show()
 
 	def onClose(self, event):
-			ConfigFileSave()
-			self.DestroyChildren()
-			self.Destroy()
-			self.SetReturnCode(wx.ID_CANCEL)
-
+		ConfigFileSave()
+		self.Destroy()
+		MainWindows._instance = None
 
 class GeneratingThread(Thread):
 	def __init__(self, value):
@@ -200,7 +231,7 @@ class GeneratingThread(Thread):
 class ProgressThread(wx.Dialog):
 	def __init__(self, value):
 
-		super(ProgressThread, self).__init__(None, -1, title=_("Generating add-ons"), style=wx.MINIMIZE_BOX|wx.SYSTEM_MENU|wx.CAPTION|wx.CLOSE_BOX |wx.CLIP_CHILDREN)
+		super(ProgressThread, self).__init__(None, -1, title=_("Generating add-ons"))
 
 		self.Centre()
 
