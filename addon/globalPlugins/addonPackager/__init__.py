@@ -37,6 +37,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		# Creation of our menu.
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
+		# Translators: Name of the item in the tools menu
 		self.menuItem = self.toolsMenu.Append(wx.ID_ANY, _("&Add-on packer"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.generaAddon, self.menuItem)
 
@@ -55,7 +56,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not self._MainWindows.IsShown():
 			gui.mainFrame.prePopup()
 			self._MainWindows.Show()
-			gui.mainFrame.postPopup()
 
 # Creating the Main Window of the Plug-in
 class MainWindows(wx.Dialog):
@@ -73,9 +73,12 @@ class MainWindows(wx.Dialog):
 			else:
 				directorySave = ""
 		else:
-			file = open(fileConfig, "wb")
-			pickle.dump(directorySave, file)
-			file.close()
+			try:
+				file = open(fileConfig, "wb")
+				pickle.dump(directorySave, file)
+				file.close()
+			except:
+				pass
 
 # Save the output directory to a configuration file
 	def ConfigFileSave(self):
@@ -84,6 +87,7 @@ class MainWindows(wx.Dialog):
 		pickle.dump(directorySave, file)
 		file.close()
 
+# Function taken from the add-on emoticons to center the window
 	def _calculatePosition(self, width, height):
 		w = wx.SystemSettings.GetMetric(wx.SYS_SCREEN_X)
 		h = wx.SystemSettings.GetMetric(wx.SYS_SCREEN_Y)
@@ -101,12 +105,14 @@ class MainWindows(wx.Dialog):
 		HEIGHT = 600
 		pos = self._calculatePosition(WIDTH, HEIGHT)
 
+		# Translators: Title of the plug-in in the main dialogue
 		super(MainWindows, self).__init__(parent, -1, title=_("Add-on packer"), pos = pos, size = (WIDTH, HEIGHT))
 
 		self.ConfigFile()
 
 		Panel = wx.Panel(self)
 
+		# Translators: Label that identifies the list of add-ons
 		label1 = wx.StaticText(Panel, wx.ID_ANY, label=_("&List of Add-on:"))
 		self.myListBox = wx.ListBox(Panel, style =  wx.LB_HSCROLL | wx.LB_MULTIPLE | wx.LB_NEEDED_SB)
 		for i in lista:
@@ -119,15 +125,20 @@ class MainWindows(wx.Dialog):
 		self.unselectionAllBTN = wx.Button(Panel, wx.ID_ANY, _("Deselect &all"))
 		self.Bind(wx.EVT_BUTTON, self.onUnselectionAllBTN, self.unselectionAllBTN)
 
+		# Translators: Label that identifies the area to choose directory to save the add-ons
 		label2 = wx.StaticText(Panel, wx.ID_ANY, label=_("Destination directory:"))
 		self.textDirectory = wx.TextCtrl(Panel, wx.ID_ANY, style=wx.TE_MULTILINE|wx.TE_READONLY)
 		self.textDirectory.SetValue(directorySave)
+
+		# Translators: Name of the button to choose directory
 		self.directoryBTN = wx.Button(Panel, wx.ID_ANY, _("Select &directory"))
 		self.Bind(wx.EVT_BUTTON, self.onDirectory, self.directoryBTN)
 
+		# Translators: Name of the button to generate the add-ons
 		self.generateAddon = wx.Button(Panel, wx.ID_ANY, _("&Generate add-ons"))
 		self.Bind(wx.EVT_BUTTON, self.onGenerate, self.generateAddon)
 
+		# Translators: Exit button name
 		self.closeBTN = wx.Button(Panel, wx.ID_CANCEL, _("&Close"))
 		self.Bind(wx.EVT_BUTTON, self.onClose, id=wx.ID_CANCEL)
 
@@ -174,6 +185,7 @@ class MainWindows(wx.Dialog):
 		self.myListBox.SetFocus()
 
 	def onDirectory(self, event):
+		# Translators: Title of the dialog box to select directory
 		dlg = wx.DirDialog(self, _("Select a directory:"),
 			style=wx.DD_DEFAULT_STYLE
 #			| wx.DD_DIR_MUST_EXIST
@@ -191,20 +203,23 @@ class MainWindows(wx.Dialog):
 	def onGenerate(self, event):
 		selection = self.myListBox.GetSelections()
 		if len(selection) == 0:
+			# Translators: Error message warning that no add-on was selected
 			gui.messageBox(_("You need to select at least one add-on to continue the action."), _("Error"), wx.ICON_ERROR)
 			self.myListBox.SetFocus()
 		else:
 			if self.textDirectory.GetValue() == "":
+				# Translators: Error message to warn that no directory was selected
 				gui.messageBox(_("You need to select an output directory to continue the action."), _("Error"), wx.ICON_ERROR)
 				self.directoryBTN.SetFocus()
 			else:
-				self.Close()
 				dlg = ProgressThread(selection)
-				dlg.Show()
+				dlg.ShowModal()
+				self.onClose(None)
 
 	def onClose(self, event):
 		self.ConfigFileSave()
 		self.Destroy()
+		gui.mainFrame.postPopup()
 
 class GeneratingThread(Thread):
 	def __init__(self, value):
@@ -221,13 +236,17 @@ class GeneratingThread(Thread):
 				shutil.make_archive(addonSave, "zip", lista[i].path, base_dir=None)
 				shutil.move(addonSave + ".zip", addonSave + ".nvda-addon")
 				wx.CallAfter(pub.sendMessage, "nextProgress", msg=i)
+			# Translators: Message informing that the add-ons were generated correctly
 			wx.CallAfter(pub.sendMessage, "correctoCHK_BK", msg=_("All add-ons were correctly generated."))
 		except:
+			# Translators: Message informing that add-on generation failed
 			wx.CallAfter(pub.sendMessage, "errorCHK_BK", msg=_("The add-ons could not be generated."))
 
 class ProgressThread(wx.Dialog):
+
 	def __init__(self, value):
 
+		# Translators: Title of the progress dialog
 		super(ProgressThread, self).__init__(None, -1, title=_("Generating add-ons"))
 
 		self.Centre()
@@ -236,6 +255,7 @@ class ProgressThread(wx.Dialog):
 
 		self.Bind(wx.EVT_CLOSE, self.onNull)
 
+		# Translators: Tag that asks the user to wait
 		label = wx.StaticText(panel, wx.ID_ANY, label=_("Please wait..."))
 		self.progressBar=wx.Gauge(panel, wx.ID_ANY, range=len(value), style = wx.GA_HORIZONTAL)
 		label.SetFocus()
