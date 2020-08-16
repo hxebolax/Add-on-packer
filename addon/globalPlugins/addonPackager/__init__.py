@@ -119,9 +119,11 @@ class MainWindows(wx.Dialog):
 			self.myListBox.Append(i.manifest["summary"])
 		self.Bind(wx.EVT_LISTBOX, self.OnSelection, self.myListBox)
 
+		# Translators: Button name to select all add-ons
 		self.selectionAllBTN = wx.Button(Panel, wx.ID_ANY, _("&Select all"))
 		self.Bind(wx.EVT_BUTTON, self.onselectionAllBTN, self.selectionAllBTN)
 
+		# Translators: Button name to deselect all add-ons
 		self.unselectionAllBTN = wx.Button(Panel, wx.ID_ANY, _("Deselect &all"))
 		self.Bind(wx.EVT_BUTTON, self.onUnselectionAllBTN, self.unselectionAllBTN)
 
@@ -204,12 +206,16 @@ class MainWindows(wx.Dialog):
 		selection = self.myListBox.GetSelections()
 		if len(selection) == 0:
 			# Translators: Error message warning that no add-on was selected
-			gui.messageBox(_("You need to select at least one add-on to continue the action."), _("Error"), wx.ICON_ERROR)
+			gui.messageBox(_("You need to select at least one add-on to continue the action."),
+				# Translators: Title of the dialog box no add-ons selected, Error
+				_("Error"), wx.ICON_ERROR)
 			self.myListBox.SetFocus()
 		else:
 			if self.textDirectory.GetValue() == "":
 				# Translators: Error message to warn that no directory was selected
-				gui.messageBox(_("You need to select an output directory to continue the action."), _("Error"), wx.ICON_ERROR)
+				gui.messageBox(_("You need to select an output directory to continue the action."),
+					# Translators: Title of the dialog box no directory, Error
+					_("Error"), wx.ICON_ERROR)
 				self.directoryBTN.SetFocus()
 			else:
 				dlg = ProgressThread(selection)
@@ -276,12 +282,16 @@ class ProgressThread(wx.Dialog):
 
 	def done(self, msg):
 		self.Close()
-		gui.messageBox(msg, _("Information"), wx.ICON_INFORMATION)
+		gui.messageBox(msg,
+			# Translators: Title of the dialog box, completed correctly. Information
+			_("Information"), wx.ICON_INFORMATION)
 		self.Destroy()
 
 	def error(self, msg):
 		self.Close()
-		gui.messageBox(msg, _("Error"), wx.ICON_ERROR)
+		gui.messageBox(msg,
+			# Translators: Title of the dialog box, could not be completed. Error
+			_("Error"), wx.ICON_ERROR)
 		self.Destroy()
 
 	def onNull(self, event):
