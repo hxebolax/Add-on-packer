@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 'addonPackager' package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'addonPackager' '0.1'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2020-07-24 11:03+0200\n"
+"PO-Revision-Date: 2020-08-18 09:55+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fr\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: addon\globalPlugins\addonPackager\__init__.py:28
+msgid "&Add-on packer"
+msgstr "&Empaqueteuse d'extensions"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: addon\globalPlugins\addonPackager\__init__.py:65 buildVars.py:17
+msgid "Add-on packer"
+msgstr "Empaqueteuse d'extensions"
+
+#: addon\globalPlugins\addonPackager\__init__.py:72
+msgid "&List of Add-on:"
+msgstr "&Liste des extensions:"
+
+#: addon\globalPlugins\addonPackager\__init__.py:78
+msgid "&Select all"
+msgstr "&Sélectionner tout"
+
+#: addon\globalPlugins\addonPackager\__init__.py:81
+msgid "Deselect &all"
+msgstr "Déselectionn&er tout"
+
+#: addon\globalPlugins\addonPackager\__init__.py:84
+msgid "Destination directory:"
+msgstr "Répertoire de destination:"
+
+#: addon\globalPlugins\addonPackager\__init__.py:87
+msgid "Select &directory"
+msgstr "Sélectionner le &répertoire"
+
+#: addon\globalPlugins\addonPackager\__init__.py:90
+msgid "&Generate add-ons"
+msgstr "&Générer les extensions"
+
+#: addon\globalPlugins\addonPackager\__init__.py:93
+msgid "&Close"
+msgstr "&Fermer"
+
+#: addon\globalPlugins\addonPackager\__init__.py:139
+msgid "Select a directory:"
+msgstr "Sélectionner un répertoire:"
+
+#: addon\globalPlugins\addonPackager\__init__.py:156
+msgid "You need to select at least one add-on to continue the action."
+msgstr "Vous devez sélectionner au moins une extension pour poursuivre l'action."
+
+#: addon\globalPlugins\addonPackager\__init__.py:156
+#: addon\globalPlugins\addonPackager\__init__.py:160
+#: addon\globalPlugins\addonPackager\__init__.py:230
+msgid "Error"
+msgstr "Erreur"
+
+#: addon\globalPlugins\addonPackager\__init__.py:160
+msgid "You need to select an output directory to continue the action."
+msgstr "Vous devez sélectionner un répertoire de sortie pour poursuivre l'action."
+
+#: addon\globalPlugins\addonPackager\__init__.py:191
+msgid "All add-ons were correctly generated."
+msgstr "Toutes les extensions ont été générées correctement."
+
+#: addon\globalPlugins\addonPackager\__init__.py:193
+msgid "The add-ons could not be generated."
+msgstr "Impossible de générer les extensions."
+
+#: addon\globalPlugins\addonPackager\__init__.py:197
+msgid "Generating add-ons"
+msgstr "Génération d'extensions en cours"
+
+#: addon\globalPlugins\addonPackager\__init__.py:205
+msgid "Please wait..."
+msgstr "Veuillez patienter..."
+
+#: addon\globalPlugins\addonPackager\__init__.py:225
+msgid "Information"
+msgstr "Information"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:20
+msgid "Back up your add-ons quickly."
+msgstr "Sauvegarder une copie de vos extensions rapidement."
