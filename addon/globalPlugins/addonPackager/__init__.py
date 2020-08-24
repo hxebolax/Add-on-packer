@@ -20,8 +20,6 @@ addonHandler.initTranslation()
 
 # List containing all the add-ons
 lista = list(addonHandler.getAvailableAddons())
-# Output directory containment
-directorySave = ""
 
 # Creation of a GlobalPlugin class, derived from globalPluginHandler.GlobalPlugin.
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
@@ -61,20 +59,19 @@ class MainWindows(wx.Dialog):
 
 # definition to check output directory
 	def ConfigFile(self):
-		global directorySave
 		fileConfig = os.path.join(globalVars.appArgs.configPath, "addonPackager.dat")
 		if os.path.isfile(fileConfig):
 			file = open(fileConfig, 'rb')
-			directorySave = pickle.load(file)
+			self.directorySave = pickle.load(file)
 			file.close()
-			if os.path.exists(directorySave):
+			if os.path.exists(self.directorySave):
 				pass
 			else:
-				directorySave = ""
+				self.directorySave = ""
 		else:
 			try:
 				file = open(fileConfig, "wb")
-				pickle.dump(directorySave, file)
+				pickle.dump(self.directorySave, file)
 				file.close()
 			except:
 				pass
@@ -83,7 +80,7 @@ class MainWindows(wx.Dialog):
 	def ConfigFileSave(self):
 		fileConfig = os.path.join(globalVars.appArgs.configPath, "addonPackager.dat")
 		file = open(fileConfig, "wb")
-		pickle.dump(directorySave, file)
+		pickle.dump(self.directorySave, file)
 		file.close()
 
 # Function taken from the add-on emoticons to center the window
@@ -99,7 +96,7 @@ class MainWindows(wx.Dialog):
 		return (x, y)
 
 	def __init__(self, parent):
-
+		self.directorySave=""
 		WIDTH = 800
 		HEIGHT = 600
 		pos = self._calculatePosition(WIDTH, HEIGHT)
@@ -129,7 +126,7 @@ class MainWindows(wx.Dialog):
 		# Translators: Label that identifies the area to choose directory to save the add-ons
 		label2 = wx.StaticText(Panel, wx.ID_ANY, label=_("Destination directory:"))
 		self.textDirectory = wx.TextCtrl(Panel, wx.ID_ANY, style=wx.TE_MULTILINE|wx.TE_READONLY)
-		self.textDirectory.SetValue(directorySave)
+		self.textDirectory.SetValue(self.directorySave)
 
 		# Translators: Name of the button to choose directory
 		self.directoryBTN = wx.Button(Panel, wx.ID_ANY, _("Select &directory"))
@@ -192,8 +189,7 @@ class MainWindows(wx.Dialog):
 			)
 		if dlg.ShowModal() == wx.ID_OK:
 			self.textDirectory.SetValue(dlg.GetPath())
-			global directorySave
-			directorySave =dlg.GetPath()
+			self.directorySave =dlg.GetPath()
 			self.ConfigFileSave()
 			dlg.Destroy()
 		else:
@@ -215,7 +211,7 @@ class MainWindows(wx.Dialog):
 					_("Error"), wx.ICON_ERROR)
 				self.directoryBTN.SetFocus()
 			else:
-				dlg = ProgressThread(selection)
+				dlg = ProgressThread(selection, self.directorySave)
 				dlg.ShowModal()
 				self.onClose(None)
 
@@ -225,17 +221,18 @@ class MainWindows(wx.Dialog):
 		gui.mainFrame.postPopup()
 
 class GeneratingThread(Thread):
-	def __init__(self, value):
+	def __init__(self, value, dir):
 
 		super(GeneratingThread, self).__init__()
 		self.value = value
+		self.directorySave = dir
 		self.daemon = True
 		self.start()
 
 	def run(self):
 		try:
 			for i in self.value:
-				addonSave = directorySave + "/" + lista[i].manifest["name"] + "_" + lista[i].manifest["version"].replace(":", "_") + "_Gen"
+				addonSave = self.directorySave + "/" + lista[i].manifest["name"] + "_" + lista[i].manifest["version"].replace(":", "_") + "_Gen"
 				shutil.make_archive(addonSave, "zip", lista[i].path, base_dir=None)
 				shutil.move(addonSave + ".zip", addonSave + ".nvda-addon")
 				wx.CallAfter(pub.sendMessage, "nextProgress", msg=i)
@@ -247,7 +244,7 @@ class GeneratingThread(Thread):
 
 class ProgressThread(wx.Dialog):
 
-	def __init__(self, value):
+	def __init__(self, value, dir):
 
 		# Translators: Title of the progress dialog
 		super(ProgressThread, self).__init__(None, -1, title=_("Generating add-ons"))
@@ -272,7 +269,7 @@ class ProgressThread(wx.Dialog):
 		pub.subscribe(self.done, "correctoCHK_BK")
 		pub.subscribe(self.error, "errorCHK_BK")
 
-		GeneratingThread(value)
+		GeneratingThread(value, dir)
 
 	def next(self, msg):
 		self.progressBar.SetValue(msg)
