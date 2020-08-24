@@ -191,9 +191,7 @@ class MainWindows(wx.Dialog):
 			self.textDirectory.SetValue(dlg.GetPath())
 			self.directorySave =dlg.GetPath()
 			self.ConfigFileSave()
-			dlg.Destroy()
-		else:
-			dlg.Destroy()
+		dlg.Destroy()
 
 	def onGenerate(self, event):
 		selection = self.myListBox.GetSelections()
