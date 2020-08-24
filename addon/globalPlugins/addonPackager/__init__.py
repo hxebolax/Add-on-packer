@@ -7,7 +7,6 @@ import globalPluginHandler
 import addonHandler
 import gui
 import globalVars
-import config
 import wx
 import shutil
 import os
@@ -63,9 +62,9 @@ class MainWindows(wx.Dialog):
 # definition to check output directory
 	def ConfigFile(self):
 		global directorySave
-		fileConfig = config.getUserDefaultConfigPath() + "/addonPackager.dat"
+		fileConfig = os.path.join(globalVars.appArgs.configPath, "addonPackager.dat")
 		if os.path.isfile(fileConfig):
-			file = open(	fileConfig, 'rb')
+			file = open(fileConfig, 'rb')
 			directorySave = pickle.load(file)
 			file.close()
 			if os.path.exists(directorySave):
@@ -82,7 +81,7 @@ class MainWindows(wx.Dialog):
 
 # Save the output directory to a configuration file
 	def ConfigFileSave(self):
-		fileConfig = config.getUserDefaultConfigPath() + "/addonPackager.dat"
+		fileConfig = os.path.join(globalVars.appArgs.configPath, "addonPackager.dat")
 		file = open(fileConfig, "wb")
 		pickle.dump(directorySave, file)
 		file.close()
@@ -143,8 +142,6 @@ class MainWindows(wx.Dialog):
 		# Translators: Exit button name
 		self.closeBTN = wx.Button(Panel, wx.ID_CANCEL, _("&Close"))
 		self.Bind(wx.EVT_BUTTON, self.onClose, id=wx.ID_CANCEL)
-
-		self.Bind(wx.EVT_BUTTON, self.onClose, id = wx.ID_CANCEL)
 
 		sizeV = wx.BoxSizer(wx.VERTICAL)
 		sizeH1 = wx.BoxSizer(wx.HORIZONTAL)
@@ -230,7 +227,7 @@ class MainWindows(wx.Dialog):
 class GeneratingThread(Thread):
 	def __init__(self, value):
 
-		Thread.__init__(self)
+		super(GeneratingThread, self).__init__()
 		self.value = value
 		self.daemon = True
 		self.start()
