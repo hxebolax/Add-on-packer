@@ -230,7 +230,7 @@ class GeneratingThread(Thread):
 	def run(self):
 		try:
 			for i in self.value:
-				addonSave = self.directorySave + "/" + lista[i].manifest["name"] + "_" + lista[i].manifest["version"].replace(":", "_") + "_Gen"
+				addonSave = os.path.join(self.directorySave, lista[i].manifest["name"] + "_" + lista[i].manifest["version"].replace(":", "_") + "_Gen")
 				shutil.make_archive(addonSave, "zip", lista[i].path, base_dir=None)
 				shutil.move(addonSave + ".zip", addonSave + ".nvda-addon")
 				wx.CallAfter(pub.sendMessage, "nextProgress", msg=i)
