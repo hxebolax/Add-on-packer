@@ -109,7 +109,7 @@ class MainWindows(wx.Dialog):
 		Panel = wx.Panel(self)
 
 		# Translators: Label that identifies the list of add-ons
-		label1 = wx.StaticText(Panel, wx.ID_ANY, label=_("&List of Add-on:"))
+		label1 = wx.StaticText(Panel, wx.ID_ANY, label=_("&List of Add-ons:"))
 		self.myListBox = wx.ListBox(Panel, style =  wx.LB_HSCROLL | wx.LB_MULTIPLE | wx.LB_NEEDED_SB)
 		for i in lista:
 			self.myListBox.Append(i.manifest["summary"])
