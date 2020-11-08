@@ -12,8 +12,6 @@ import shutil
 import os
 import pickle
 from threading import Thread
-# Call to the bookstore including pubsub
-from .pubsub import pub
 
 # For translation
 addonHandler.initTranslation()
@@ -218,10 +216,40 @@ class MainWindows(wx.Dialog):
 		self.Destroy()
 		gui.mainFrame.postPopup()
 
+evento1 = wx.NewEventType() # Custom Event Type
+EVT_PROGRESO = wx.PyEventBinder(evento1, 1) # bind specific events to event handlers
+evento2 = wx.NewEventType() # Custom Event Type
+EVT_MENSAJEACCEPT = wx.PyEventBinder(evento2, 1) # bind specific events to event handlers
+evento3 = wx.NewEventType() # Custom Event Type
+EVT_MENSAJECANCEL = wx.PyEventBinder(evento3, 1) # bind specific events to event handlers
+
+class progresoEvento(wx.PyCommandEvent):
+	def __init__(self, etype, eid, progress=None):
+		wx.PyCommandEvent.__init__(self, etype, eid)
+		self._progress = progress   # field to update progress bar
+	def GetValue(self):
+		return self._progress
+
+class mensajeEventoAcceptar(wx.PyCommandEvent):
+	def __init__(self, etype, eid, mensaje=None):
+		wx.PyCommandEvent.__init__(self, etype, eid)
+		self.mensaje = mensaje
+	def GetValue(self):
+		return self.mensaje
+
+class mensajeEventoCancelar(wx.PyCommandEvent):
+	def __init__(self, etype, eid, mensaje=None):
+		wx.PyCommandEvent.__init__(self, etype, eid)
+		self.mensaje = mensaje
+	def GetValue(self):
+		return self.mensaje
+
 class GeneratingThread(Thread):
-	def __init__(self, value, dir):
+	def __init__(self, notify_window, value, dir):
 
 		super(GeneratingThread, self).__init__()
+
+		self._notify_window = notify_window
 		self.value = value
 		self.directorySave = dir
 		self.daemon = True
@@ -233,12 +261,23 @@ class GeneratingThread(Thread):
 				addonSave = os.path.join(self.directorySave, lista[i].manifest["name"] + "_" + lista[i].manifest["version"].replace(":", "_") + "_Gen")
 				shutil.make_archive(addonSave, "zip", lista[i].path, base_dir=None)
 				shutil.move(addonSave + ".zip", addonSave + ".nvda-addon")
-				wx.CallAfter(pub.sendMessage, "nextProgress", msg=i)
+				self.SendProgreso(i)
 			# Translators: Message informing that the add-ons were generated correctly
-			wx.CallAfter(pub.sendMessage, "correctoCHK_BK", msg=_("All add-ons were correctly generated."))
+			self.SendMensajeOk(_("All add-ons were correctly generated."))
 		except:
 			# Translators: Message informing that add-on generation failed
-			wx.CallAfter(pub.sendMessage, "errorCHK_BK", msg=_("The add-ons could not be generated."))
+			self.SendMensajeCancel(_("The add-ons could not be generated."))
+
+	def SendProgreso(self, progress=None):
+		evt = progresoEvento(evento1, -1, progress)
+		wx.PostEvent(self._notify_window, evt)
+
+	def SendMensajeOk(self, status=None):
+		evt = mensajeEventoAcceptar(evento2, -1, status)
+		wx.PostEvent(self._notify_window, evt)
+	def SendMensajeCancel(self, status=None):
+		evt = mensajeEventoCancelar(evento3, -1, status)
+		wx.PostEvent(self._notify_window, evt)
 
 class ProgressThread(wx.Dialog):
 
@@ -252,6 +291,9 @@ class ProgressThread(wx.Dialog):
 		panel=wx.Panel(self)
 
 		self.Bind(wx.EVT_CLOSE, self.onNull)
+		self.Bind(EVT_PROGRESO, self.next) # Bind our new custom event to a function
+		self.Bind(EVT_MENSAJEACCEPT, self.done) # Bind our new custom event to a function
+		self.Bind(EVT_MENSAJECANCEL, self.error) # Bind our new custom event to a function
 
 		# Translators: Tag that asks the user to wait
 		label = wx.StaticText(panel, wx.ID_ANY, label=_("Please wait..."))
@@ -263,25 +305,21 @@ class ProgressThread(wx.Dialog):
 		sizer.Add(self.progressBar, 0, wx.EXPAND)
 		panel.SetSizer(sizer)
 
-		pub.subscribe(self.next, "nextProgress")
-		pub.subscribe(self.done, "correctoCHK_BK")
-		pub.subscribe(self.error, "errorCHK_BK")
+		GeneratingThread(self, value, dir)
 
-		GeneratingThread(value, dir)
+	def next(self, event):
+		self.progressBar.SetValue(event.GetValue())
 
-	def next(self, msg):
-		self.progressBar.SetValue(msg)
-
-	def done(self, msg):
+	def done(self, event):
 		self.Close()
-		gui.messageBox(msg,
+		gui.messageBox(event.GetValue(),
 			# Translators: Title of the dialog box, completed correctly. Information
 			_("Information"), wx.ICON_INFORMATION)
 		self.Destroy()
 
-	def error(self, msg):
+	def error(self, event):
 		self.Close()
-		gui.messageBox(msg,
+		gui.messageBox(event.GetValue(),
 			# Translators: Title of the dialog box, could not be completed. Error
 			_("Error"), wx.ICON_ERROR)
 		self.Destroy()
