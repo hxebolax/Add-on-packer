@@ -226,6 +226,7 @@ EVT_MENSAJECANCEL = wx.PyEventBinder(evento3, 1) # bind specific events to event
 class progresoEvento(wx.PyCommandEvent):
 	def __init__(self, etype, eid, progress=None):
 		wx.PyCommandEvent.__init__(self, etype, eid)
+
 		self._progress = progress   # field to update progress bar
 	def GetValue(self):
 		return self._progress

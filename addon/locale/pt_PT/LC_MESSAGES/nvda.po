@@ -7,91 +7,115 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'addonPackager' '0.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2020-07-24 11:03+0200\n"
-"PO-Revision-Date: 2020-07-31 20:36+0100\n"
+"POT-Creation-Date: 2020-11-08 21:10+0100\n"
+"PO-Revision-Date: 2020-11-08 21:13+0100\n"
+"Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa Portuguesa do NVDA; Ângelo Abrantes e Rui fontes\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4\n"
-"Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
+"X-Generator: Poedit 2.3.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: pt_PT\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: addon\globalPlugins\addonPackager\__init__.py:28
+#. Translators: Name of the item in the tools menu
+#: addon\globalPlugins\addonPackager\__init__.py:36
 msgid "&Add-on packer"
 msgstr "&Empacotador de extras"
 
+#. Translators: Title of the plug-in in the main dialogue
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: addon\globalPlugins\addonPackager\__init__.py:65 buildVars.py:17
+#: addon\globalPlugins\addonPackager\__init__.py:103 buildVars.py:17
 msgid "Add-on packer"
 msgstr "Empacotador de extras"
 
-#: addon\globalPlugins\addonPackager\__init__.py:72
-msgid "&List of Add-on:"
+#. Translators: Label that identifies the list of add-ons
+#: addon\globalPlugins\addonPackager\__init__.py:110
+msgid "&List of Add-ons:"
 msgstr "&Lista de extras:"
 
-#: addon\globalPlugins\addonPackager\__init__.py:78
+#. Translators: Button name to select all add-ons
+#: addon\globalPlugins\addonPackager\__init__.py:117
 msgid "&Select all"
 msgstr "&Seleccionar tudo"
 
-#: addon\globalPlugins\addonPackager\__init__.py:81
+#. Translators: Button name to deselect all add-ons
+#: addon\globalPlugins\addonPackager\__init__.py:121
 msgid "Deselect &all"
 msgstr "Deseleccion&ar tudo"
 
-#: addon\globalPlugins\addonPackager\__init__.py:84
+#. Translators: Label that identifies the area to choose directory to save the add-ons
+#: addon\globalPlugins\addonPackager\__init__.py:125
 msgid "Destination directory:"
 msgstr "Pasta de destino:"
 
-#: addon\globalPlugins\addonPackager\__init__.py:87
+#. Translators: Name of the button to choose directory
+#: addon\globalPlugins\addonPackager\__init__.py:130
 msgid "Select &directory"
 msgstr "Seleccionar &pasta"
 
-#: addon\globalPlugins\addonPackager\__init__.py:90
+#. Translators: Name of the button to generate the add-ons
+#: addon\globalPlugins\addonPackager\__init__.py:134
 msgid "&Generate add-ons"
 msgstr "&Criar extras"
 
-#: addon\globalPlugins\addonPackager\__init__.py:93
+#. Translators: Exit button name
+#: addon\globalPlugins\addonPackager\__init__.py:138
 msgid "&Close"
 msgstr "&Fechar"
 
-#: addon\globalPlugins\addonPackager\__init__.py:139
+#. Translators: Title of the dialog box to select directory
+#: addon\globalPlugins\addonPackager\__init__.py:183
 msgid "Select a directory:"
 msgstr "Seleccione uma pasta"
 
-#: addon\globalPlugins\addonPackager\__init__.py:156
+#. Translators: Error message warning that no add-on was selected
+#: addon\globalPlugins\addonPackager\__init__.py:198
 msgid "You need to select at least one add-on to continue the action."
 msgstr "Precisa de seleccionar pelo menos um extra para continuar com a acção."
 
-#: addon\globalPlugins\addonPackager\__init__.py:156
-#: addon\globalPlugins\addonPackager\__init__.py:160
-#: addon\globalPlugins\addonPackager\__init__.py:230
+#. Translators: Title of the dialog box no add-ons selected, Error
+#. Translators: Title of the dialog box no directory, Error
+#. Translators: Title of the dialog box, could not be completed. Error
+#: addon\globalPlugins\addonPackager\__init__.py:200
+#: addon\globalPlugins\addonPackager\__init__.py:207
+#: addon\globalPlugins\addonPackager\__init__.py:325
 msgid "Error"
 msgstr "Erro"
 
-#: addon\globalPlugins\addonPackager\__init__.py:160
+#. Translators: Error message to warn that no directory was selected
+#: addon\globalPlugins\addonPackager\__init__.py:205
 msgid "You need to select an output directory to continue the action."
-msgstr "Necessita de seleccionar uma pasta de saída para continuar com a acção."
+msgstr ""
+"Necessita de seleccionar uma pasta de saída para continuar com a acção."
 
-#: addon\globalPlugins\addonPackager\__init__.py:191
+#. Translators: Message informing that the add-ons were generated correctly
+#: addon\globalPlugins\addonPackager\__init__.py:267
 msgid "All add-ons were correctly generated."
 msgstr "Todos os extras foram criados correctamente."
 
-#: addon\globalPlugins\addonPackager\__init__.py:193
+#. Translators: Message informing that add-on generation failed
+#: addon\globalPlugins\addonPackager\__init__.py:270
 msgid "The add-ons could not be generated."
 msgstr "Não foi possível criar os extras."
 
-#: addon\globalPlugins\addonPackager\__init__.py:197
+#. Translators: Title of the progress dialog
+#: addon\globalPlugins\addonPackager\__init__.py:288
 msgid "Generating add-ons"
 msgstr "A criar os extras"
 
-#: addon\globalPlugins\addonPackager\__init__.py:205
+#. Bind our new custom event to a function
+#. Bind our new custom event to a function
+#. Bind our new custom event to a function
+#. Translators: Tag that asks the user to wait
+#: addon\globalPlugins\addonPackager\__init__.py:300
 msgid "Please wait..."
 msgstr "Espere, por favor..."
 
-#: addon\globalPlugins\addonPackager\__init__.py:225
+#. Translators: Title of the dialog box, completed correctly. Information
+#: addon\globalPlugins\addonPackager\__init__.py:318
 msgid "Information"
 msgstr "Informação"
 
@@ -99,4 +123,6 @@ msgstr "Informação"
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:20
 msgid "Back up your add-ons quickly."
-msgstr "Faça rapidamente uma cópia dos seus complementos, deixando-os prontos para voltarem a ser instalados."
+msgstr ""
+"Faça rapidamente uma cópia dos seus complementos, deixando-os prontos para "
+"voltarem a ser instalados."
