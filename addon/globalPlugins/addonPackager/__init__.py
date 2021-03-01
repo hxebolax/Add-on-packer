@@ -10,10 +10,10 @@ import globalVars
 from gui.nvdaControls import CustomCheckListBox
 from scriptHandler import script
 import wx
-import shutil
 import os
 import pickle
 from threading import Thread
+import zipfile
 
 # For translation
 addonHandler.initTranslation()
@@ -118,6 +118,8 @@ class MainWindows(wx.Dialog):
 
 		for i in lista:
 			self.myListBox.Append(i.manifest["summary"])
+		self.myListBox.SetSelection(0)
+		self.myListBox.SetFocus()
 		self.Bind(wx.EVT_LISTBOX, self.OnSelection, self.myListBox)
 
 		# Translators: Button name to select all add-ons
@@ -254,12 +256,22 @@ class GeneratingThread(Thread):
 		self.daemon = True
 		self.start()
 
+	def zipfolder(self, foldername, target_dir):            
+		zipobj = zipfile.ZipFile(foldername + '.nvda-addon', 'w', zipfile.ZIP_DEFLATED)
+		rootlen = len(target_dir) + 1
+		for base, dirs, files in os.walk(target_dir):
+			if '__pycache__' in dirs:
+				dirs.remove('__pycache__')
+			for file in files:
+				fn = os.path.join(base, file)
+				zipobj.write(fn, fn[rootlen:])
+		zipobj.close()
+
 	def run(self):
 		try:
 			for i in self.value:
 				addonSave = os.path.join(self.directorySave, lista[i].manifest["name"] + "_" + lista[i].manifest["version"].replace(":", "_") + "_Gen")
-				shutil.make_archive(addonSave, "zip", lista[i].path, base_dir=None)
-				shutil.move(addonSave + ".zip", addonSave + ".nvda-addon")
+				self.zipfolder(addonSave, lista[i].path)
 				wx.CallAfter(self.frame.next, i)
 			# Translators: Message informing that the add-ons were generated correctly
 			wx.CallAfter(self.frame.done, _("All add-ons were correctly generated."))
