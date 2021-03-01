@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'addonPackager' '0.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2020-11-08 21:10+0100\n"
-"PO-Revision-Date: 2020-11-08 21:13+0100\n"
+"POT-Creation-Date: 2021-03-01 12:50+0100\n"
+"PO-Revision-Date: 2021-03-01 12:55+0100\n"
 "Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa Portuguesa do NVDA; Ângelo Abrantes e Rui fontes\n"
 "Language: pt_BR\n"
@@ -19,60 +19,73 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#. Translators: Name of the item in the tools menu
-#: addon\globalPlugins\addonPackager\__init__.py:36
-msgid "&Add-on packer"
-msgstr "&Empacotador de complementos"
-
-#. Translators: Title of the plug-in in the main dialogue
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: addon\globalPlugins\addonPackager\__init__.py:103 buildVars.py:17
+#. Translators: Title of the plug-in in the main dialogue
+#: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:47
+#: addon\globalPlugins\addonPackager\__init__.py:107
 msgid "Add-on packer"
 msgstr "Empacotador de complementos"
 
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid "Back up your add-ons quickly."
+msgstr ""
+"Faça rapidamente uma cópia dos seus complementos, deixando-os prontos para "
+"voltarem a ser instalados."
+
+#. Translators: Name of the item in the tools menu
+#: addon\globalPlugins\addonPackager\__init__.py:37
+msgid "&Add-on packer"
+msgstr "&Empacotador de complementos"
+
+#: addon\globalPlugins\addonPackager\__init__.py:47
+msgid "Show the plug-in packer window"
+msgstr "Mostrar a janela do empacotador plug-in"
+
 #. Translators: Label that identifies the list of add-ons
-#: addon\globalPlugins\addonPackager\__init__.py:110
+#: addon\globalPlugins\addonPackager\__init__.py:114
 msgid "&List of Add-ons:"
 msgstr "&Lista de complementos:"
 
 #. Translators: Button name to select all add-ons
-#: addon\globalPlugins\addonPackager\__init__.py:117
+#: addon\globalPlugins\addonPackager\__init__.py:123
 msgid "&Select all"
 msgstr "&Seleccionar tudo"
 
 #. Translators: Button name to deselect all add-ons
-#: addon\globalPlugins\addonPackager\__init__.py:121
+#: addon\globalPlugins\addonPackager\__init__.py:127
 msgid "Deselect &all"
 msgstr "Deseleccion&ar tudo"
 
 #. Translators: Label that identifies the area to choose directory to save the add-ons
-#: addon\globalPlugins\addonPackager\__init__.py:125
+#: addon\globalPlugins\addonPackager\__init__.py:131
 msgid "Destination directory:"
 msgstr "Pasta de destino:"
 
 #. Translators: Name of the button to choose directory
-#: addon\globalPlugins\addonPackager\__init__.py:130
+#: addon\globalPlugins\addonPackager\__init__.py:136
 msgid "Select &directory"
 msgstr "Seleccionar &pasta"
 
 #. Translators: Name of the button to generate the add-ons
-#: addon\globalPlugins\addonPackager\__init__.py:134
+#: addon\globalPlugins\addonPackager\__init__.py:140
 msgid "&Generate add-ons"
 msgstr "&Criar complementos"
 
 #. Translators: Exit button name
-#: addon\globalPlugins\addonPackager\__init__.py:138
+#: addon\globalPlugins\addonPackager\__init__.py:144
 msgid "&Close"
 msgstr "&Fechar"
 
 #. Translators: Title of the dialog box to select directory
-#: addon\globalPlugins\addonPackager\__init__.py:183
+#: addon\globalPlugins\addonPackager\__init__.py:192
 msgid "Select a directory:"
 msgstr "Seleccione uma pasta"
 
 #. Translators: Error message warning that no add-on was selected
-#: addon\globalPlugins\addonPackager\__init__.py:198
+#: addon\globalPlugins\addonPackager\__init__.py:207
 msgid "You need to select at least one add-on to continue the action."
 msgstr ""
 "Precisa de seleccionar pelo menos um complemento para continuar com a acção."
@@ -80,50 +93,39 @@ msgstr ""
 #. Translators: Title of the dialog box no add-ons selected, Error
 #. Translators: Title of the dialog box no directory, Error
 #. Translators: Title of the dialog box, could not be completed. Error
-#: addon\globalPlugins\addonPackager\__init__.py:200
-#: addon\globalPlugins\addonPackager\__init__.py:207
-#: addon\globalPlugins\addonPackager\__init__.py:325
+#: addon\globalPlugins\addonPackager\__init__.py:209
+#: addon\globalPlugins\addonPackager\__init__.py:216
+#: addon\globalPlugins\addonPackager\__init__.py:313
 msgid "Error"
 msgstr "Erro"
 
 #. Translators: Error message to warn that no directory was selected
-#: addon\globalPlugins\addonPackager\__init__.py:205
+#: addon\globalPlugins\addonPackager\__init__.py:214
 msgid "You need to select an output directory to continue the action."
 msgstr ""
 "Necessita de seleccionar uma pasta de saída para continuar com a acção."
 
 #. Translators: Message informing that the add-ons were generated correctly
-#: addon\globalPlugins\addonPackager\__init__.py:267
+#: addon\globalPlugins\addonPackager\__init__.py:264
 msgid "All add-ons were correctly generated."
 msgstr "Todos os complementos foram criados correctamente."
 
 #. Translators: Message informing that add-on generation failed
-#: addon\globalPlugins\addonPackager\__init__.py:270
+#: addon\globalPlugins\addonPackager\__init__.py:267
 msgid "The add-ons could not be generated."
 msgstr "Não foi possível criar os complementos."
 
 #. Translators: Title of the progress dialog
-#: addon\globalPlugins\addonPackager\__init__.py:288
+#: addon\globalPlugins\addonPackager\__init__.py:274
 msgid "Generating add-ons"
 msgstr "A criar os complementos"
 
-#. Bind our new custom event to a function
-#. Bind our new custom event to a function
-#. Bind our new custom event to a function
 #. Translators: Tag that asks the user to wait
-#: addon\globalPlugins\addonPackager\__init__.py:300
+#: addon\globalPlugins\addonPackager\__init__.py:285
 msgid "Please wait..."
 msgstr "Espere, por favor..."
 
 #. Translators: Title of the dialog box, completed correctly. Information
-#: addon\globalPlugins\addonPackager\__init__.py:318
+#: addon\globalPlugins\addonPackager\__init__.py:304
 msgid "Information"
 msgstr "Informação"
-
-#. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:20
-msgid "Back up your add-ons quickly."
-msgstr ""
-"Faça rapidamente uma cópia dos seus complementos, deixando-os prontos para "
-"voltarem a ser instalados."

@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: 'addonPackager' '0.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2021-03-01 12:50+0100\n"
-"PO-Revision-Date: 2021-03-01 12:56+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-03-01 12:59+0100\n"
+"Last-Translator: wafiqtaher <wafiqtaher@gmail.com>\n"
 "Language-Team: \n"
-"Language: es\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. Add-on summary, usually the user visible name of the addon.
@@ -25,67 +26,69 @@ msgstr ""
 #: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:47
 #: addon\globalPlugins\addonPackager\__init__.py:107
 msgid "Add-on packer"
-msgstr "Empaquetador de complementos"
+msgstr "نسخ الإضافات"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:26
 msgid "Back up your add-ons quickly."
-msgstr "Haga una copia de sus complementos rápidamente."
+msgstr "نسخ احتياطي للوظائف الإضافية بسرعة."
 
 #. Translators: Name of the item in the tools menu
 #: addon\globalPlugins\addonPackager\__init__.py:37
 msgid "&Add-on packer"
-msgstr "&Empaquetador de complementos"
+msgstr "&نصخ الإضافات"
 
 #: addon\globalPlugins\addonPackager\__init__.py:47
 msgid "Show the plug-in packer window"
-msgstr "Mostrar la ventana del empaquetador de complementos"
+msgstr "اعرض نافذة البرنامج الإضافي "
 
 #. Translators: Label that identifies the list of add-ons
 #: addon\globalPlugins\addonPackager\__init__.py:114
+#, fuzzy
+#| msgid "&List of Add-on:"
 msgid "&List of Add-ons:"
-msgstr "&Lista de complementos:"
+msgstr "&قائمة الوظائف الإضافية:"
 
 #. Translators: Button name to select all add-ons
 #: addon\globalPlugins\addonPackager\__init__.py:123
 msgid "&Select all"
-msgstr "&Seleccionar todo"
+msgstr "&اختر الكل"
 
 #. Translators: Button name to deselect all add-ons
 #: addon\globalPlugins\addonPackager\__init__.py:127
 msgid "Deselect &all"
-msgstr "Deseleccion&ar todo"
+msgstr "ال&غاء تحديد الكل"
 
 #. Translators: Label that identifies the area to choose directory to save the add-ons
 #: addon\globalPlugins\addonPackager\__init__.py:131
 msgid "Destination directory:"
-msgstr "Directorio destino:"
+msgstr "مجلد الهدف"
 
 #. Translators: Name of the button to choose directory
 #: addon\globalPlugins\addonPackager\__init__.py:136
 msgid "Select &directory"
-msgstr "Seleccionar &directorio"
+msgstr "حدد & دليل"
 
 #. Translators: Name of the button to generate the add-ons
 #: addon\globalPlugins\addonPackager\__init__.py:140
 msgid "&Generate add-ons"
-msgstr "&Generar complementos"
+msgstr "إن&شاء الوظائف الإضافية"
 
 #. Translators: Exit button name
 #: addon\globalPlugins\addonPackager\__init__.py:144
 msgid "&Close"
-msgstr "&Cerrar"
+msgstr "&أغلق"
 
 #. Translators: Title of the dialog box to select directory
 #: addon\globalPlugins\addonPackager\__init__.py:192
 msgid "Select a directory:"
-msgstr "Seleccione un directorio"
+msgstr "حدد دليلاً:"
 
 #. Translators: Error message warning that no add-on was selected
 #: addon\globalPlugins\addonPackager\__init__.py:207
 msgid "You need to select at least one add-on to continue the action."
-msgstr "Necesita seleccionar al menos un complemento para continuar con la acción."
+msgstr "تحتاج إلى تحديد وظيفة إضافية واحدة على الأقل لمتابعة الإجراء."
 
 #. Translators: Title of the dialog box no add-ons selected, Error
 #. Translators: Title of the dialog box no directory, Error
@@ -94,34 +97,34 @@ msgstr "Necesita seleccionar al menos un complemento para continuar con la acci�
 #: addon\globalPlugins\addonPackager\__init__.py:216
 #: addon\globalPlugins\addonPackager\__init__.py:313
 msgid "Error"
-msgstr "Error"
+msgstr "خطأ"
 
 #. Translators: Error message to warn that no directory was selected
 #: addon\globalPlugins\addonPackager\__init__.py:214
 msgid "You need to select an output directory to continue the action."
-msgstr "Necesita seleccionar un directorio de salida para continuar con la acción."
+msgstr "تحتاج إلى تحديد دليل الإخراج لمتابعة الإجراء."
 
 #. Translators: Message informing that the add-ons were generated correctly
 #: addon\globalPlugins\addonPackager\__init__.py:264
 msgid "All add-ons were correctly generated."
-msgstr "Se generaron correctamente todos los complementos."
+msgstr "تم إنشاء جميع الوظائف الإضافية بشكل صحيح."
 
 #. Translators: Message informing that add-on generation failed
 #: addon\globalPlugins\addonPackager\__init__.py:267
 msgid "The add-ons could not be generated."
-msgstr "No se pudieron generar los complementos."
+msgstr "لا يمكن إنشاء الوظائف الإضافية."
 
 #. Translators: Title of the progress dialog
 #: addon\globalPlugins\addonPackager\__init__.py:274
 msgid "Generating add-ons"
-msgstr "Generando complementos"
+msgstr "إنشاء الوظائف الإضافية"
 
 #. Translators: Tag that asks the user to wait
 #: addon\globalPlugins\addonPackager\__init__.py:285
 msgid "Please wait..."
-msgstr "Espere por favor..."
+msgstr "الرجاء الإنتظار"
 
 #. Translators: Title of the dialog box, completed correctly. Information
 #: addon\globalPlugins\addonPackager\__init__.py:304
 msgid "Information"
-msgstr "Información"
+msgstr "معلومات"

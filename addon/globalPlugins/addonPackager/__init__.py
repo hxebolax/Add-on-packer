@@ -7,6 +7,8 @@ import globalPluginHandler
 import addonHandler
 import gui
 import globalVars
+from gui.nvdaControls import CustomCheckListBox
+from scriptHandler import script
 import wx
 import shutil
 import os
@@ -18,7 +20,7 @@ addonHandler.initTranslation()
 
 # List containing all the add-ons
 lista = list(addonHandler.getAvailableAddons())
-
+IS_WIN_on = False
 # Creation of a GlobalPlugin class, derived from globalPluginHandler.GlobalPlugin.
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Creating the constructor of the newly created GlobalPlugin class.
@@ -34,7 +36,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
 		# Translators: Name of the item in the tools menu
 		self.menuItem = self.toolsMenu.Append(wx.ID_ANY, _("&Add-on packer"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.generaAddon, self.menuItem)
+		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_generaAddon, self.menuItem)
 
 	def terminate(self):
 		try:
@@ -43,14 +45,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except (AttributeError, RuntimeError):
 			pass
 
-	def generaAddon(self, event):
+	@script(gesture=None, description= _("Show the plug-in packer window"), category= _("Add-on packer"))
+	def script_generaAddon(self, event):
 # Calling the main window of the plug-in
-		if not self._MainWindows:
-			self._MainWindows = MainWindows(gui.mainFrame)
 
-		if not self._MainWindows.IsShown():
-			gui.mainFrame.prePopup()
-			self._MainWindows.Show()
+		if IS_WIN_on == False:
+			if not self._MainWindows:
+				self._MainWindows = MainWindows(gui.mainFrame)
+
+			if not self._MainWindows.IsShown():
+				gui.mainFrame.prePopup()
+				self._MainWindows.Show()
 
 # Creating the Main Window of the Plug-in
 class MainWindows(wx.Dialog):
@@ -108,7 +113,9 @@ class MainWindows(wx.Dialog):
 
 		# Translators: Label that identifies the list of add-ons
 		label1 = wx.StaticText(Panel, wx.ID_ANY, label=_("&List of Add-ons:"))
-		self.myListBox = wx.ListBox(Panel, style =  wx.LB_HSCROLL | wx.LB_MULTIPLE | wx.LB_NEEDED_SB)
+#		self.myListBox = wx.ListBox(Panel, style =  wx.LB_HSCROLL | wx.LB_MULTIPLE | wx.LB_NEEDED_SB)
+		self.myListBox = CustomCheckListBox(Panel, 2)
+
 		for i in lista:
 			self.myListBox.Append(i.manifest["summary"])
 		self.Bind(wx.EVT_LISTBOX, self.OnSelection, self.myListBox)
@@ -170,12 +177,15 @@ class MainWindows(wx.Dialog):
 	def onselectionAllBTN(self, event):
 		num = self.myListBox.GetCount()
 		for i in range(num):
-			self.myListBox.SetSelection(i)
+			self.myListBox.Check(	i, True)
+		self.myListBox.SetSelection(0)
+		self.myListBox.SetFocus()
 
 	def onUnselectionAllBTN(self, event):
 		self.myListBox.Clear()
 		for i in lista:
 			self.myListBox.Append(i.manifest["summary"])
+		self.myListBox.SetSelection(0)
 		self.myListBox.SetFocus()
 
 	def onDirectory(self, event):
@@ -192,7 +202,7 @@ class MainWindows(wx.Dialog):
 		dlg.Destroy()
 
 	def onGenerate(self, event):
-		selection = self.myListBox.GetSelections()
+		selection = [i for i in range(self.myListBox.GetCount()) if self.myListBox.IsChecked(i)]
 		if len(selection) == 0:
 			# Translators: Error message warning that no add-on was selected
 			gui.messageBox(_("You need to select at least one add-on to continue the action."),
@@ -207,8 +217,8 @@ class MainWindows(wx.Dialog):
 					_("Error"), wx.ICON_ERROR)
 				self.directoryBTN.SetFocus()
 			else:
-				dlg = ProgressThread(selection, self.directorySave)
-				dlg.ShowModal()
+				hilo =ThreadLaunch(selection, self.directorySave)
+				hilo.start()
 				self.onClose(None)
 
 	def onClose(self, event):
@@ -216,41 +226,29 @@ class MainWindows(wx.Dialog):
 		self.Destroy()
 		gui.mainFrame.postPopup()
 
-evento1 = wx.NewEventType() # Custom Event Type
-EVT_PROGRESO = wx.PyEventBinder(evento1, 1) # bind specific events to event handlers
-evento2 = wx.NewEventType() # Custom Event Type
-EVT_MENSAJEACCEPT = wx.PyEventBinder(evento2, 1) # bind specific events to event handlers
-evento3 = wx.NewEventType() # Custom Event Type
-EVT_MENSAJECANCEL = wx.PyEventBinder(evento3, 1) # bind specific events to event handlers
+class ThreadLaunch(Thread):
+	def __init__(self, selection, directorySave):
+		super(ThreadLaunch, self).__init__()
 
-class progresoEvento(wx.PyCommandEvent):
-	def __init__(self, etype, eid, progress=None):
-		wx.PyCommandEvent.__init__(self, etype, eid)
+		self.selection = selection
+		self.directorySave = directorySave
 
-		self._progress = progress   # field to update progress bar
-	def GetValue(self):
-		return self._progress
+		self.daemon = True
 
-class mensajeEventoAcceptar(wx.PyCommandEvent):
-	def __init__(self, etype, eid, mensaje=None):
-		wx.PyCommandEvent.__init__(self, etype, eid)
-		self.mensaje = mensaje
-	def GetValue(self):
-		return self.mensaje
+	def run(self):
+		def LaunchDialog(selection, directorySave):
+			self._MainWindows = ProgressThread(gui.mainFrame, selection, directorySave)
+			gui.mainFrame.prePopup()
+			self._MainWindows.Show()
 
-class mensajeEventoCancelar(wx.PyCommandEvent):
-	def __init__(self, etype, eid, mensaje=None):
-		wx.PyCommandEvent.__init__(self, etype, eid)
-		self.mensaje = mensaje
-	def GetValue(self):
-		return self.mensaje
+		wx.CallAfter(LaunchDialog, self.selection, self.directorySave)
 
 class GeneratingThread(Thread):
-	def __init__(self, notify_window, value, dir):
+	def __init__(self, frame, value, dir):
 
 		super(GeneratingThread, self).__init__()
 
-		self._notify_window = notify_window
+		self.frame = frame
 		self.value = value
 		self.directorySave = dir
 		self.daemon = True
@@ -262,40 +260,28 @@ class GeneratingThread(Thread):
 				addonSave = os.path.join(self.directorySave, lista[i].manifest["name"] + "_" + lista[i].manifest["version"].replace(":", "_") + "_Gen")
 				shutil.make_archive(addonSave, "zip", lista[i].path, base_dir=None)
 				shutil.move(addonSave + ".zip", addonSave + ".nvda-addon")
-				self.SendProgreso(i)
+				wx.CallAfter(self.frame.next, i)
 			# Translators: Message informing that the add-ons were generated correctly
-			self.SendMensajeOk(_("All add-ons were correctly generated."))
+			wx.CallAfter(self.frame.done, _("All add-ons were correctly generated."))
 		except:
 			# Translators: Message informing that add-on generation failed
-			self.SendMensajeCancel(_("The add-ons could not be generated."))
-
-	def SendProgreso(self, progress=None):
-		evt = progresoEvento(evento1, -1, progress)
-		wx.PostEvent(self._notify_window, evt)
-
-	def SendMensajeOk(self, status=None):
-		evt = mensajeEventoAcceptar(evento2, -1, status)
-		wx.PostEvent(self._notify_window, evt)
-	def SendMensajeCancel(self, status=None):
-		evt = mensajeEventoCancelar(evento3, -1, status)
-		wx.PostEvent(self._notify_window, evt)
+			wx.CallAfter(self.frame.error, _("The add-ons could not be generated."))
 
 class ProgressThread(wx.Dialog):
 
-	def __init__(self, value, dir):
+	def __init__(self, frame, value, dir):
 
 		# Translators: Title of the progress dialog
 		super(ProgressThread, self).__init__(None, -1, title=_("Generating add-ons"))
 
 		self.Centre()
 
+		global IS_WIN_on
+		IS_WIN_on = True
+
 		panel=wx.Panel(self)
 
 		self.Bind(wx.EVT_CLOSE, self.onNull)
-		self.Bind(EVT_PROGRESO, self.next) # Bind our new custom event to a function
-		self.Bind(EVT_MENSAJEACCEPT, self.done) # Bind our new custom event to a function
-		self.Bind(EVT_MENSAJECANCEL, self.error) # Bind our new custom event to a function
-
 		# Translators: Tag that asks the user to wait
 		label = wx.StaticText(panel, wx.ID_ANY, label=_("Please wait..."))
 		self.progressBar=wx.Gauge(panel, wx.ID_ANY, range=len(value), style = wx.GA_HORIZONTAL)
@@ -309,21 +295,25 @@ class ProgressThread(wx.Dialog):
 		GeneratingThread(self, value, dir)
 
 	def next(self, event):
-		self.progressBar.SetValue(event.GetValue())
+		self.progressBar.SetValue(event)
 
 	def done(self, event):
-		self.Close()
-		gui.messageBox(event.GetValue(),
+		global IS_WIN_on
+		IS_WIN_on = False
+		gui.messageBox(event,
 			# Translators: Title of the dialog box, completed correctly. Information
 			_("Information"), wx.ICON_INFORMATION)
 		self.Destroy()
+		gui.mainFrame.postPopup()
 
 	def error(self, event):
-		self.Close()
-		gui.messageBox(event.GetValue(),
+		global IS_WIN_on
+		IS_WIN_on = False
+		gui.messageBox(event,
 			# Translators: Title of the dialog box, could not be completed. Error
 			_("Error"), wx.ICON_ERROR)
 		self.Destroy()
+		gui.mainFrame.postPopup()
 
 	def onNull(self, event):
 		pass

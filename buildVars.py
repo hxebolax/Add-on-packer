@@ -3,8 +3,14 @@
 # Build customizations
 # Change this file instead of sconstruct or manifest files, whenever possible.
 
-# Full getext (please don't change)
-_ = lambda x: x
+
+# Since some strings in `addon_info` are translatable,
+# we need to include them in the .po files.
+# Gettext recognizes only strings given as parameters to the `_` function.
+# To avoid initializing translations in this module we simply roll our own "fake" `_` function
+# which returns whatever is given to it as an argument.
+def _(arg):
+	return arg
 
 # Add-on information variables
 addon_info = {
@@ -19,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("Back up your add-ons quickly."),
 	# version
-	"addon_version": "0.6",
+	"addon_version": "0.7",
 	# Author(s)
 	"addon_author": u"Héctor J. Benítez Corredera <xebolax@gmail.com>",
 	# URL for the add-on documentation support
@@ -34,18 +40,26 @@ addon_info = {
 	"addon_updateChannel": None,
 }
 
-
 import os.path
 
 # Define the python files that are the sources of your add-on.
-# You can use glob expressions here, they will be expanded.
-#pythonSources = ["addon/globalPlugins/*.py"]
+# You can either list every file (using ""/") as a path separator,
+# or use glob expressions.
+# For example to include all files with a ".py" extension from the "globalPlugins" dir of your add-on
+# the list can be written as follows:
+# pythonSources = ["addon/globalPlugins/*.py"]
+# For more information on SCons Glob expressions please take a look at:
+# https://scons.org/doc/production/HTML/scons-user/apd.html
 pythonSources = [os.path.join("addon", "globalPlugins", "addonPackager", "*.py")]
 
-
 # Files that contain strings for translation. Usually your python sources
-i18nSources = pythonSources + ["buildVars.py"]
+i18nSources = ["buildVars.py"] + pythonSources
 
 # Files that will be ignored when building the nvda-addon file
 # Paths are relative to the addon directory, not to the root directory of your addon sources.
 excludedFiles = []
+
+# Base language for the NVDA add-on
+# If the source code, add-on interface and readme file located in the root folder are written in a language other than english, modify this variable as appropriate.
+# For example, set baseLanguage to "es" if your add-on is primarily in spanish
+baseLanguage = "en"
