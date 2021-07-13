@@ -19,8 +19,11 @@ import zipfile
 addonHandler.initTranslation()
 
 # List containing all the add-ons
-lista = list(addonHandler.getAvailableAddons())
+listAddons = list(addonHandler.getAvailableAddons())
+
+# Flag to know if a window is open
 IS_WIN_on = False
+
 # Creation of a GlobalPlugin class, derived from globalPluginHandler.GlobalPlugin.
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Creating the constructor of the newly created GlobalPlugin class.
@@ -29,8 +32,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		super(GlobalPlugin, self).__init__()
 		self._MainWindows = None
 
-		if globalVars.appArgs.secure:
-			return
+		if globalVars.appArgs.secure: return
 
 		# Creation of our menu.
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
@@ -45,7 +47,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except (AttributeError, RuntimeError):
 			pass
 
-	@script(gesture=None, description= _("Show the plug-in packer window"), category= _("Add-on packer"))
+	@script(gesture=None,
+		# TRANSLATORS: note for translators on the description
+		description= _("Show the plug-in packer window"),
+		# TRANSLATORS: note for translators on the category
+		category= _("Add-on packer"))
 	def script_generaAddon(self, event):
 # Calling the main window of the plug-in
 
@@ -67,10 +73,7 @@ class MainWindows(wx.Dialog):
 			file = open(fileConfig, 'rb')
 			self.directorySave = pickle.load(file)
 			file.close()
-			if os.path.exists(self.directorySave):
-				pass
-			else:
-				self.directorySave = ""
+			if not os.path.exists(self.directorySave): self.directorySave = ""
 		else:
 			try:
 				file = open(fileConfig, "wb")
@@ -99,7 +102,7 @@ class MainWindows(wx.Dialog):
 		return (x, y)
 
 	def __init__(self, parent):
-		self.directorySave=""
+
 		WIDTH = 800
 		HEIGHT = 600
 		pos = self._calculatePosition(WIDTH, HEIGHT)
@@ -107,16 +110,16 @@ class MainWindows(wx.Dialog):
 		# Translators: Title of the plug-in in the main dialogue
 		super(MainWindows, self).__init__(parent, -1, title=_("Add-on packer"), pos = pos, size = (WIDTH, HEIGHT))
 
+		self.directorySave = ""
 		self.ConfigFile()
 
 		Panel = wx.Panel(self)
 
 		# Translators: Label that identifies the list of add-ons
 		label1 = wx.StaticText(Panel, wx.ID_ANY, label=_("&List of Add-ons:"))
-#		self.myListBox = wx.ListBox(Panel, style =  wx.LB_HSCROLL | wx.LB_MULTIPLE | wx.LB_NEEDED_SB)
 		self.myListBox = CustomCheckListBox(Panel, 2)
 
-		for i in lista:
+		for i in listAddons:
 			self.myListBox.Append(i.manifest["summary"])
 		self.myListBox.SetSelection(0)
 		self.myListBox.SetFocus()
@@ -185,7 +188,7 @@ class MainWindows(wx.Dialog):
 
 	def onUnselectionAllBTN(self, event):
 		self.myListBox.Clear()
-		for i in lista:
+		for i in listAddons:
 			self.myListBox.Append(i.manifest["summary"])
 		self.myListBox.SetSelection(0)
 		self.myListBox.SetFocus()
@@ -194,8 +197,6 @@ class MainWindows(wx.Dialog):
 		# Translators: Title of the dialog box to select directory
 		dlg = wx.DirDialog(self, _("Select a directory:"),
 			style=wx.DD_DEFAULT_STYLE
-#			| wx.DD_DIR_MUST_EXIST
-#			| wx.DD_CHANGE_DIR
 			)
 		if dlg.ShowModal() == wx.ID_OK:
 			self.textDirectory.SetValue(dlg.GetPath())
@@ -219,8 +220,8 @@ class MainWindows(wx.Dialog):
 					_("Error"), wx.ICON_ERROR)
 				self.directoryBTN.SetFocus()
 			else:
-				hilo =ThreadLaunch(selection, self.directorySave)
-				hilo.start()
+				threadHome =ThreadLaunch(selection, self.directorySave)
+				threadHome.start()
 				self.onClose(None)
 
 	def onClose(self, event):
@@ -256,6 +257,7 @@ class GeneratingThread(Thread):
 		self.daemon = True
 		self.start()
 
+	# Function to compress plug-in folders and remove all __pycache__ folders
 	def zipfolder(self, foldername, target_dir):            
 		zipobj = zipfile.ZipFile(foldername + '.nvda-addon', 'w', zipfile.ZIP_DEFLATED)
 		rootlen = len(target_dir) + 1
@@ -270,8 +272,8 @@ class GeneratingThread(Thread):
 	def run(self):
 		try:
 			for i in self.value:
-				addonSave = os.path.join(self.directorySave, lista[i].manifest["name"] + "_" + lista[i].manifest["version"].replace(":", "_") + "_Gen")
-				self.zipfolder(addonSave, lista[i].path)
+				addonSave = os.path.join(self.directorySave, listAddons[i].manifest["name"] + "_" + listAddons[i].manifest["version"].replace(":", "_") + "_Gen")
+				self.zipfolder(addonSave, listAddons[i].path)
 				wx.CallAfter(self.frame.next, i)
 			# Translators: Message informing that the add-ons were generated correctly
 			wx.CallAfter(self.frame.done, _("All add-ons were correctly generated."))
@@ -294,6 +296,7 @@ class ProgressThread(wx.Dialog):
 		panel=wx.Panel(self)
 
 		self.Bind(wx.EVT_CLOSE, self.onNull)
+
 		# Translators: Tag that asks the user to wait
 		label = wx.StaticText(panel, wx.ID_ANY, label=_("Please wait..."))
 		self.progressBar=wx.Gauge(panel, wx.ID_ANY, range=len(value), style = wx.GA_HORIZONTAL)
