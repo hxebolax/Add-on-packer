@@ -46,7 +46,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
 		# Translators: Name of the item in the tools menu
 		self.menuItem = self.toolsMenu.Append(wx.ID_ANY, _("&Add-on packer"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_generaAddon, self.menuItem)
+		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_GenerateAddons, self.menuItem)
 
 	def terminate(self):
 		try:
@@ -60,7 +60,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description= _("Show the plug-in packer window"),
 		# TRANSLATORS: note for translators on the category
 		category= _("Add-on packer"))
-	def script_generaAddon(self, event):
+	def script_GenerateAddons(self, event):
 # Calling the main window of the plug-in
 
 		if IS_WIN_on == False:
