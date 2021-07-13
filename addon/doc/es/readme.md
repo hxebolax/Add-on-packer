@@ -38,9 +38,9 @@ E puesto el cuadro de texto de solo lectura para que sea fácil el poder revisar
 * Nos avisara si intentamos generar un complemento sin tener ninguno seleccionado.
 * Nos avisara si intentamos generar un complemento sin tener un directorio de salida definido.
 * Nos avisara cuando el proceso sea un éxito al igual que cuando se produzca un error.
-* El directorio de salida se guardara para que quede especificado en la siguiente vez que usemos el complemento, dicho ajuste se borrara si el directorio de salida es eliminado y tendremos que seleccionar otro directorio existente.
+* El directorio de salida se guardará para que quede especificado en la siguiente vez que usemos el complemento, dicho ajuste se borrara si el directorio de salida es eliminado y tendremos que seleccionar otro directorio existente.
 * Al generar los complementos estaremos avisados por una barra de progreso que nos indicara el porcentaje que lleve realizado en todo momento.
-* Los archivos resultantes tienen en el nombre puesta una coletilla para identificar que han sido generados y no son originales. Dicha coletilla es  (gen).
+* Los archivos resultantes tienen en el nombre puesta una coletilla para identificar que han sido generados y no son originales. Dicha coletilla es (gen).
 
 # Nota muy importante
 

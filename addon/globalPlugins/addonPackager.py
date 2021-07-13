@@ -1,7 +1,15 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2020 Héctor J. Benítez Corredera <xebolax@gmail.com>
 # This file is covered by the GNU General Public License.
-
+#
+# Thanks to the translators:
+#
+# English: slanovani
+# French: Rémy Ruiz
+# Portuguese: Ângelo Miguel Abrantes
+# Arabic: Wafiq Taher
+# simplified Chinese: cary-rowen
+# Spanish: Héctor J. Benítez Corredera
 # import the necessary modules.
 import globalPluginHandler
 import addonHandler
