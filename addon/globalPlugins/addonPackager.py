@@ -339,7 +339,8 @@ class ProgressThread(wx.Dialog):
 
 	def onNull(self, event):
 		pass
-		class DescargaDialogo(wx.Dialog):
+
+class DescargaDialogo(wx.Dialog):
 	def __init__(self, titulo, url, file, seconds):
 
 		super(DescargaDialogo, self).__init__(None, -1, title=titulo)
