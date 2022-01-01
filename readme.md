@@ -1,62 +1,51 @@
-# Addon Packager
+# Add-on Packager
 
-This add-on comes up  from the need to have a backup of the installed add-ons.
+This add-on was created so that everyone can create backups of installed add-ons.
 
-NVDA has an ample collection of official add-ons, easy to obtain from the official repositories or from the authors' different github accounts.
+NVDA has a wide variety of add-ons, that can be installed from the [NVDA Community Add-ons website](https://addons.nvda-project.org)
 
-But at the same time it also has a number of unofficial add-ons whose source  is sometimes difficult to determine.
+At the same time, there are a number of unofficial add-ons created by users around the world, the sources of which can be difficult to find after reinstalling the operating system or NVDA itself.
 
-The idea came up when a friend asked me for an unofficial add-on, and since the add-on wasn't within my reach I had to package it for him.
+The idea came about when a friend asked me for an unofficial add-on, and since I didn't have a packaged add-on, I had to package it.
 
-Well, the process of packaging an add-on is easy, but not known by everyone, so I thought it would be great if NVDA had such feature.
+It is generally very easy to package an add-on, but not everyone knows about it, so I thought it would be better if NVDA had such a feature.
 
-So that's what this add-on does: it automatically packages those add-ons that the user wants to have so they can be installed in another copy of NVDA, in a clean installation of NVDA or just to share it.
+This add-on packages selected user add-ons that are installed on a computer to be installed on another PC or simply to share.
 ## Using the add-on
 
 The add-on is divided into four areas:
 
-* The first one, which  contains a list of all our installed add-ons whether they are enabled or disabled. In this list we can select all the add-ons we want.
-* The second one contains a row of buttons to quickly select all the add-ons or to quickly delete all the selections that we had made.
-* The third one a reading text box that will contain the output directory and a button to select that output directory.
+* The first one contains a list of all the add-ons we have installed, whether they are enabled or disabled. In this list, we can select all the add-ons we need.
+* The second contains a row of buttons for quickly selecting all add-ons or quickly deselecting all the selections we made.
+* The third area is a read-only text box, which is empty by default, and there is a button to select a directory.
+* The fourth is a row of buttons with a button for creating already selected add-ons and another one for exiting the add-on.
 
-I've put the text box as read-only  in order to make it easy to check the output directory at any given time. I've decided not to put it as a normal edit field in order to avoid any  accidental press, and that the directory could thus be affected.
+I've made the textbox read-only to make it easier to check the output directory at any given time. I decided not to use it as a normal edit box to avoid accidental clicking and it might affect the directory.
 
-* The fourth one is a row of buttons with the button to generate the already packed add-ons and another one to exit the add-on.
+Also, the first time you select a folder, the selected folder will be saved for quick creation until the folder is removed from drive. In this case, the folder must be selected again.
 
-### Ad-on hotkeys
+### Add-on hotkeys
 
-* Alt + L: it will situate our focus on thead-on list.
-* Alt + S: It will select all the add-ons for us regardless of whether there was any other already checked.
-* Alt + A: It will uncheck all the add-ons we have checked.
-* Alt + D: It will open a directory selection window to select the output directory.
-* Alt + G: It will start the generation of the add-ons  we have selected in the output directory.
-* Alt + C or Alt + F4: It will close the add-on.
+* Alt + L: Go to the list of add-ons.
+* Alt + S: Select all add-ons, whether the add-on has already been checked out or not.
+* Alt + D: Deselect all checked add-ons.
+* Alt + B: Opens a window for selecting a folder.
+* Alt + G: Generates selected add-ons.
+* Alt + C or Alt + F4: Closes the add-on.
 
-## Other information of interest
+The add-on will inform us at any time if there are any errors in use. It will warn if we generate an add-on without selecting it, or by selecting an add-on and leaving the folder field blank. The add-on will inform us about the successful generation of add-ons,as well as any errors that occurred during the generation.
 
-* The add-on will alert us at all times with information dialogs about the course of usage.
-* It will warn us if we try to generate an add-on without having one selected.
-* It will warn us if we try to generate an add-on without having a defined output directory.
-* It will alert us when the process is successful, as well as when an error occurs.
-* The output directory will be saved so that it is specified  next time we use the add-on. This setting will be deleted if the output directory is deleted, and we will have to select another existing directory.
-* When generating the add-ons, a progress bar will alert us about the percentage completed at all times.
-* The resulting files have a tag in the name to identify that they have been generated and are not original. This tag is (gen).
+There is also a progress bar while generating add-ons to give a percentage.
 
-# A very important notice
+## A small note about minor changes to the generated add-on file
 
-It's worth to mention that the resulting files are just the way we have them in our Addon directory, without adding or removing anything by this addon.
+Previously, when creating an add-on, the add-on would automatically add a "gen" tag to the name of the generated add-on file at the end, which indicated that the add-on was not original, but in this release this tag was removed, as such a tag is not required, because the generated add-ons are similar to the original packaged add-ons, so the generated add-ons will now be without the "gen" tag.
 
-This means that all the information of the add-on we select is included.
+## Privacy Notice
 
-It is not normal for an add-on developer to include sensitive information within the add-on directory itself.
+It should be noted that the final generated file is a standard NVDA add-on file, so it is strictly forbidden to put sensitive information in the add-on folder that will be generated, because this add-on adds or removes nothing, it just generates the installed add-ons.
 
-in fact, this is considered a bad practice, so this will unlikely happen at least in official addons.
+This is never the case with official add-ons, but as mentioned, there are hundreds of unofficial add-ons out there, so we advise you not to put sensitive information in the add-on folder.
 
-But since there are hundreds of unofficial add-ons of different kinds, you are warned that if an add-on includes sensitive information in its own directory, this sensitive information will be included in the generated file.
+the author of the add-on "AddonPacker" is exempt from liability.
 
-
-That's why we have to take this privacy and security aspect into account, in order to know if a generated add-on we are going to share brings any sensitive information that we don't want to share.
-
-As I mentioned, this is almost improbable, but you are warned and by using this add-on you agree to know that you have been warned and that the author of this add-on is exempt  from  all liability.
-
-Translated by slanovani.

@@ -20,12 +20,12 @@ addon_info = {
 	"addon_name": "addonPackager",
 	# Add-on summary, usually the user visible name of the addon.
 	# Translators: Summary for this add-on to be shown on installation and add-on information.
-	"addon_summary": _("Add-on packer"),
+	"addon_summary": _("Add-on packager"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("Back up your add-ons quickly."),
 	# version
-	"addon_version": "0.8",
+	"addon_version": "0.8.1",
 	# Author(s)
 	"addon_author": u"Héctor J. Benítez Corredera <xebolax@gmail.com>",
 	# URL for the add-on documentation support
