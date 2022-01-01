@@ -138,7 +138,7 @@ class MainWindows(wx.Dialog):
 		self.Bind(wx.EVT_BUTTON, self.onselectionAllBTN, self.selectionAllBTN)
 
 		# Translators: Button name to deselect all add-ons
-		self.unselectionAllBTN = wx.Button(Panel, wx.ID_ANY, _("Deselect &all"))
+		self.unselectionAllBTN = wx.Button(Panel, wx.ID_ANY, _("&Deselect all"))
 		self.Bind(wx.EVT_BUTTON, self.onUnselectionAllBTN, self.unselectionAllBTN)
 
 		# Translators: Label that identifies the area to choose directory to save the add-ons
