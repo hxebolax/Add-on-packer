@@ -57,7 +57,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@script(gesture=None,
 		# TRANSLATORS: note for translators on the description
-		description= _("Show the plug-in packer window"),
+		description= _("Shows the add-on packer window"),
 		# TRANSLATORS: note for translators on the category
 		category= _("Add-on packer"))
 	def script_GenerateAddons(self, event):
@@ -119,7 +119,6 @@ class MainWindows(wx.Dialog):
 		super(MainWindows, self).__init__(parent, -1, title=_("Add-on packer"), pos = pos, size = (WIDTH, HEIGHT))
 
 		self.directorySave = ""
-		self.selection = []
 		self.ConfigFile()
 
 		Panel = wx.Panel(self)
@@ -143,12 +142,12 @@ class MainWindows(wx.Dialog):
 		self.Bind(wx.EVT_BUTTON, self.onUnselectionAllBTN, self.unselectionAllBTN)
 
 		# Translators: Label that identifies the area to choose directory to save the add-ons
-		label2 = wx.StaticText(Panel, wx.ID_ANY, label=_("Destination directory:"))
+		label2 = wx.StaticText(Panel, wx.ID_ANY, label=_("Destination folder:"))
 		self.textDirectory = wx.TextCtrl(Panel, wx.ID_ANY, style=wx.TE_MULTILINE|wx.TE_READONLY)
 		self.textDirectory.SetValue(self.directorySave)
 
 		# Translators: Name of the button to choose directory
-		self.directoryBTN = wx.Button(Panel, wx.ID_ANY, _("Select &directory"))
+		self.directoryBTN = wx.Button(Panel, wx.ID_ANY, _("&Browse"))
 		self.Bind(wx.EVT_BUTTON, self.onDirectory, self.directoryBTN)
 
 		# Translators: Name of the button to generate the add-ons
@@ -204,7 +203,7 @@ class MainWindows(wx.Dialog):
 
 	def onDirectory(self, event):
 		# Translators: Title of the dialog box to select directory
-		dlg = wx.DirDialog(self, _("Select a directory:"),
+		dlg = wx.DirDialog(self, _("Select a folder:"),
 			style=wx.DD_DEFAULT_STYLE
 			)
 		if dlg.ShowModal() == wx.ID_OK:
@@ -214,22 +213,22 @@ class MainWindows(wx.Dialog):
 		dlg.Destroy()
 
 	def onGenerate(self, event):
-		self.selection = [i for i in range(self.myListBox.GetCount()) if self.myListBox.IsChecked(i)]
-		if len(self.selection) == 0:
+		selection = [i for i in range(self.myListBox.GetCount()) if self.myListBox.IsChecked(i)]
+		if len(selection) == 0:
 			# Translators: Error message warning that no add-on was selected
-			gui.messageBox(_("You need to select at least one add-on to continue the action."),
+			gui.messageBox(_("You need to select at least one add-on to proceed."),
 				# Translators: Title of the dialog box no add-ons selected, Error
 				_("Error"), wx.ICON_ERROR)
 			self.myListBox.SetFocus()
 		else:
 			if self.textDirectory.GetValue() == "":
 				# Translators: Error message to warn that no directory was selected
-				gui.messageBox(_("You need to select an output directory to continue the action."),
+				gui.messageBox(_("You need to select an output folder to proceed."),
 					# Translators: Title of the dialog box no directory, Error
 					_("Error"), wx.ICON_ERROR)
 				self.directoryBTN.SetFocus()
 			else:
-				threadHome =ThreadLaunch(self)
+				threadHome =ThreadLaunch(selection, self.directorySave)
 				threadHome.start()
 				self.onClose(None)
 
@@ -239,19 +238,21 @@ class MainWindows(wx.Dialog):
 		gui.mainFrame.postPopup()
 
 class ThreadLaunch(Thread):
-	def __init__(self, frame):
+	def __init__(self, selection, directorySave):
 		super(ThreadLaunch, self).__init__()
 
-		self.frame = frame
+		self.selection = selection
+		self.directorySave = directorySave
+
 		self.daemon = True
 
 	def run(self):
-		def LaunchDialog():
-			self._MainWindows = ProgressThread(gui.mainFrame, self.frame)
+		def LaunchDialog(selection, directorySave):
+			self._MainWindows = ProgressThread(gui.mainFrame, selection, directorySave)
 			gui.mainFrame.prePopup()
 			self._MainWindows.Show()
 
-		wx.CallAfter(LaunchDialog)
+		wx.CallAfter(LaunchDialog, self.selection, self.directorySave)
 
 class GeneratingThread(Thread):
 	def __init__(self, frame, value, dir):
@@ -279,7 +280,7 @@ class GeneratingThread(Thread):
 	def run(self):
 		try:
 			for i in self.value:
-				addonSave = os.path.join(self.directorySave, listAddons[i].manifest["name"] + "_" + listAddons[i].manifest["version"].replace(":", "_") + "_Gen")
+				addonSave = os.path.join(self.directorySave, listAddons[i].manifest["name"] + "_" + listAddons[i].manifest["version"])
 				self.zipfolder(addonSave, listAddons[i].path)
 				wx.CallAfter(self.frame.next, i)
 			# Translators: Message informing that the add-ons were generated correctly
@@ -290,7 +291,7 @@ class GeneratingThread(Thread):
 
 class ProgressThread(wx.Dialog):
 
-	def __init__(self, frame, framePrimary):
+	def __init__(self, frame, value, dir):
 
 		# Translators: Title of the progress dialog
 		super(ProgressThread, self).__init__(None, -1, title=_("Generating add-ons"))
@@ -299,14 +300,14 @@ class ProgressThread(wx.Dialog):
 
 		global IS_WIN_on
 		IS_WIN_on = True
-		self.framePrimary = framePrimary
+
 		panel=wx.Panel(self)
 
 		self.Bind(wx.EVT_CLOSE, self.onNull)
 
 		# Translators: Tag that asks the user to wait
 		label = wx.StaticText(panel, wx.ID_ANY, label=_("Please wait..."))
-		self.progressBar=wx.Gauge(panel, wx.ID_ANY, range=len(self.framePrimary.selection), style = wx.GA_HORIZONTAL)
+		self.progressBar=wx.Gauge(panel, wx.ID_ANY, range=len(value), style = wx.GA_HORIZONTAL)
 		label.SetFocus()
 
 		sizer = wx.BoxSizer(wx.VERTICAL)
@@ -314,7 +315,7 @@ class ProgressThread(wx.Dialog):
 		sizer.Add(self.progressBar, 0, wx.EXPAND)
 		panel.SetSizer(sizer)
 
-		GeneratingThread(self, self.framePrimary.selection, self.framePrimary.directorySave)
+		GeneratingThread(self, value, dir)
 
 	def next(self, event):
 		self.progressBar.SetValue(event)
@@ -339,88 +340,3 @@ class ProgressThread(wx.Dialog):
 
 	def onNull(self, event):
 		pass
-
-class DescargaDialogo(wx.Dialog):
-	def __init__(self, titulo, url, file, seconds):
-
-		super(DescargaDialogo, self).__init__(None, -1, title=titulo)
-
-#		self.SetSize((400, 130))
-		self.CenterOnScreen()
-
-		self.url = url
-		self.file = file
-		self.seconds = seconds
-
-		panel = wx.Panel(self)
-		self.Panel = panel
-
-		self.progressBar=wx.Gauge(self.Panel, wx.ID_ANY, range=100, style = wx.GA_HORIZONTAL)
-		self.textorefresco = wx.TextCtrl(self.Panel, wx.ID_ANY, style =wx.TE_MULTILINE|wx.TE_READONLY)
-		self.textorefresco.Bind(wx.EVT_CONTEXT_MENU, self.skip)
-
-		self.AceptarTRUE = wx.Button(self.Panel, ajustes.ID_TRUE, "&Aceptar")
-		self.Bind(wx.EVT_BUTTON, self.onAceptarTRUE, id=self.AceptarTRUE.GetId())
-		self.AceptarTRUE.Disable()
-
-		self.AceptarFALSE = wx.Button(self.Panel, ajustes.ID_FALSE, "&Cerrar")
-		self.Bind(wx.EVT_BUTTON, self.onAceptarFALSE, id=self.AceptarFALSE.GetId())
-		self.AceptarFALSE.Disable()
-
-		self.Bind(wx.EVT_CLOSE, self.onNull)
-
-		sizer = wx.BoxSizer(wx.VERTICAL)
-		sizer_botones = wx.BoxSizer(wx.HORIZONTAL)
-
-		sizer.Add(self.progressBar, 0, wx.EXPAND)
-		sizer.Add(self.textorefresco, 1, wx.EXPAND)
-
-		sizer_botones.Add(self.AceptarTRUE, 2, wx.CENTER)
-		sizer_botones.Add(self.AceptarFALSE, 2, wx.CENTER)
-
-		sizer.Add(sizer_botones, 0, wx.EXPAND)
-
-		self.Panel.SetSizer(sizer)
-
-		HiloDescarga(self, self.url, self.file, self.seconds)
-
-		self.textorefresco.SetFocus()
-
-	def skip(self, event):
-		return
-
-	def onNull(self, event):
-		pass
-
-	def next(self, event):
-		self.progressBar.SetValue(event)
-
-	def TextoRefresco(self, event):
-		self.textorefresco.Clear()
-		self.textorefresco.AppendText(event)
-
-	def done(self, event):
-		winsound.MessageBeep(0)
-		self.AceptarTRUE.Enable()
-		self.textorefresco.Clear()
-		self.textorefresco.AppendText(event)
-		self.textorefresco.SetInsertionPoint(0) 
-
-	def error(self, event):
-		winsound.MessageBeep(16)
-		self.AceptarFALSE.Enable()
-		self.textorefresco.Clear()
-		self.textorefresco.AppendText(event)
-		self.textorefresco.SetInsertionPoint(0) 
-
-	def onAceptarTRUE(self, event):
-		if self.IsModal():
-			self.EndModal(event.EventObject.Id)
-		else:
-			self.Close()
-
-	def onAceptarFALSE(self, event):
-		if self.IsModal():
-			self.EndModal(event.EventObject.Id)
-		else:
-			self.Close()
