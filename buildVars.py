@@ -20,12 +20,21 @@ addon_info = {
 	"addon_name": "addonPackager",
 	# Add-on summary, usually the user visible name of the addon.
 	# Translators: Summary for this add-on to be shown on installation and add-on information.
-	"addon_summary": _("Add-on packer"),
+	"addon_summary": _("Utilidades para los complementos de NVDA"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description": _("Back up your add-ons quickly."),
+	"addon_description": _("""Conjunto de utilidades para un manejo fácil de complementos para NVDA.
+
+* Empaquetador de complementos.
+* Instalador múltiple de complementos.
+* Desinstala complementos.
+* Habilita / deshabilita complementos.
+* Modificador de manifiestos, instalados y desde archivo no instalado.
+* Documentación de complementos.
+
+Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de complementos nativo de NVDA."""),
 	# version
-	"addon_version": "0.8",
+	"addon_version": "1.0",
 	# Author(s)
 	"addon_author": u"Héctor J. Benítez Corredera <xebolax@gmail.com>",
 	# URL for the add-on documentation support
@@ -33,7 +42,7 @@ addon_info = {
 	# Documentation file name
 	"addon_docFileName": "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
-	"addon_minimumNVDAVersion": "2019.3.0",
+	"addon_minimumNVDAVersion": "2021.1.0",
 	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
 	"addon_lastTestedNVDAVersion": "2022.1.0",
 	# Add-on update channel (default is None, denoting stable releases, and for development releases, use "dev"; do not change unless you know what you are doing)
@@ -50,7 +59,12 @@ import os.path
 # pythonSources = ["addon/globalPlugins/*.py"]
 # For more information on SCons Glob expressions please take a look at:
 # https://scons.org/doc/production/HTML/scons-user/apd.html
-pythonSources = [os.path.join("addon", "globalPlugins", "*.py")]
+pythonSources = [
+	'addon/*.py',
+	'addon/globalPlugins/*/*.py',
+	'addon/globalPlugins/*/*/*.py',
+	'addon/globalPlugins/*/*/*/*.py',
+]
 
 # Files that contain strings for translation. Usually your python sources
 i18nSources = ["buildVars.py"] + pythonSources
@@ -62,4 +76,11 @@ excludedFiles = []
 # Base language for the NVDA add-on
 # If the source code, add-on interface and readme file located in the root folder are written in a language other than english, modify this variable as appropriate.
 # For example, set baseLanguage to "es" if your add-on is primarily in spanish
-baseLanguage = "en"
+baseLanguage = "es"
+
+# Markdown extensions for add-on documentation
+# Most add-ons do not require additional Markdown extensions.
+# If you need to add support for markup such as tables, fill out the below list.
+# Extensions string must be of the form "markdown.extensions.extensionName"
+# e.g. "markdown.extensions.tables" to add tables.
+markdownExtensions = []
