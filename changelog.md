@@ -1,1 +1,1 @@
-* Versión inicial.
+* Añadido idioma Turco

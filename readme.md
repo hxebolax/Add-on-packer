@@ -203,6 +203,7 @@ Si tabulamos encontraremos un botón llamado Abrir documentación del complement
 Si alguien desea colaborar con traducciones puede hacerlo por el repositorio de Github del complemento o mandando un correo electrónico a xebolax@gmail.com
 
 * Inglés: Traducción automatica
+* Turco: umut korkmaz
 
 # Registro de cambios.
 ## Información sobre las actualizaciones:
