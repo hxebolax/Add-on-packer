@@ -10,7 +10,7 @@ Este complemento puede ser lanzado desde el menú Herramientas / Utilidades para
 
 El complemento no tiene un atajo de tecla asignado para su rápido uso.
 
-Se puede agregar un gesto en el menú Preferencias / Gestos de entrada... y buscar Utilidades para los complementos de NVDA.
+Se puede agregar un gesto en el menú Preferencias / Gestos de entrada... y buscar la categoría Utilidades para los complementos de NVDA.
 
 ## Descargo de responsabilidades
 
@@ -20,7 +20,7 @@ Se intenta que todo sea lo más fiable posible pero siempre pueden surgir proble
 
 # Descripción general
 
-La aplicación esta comprendida en 3 secciones.
+El complemento esta comprendido en 3 secciones.
 
 * 1ª sección: Lista donde podremos elegir la categoría que deseamos usar. Es donde queda el foco cada vez que llamemos el complemento.
 
@@ -50,11 +50,11 @@ Si tabulamos caeremos en un botón llamado Selección o podemos acceder rápidam
 
 Si volvemos a tabular caeremos en el botón Generar o acceso rápido Alt+G, si pulsamos dicho botón y tenemos al menos un complemento marcado nos abrirá una ventana para elegir el directorio donde deseamos guardar el o los complementos seleccionados.
 
-Una vez elegido el directorio y dando a aceptar empezara la generación de los complementos. El foco nos quedara en un cuadro de solo lectura en el cual ira apareciendo información junto a una barra de progreso que nos avisara del porcentaje que lleva. El botón cerrar, así como el resto de la interface se deshabilitará hasta que termine la acción de generar los complementos.
+Una vez elegido el directorio y dando a Aceptar empezara la generación de los complementos. El foco nos quedara en un cuadro de solo lectura en el cual ira apareciendo información junto a una barra de progreso que nos avisara del porcentaje que lleva. El botón Cerrar, así como el resto de la interface se deshabilitará hasta que termine la acción de generar los complementos.
 
 Una vez la acción termine nos informara si todo fue exitoso o hubo algún problema y si ahora tabulamos podremos elegir Aceptar (Alt+A), Cancelar (Alt+C) o cerrar la interface si lo deseamos.
 
-Los botones aceptar y cancelar saldrán según como haya terminado la acción.
+Los botones Aceptar y Cancelar saldrán según como haya terminado la acción.
 
 Para generar los complementos es indispensable tener marcado al menos uno de lo contrario se nos informara con un mensaje explicativo.
 
@@ -62,7 +62,7 @@ Para generar los complementos es indispensable tener marcado al menos uno de lo 
 
 Esta categoría nos permitirá elegir un Directorio donde tengamos complementos y podremos instalarlos todos de golpe.
 
-Cuando entramos en dicha categoría caeremos en un botón llamado Seleccione un directorio con complementos a instalar... o atajo (Alt+S), si lo pulsamos nos Dara una ventana para elegir el directorio que contenga complementos.
+Cuando entramos en dicha categoría caeremos en un botón llamado "Seleccione un directorio con complementos a instalar..." o atajo (Alt+S), si lo pulsamos nos Dara una ventana para elegir el directorio que contenga complementos.
 
 El resto de la interface en esta categoría esta desactivado hasta que no elijamos un directorio.
 
@@ -70,11 +70,11 @@ Cuando elijamos un directorio el foco nos dejara en el cuadro de solo lectura do
 
 Se nos informara una vez terminado el escaneo si hubo algún problema y como actuar. Decir que solo aceptara complementos que cumplan con la API de NVDA que tengamos instalado descartando cualquier complemento incompatible o que este dañado.
 
-Una vez terminado el escaneo y si encontró complementos y damos a aceptar se activará la lista con los nombres de los complementos que haya encontrado en dicho directorio.
+Una vez terminado el escaneo y si encontró complementos y damos a Aceptar se activará la lista con los nombres de los complementos que haya encontrado en dicho directorio.
 
 Podemos ir rápidamente a dicha lista con (Alt+L), en dicha lista podremos elegir tantos complementos como deseemos marcándolos con espacio.
 
-Si tabulamos tendremos el mismo botón seleccionar que hay en la pantalla Empaquetadores de complementos y que no voy a explicar por que es su mismo uso.
+Si tabulamos tendremos el mismo botón Selección que hay en la pantalla Empaquetadores de complementos y que no voy a explicar por que es su mismo uso.
 
 Si tabulamos de nuevo caeremos en el botón Instalar o acceso rápido (Alt+I).
 
@@ -82,17 +82,17 @@ Si tenemos al menos un complemento seleccionado y pulsamos dicho botón la insta
 
 Decir que este paso también tiene protecciones como comprobación de API, que el complemento no este dañado y otras cosas internas de NVDA. Todo para intentar siempre el mejor funcionamiento de nuestro lector.
 
-Cuando demos al botón instalar el foco quedara en el cuadro de solo lectura donde se informará de lo que esta realizando el complemento.
+Cuando demos al botón Instalar el foco quedara en el cuadro de solo lectura donde se informará de lo que esta realizando el complemento.
 
 Igualmente, cuando termine se nos informara tanto si todo fue un éxito como si hubo algún complemento que no se pudo instalar o si hubo errores.
 
-Dependiendo de lo sucedido nos activara el botón aceptar o cancelar junto al botón cerrar.
+Dependiendo de lo sucedido nos activara el botón Aceptar o Cancelar junto al botón Cerrar.
 
-Si activa el botón aceptar es por que NVDA a instalado algún complemento y para aplicar los cambios necesita reiniciarse, si lo pulsamos NVDA se reiniciara y ya tendremos los complementos o complemento instalado.
+Si activa el botón Aceptar es por que NVDA a instalado algún complemento y para aplicar los cambios necesita reiniciarse, si lo pulsamos NVDA se reiniciara y ya tendremos los complementos o complemento instalado.
 
 Si no aceptamos y cerramos no podremos usar el complemento de nuevo hasta que no reiniciemos NVDA esto es una protección para evitar duplicar acciones.
 
-Si de lo contrario hubo fallos y solo se presenta el botón cancelar podremos pulsarlo y nos volverá a la interface para hacer otras cosas.
+Si de lo contrario hubo fallos y solo se presenta el botón Cancelar podremos pulsarlo y nos volverá a la interface para hacer otras cosas.
 
 ### ADVERTENCIA
 
@@ -104,19 +104,19 @@ Esta categoría nos permitirá desinstalar complementos de una manera rápida y 
 
 Podemos elegir en la lista cualquiera de los complementos que tenemos instalados. Podemos seleccionar con espacio. Para ir rápidamente a la lista (Alt+L).
 
-Disponemos igualmente del botón selección (Alt+S) que cumple la función exactamente igual que en las anteriores categorías y no volveré a explicar.
+Disponemos igualmente del botón Selección (Alt+S) que cumple la función exactamente igual que en las anteriores categorías y no volveré a explicar.
 
 Si tabulamos encontraremos el botón Desinstalar o acceso rápido (Alt+D) si lo pulsamos y tenemos uno o más complementos seleccionados nos dejara el foco en el campo de solo lectura y nos informara de lo que esta realizando.
 
 También se nos informara a través de la barra de progreso.
 
-Una vez finalizado nos informara del resultado y al igual que en la categoría Instalador múltiple se nos Dara el botón aceptar que necesitara reiniciar NVDA o cancelar que algo salió mal y el botón cerrar.
+Una vez finalizado nos informara del resultado y al igual que en la categoría Instalador múltiple se nos dara el botón Aceptar informándonos que necesitara reiniciar NVDA o Cancelar informándonos que algo salió mal y el botón Cerrar.
 
 Recordad que si cerramos en esta categoría y no hemos atendido a la necesidad de reiniciar el complemento no podrá volver a ser usado hasta que NVDA no se reinicie.
 
 ### Advertencia
 
-La desinstalación de complementos una vez hemos dado al botón Desinstalar no tiene vuelta atrás por lo que es conveniente asegurarnos que sabemos de donde conseguir los complementos que eliminamos por si deseamos volver a instalarlos al igual que si dicho complemento contiene información en el directorio del complemento en si, dicha información será eliminada.
+La desinstalación de complementos una vez que hemos dado al botón Desinstalar no tiene vuelta atrás por lo que es conveniente asegurarnos que sabemos de donde conseguir los complementos que eliminamos por si deseamos volver a instalarlos al igual que si dicho complemento contiene información en el directorio del complemento en si, dicha información será eliminada.
 
 No suele ser de buena praxis y NVDA no lo recomienda que los complementos guarden información en el mismo directorio del complemento, pero esto ya es decisión del programador del complemento.
 
@@ -128,9 +128,9 @@ Esta categoría nos permitirá habilitar o deshabilitar en masa nuestros complem
 
 Si entramos en la categoría caeremos en el listado de los complementos que están habilitados podemos acceder rápidamente con (Alt+L), podremos marcar aquellos complementos que deseamos deshabilitar con la barra espaciadora.
 
-Si disponemos de complementos deshabilitados entonces tendremos un segundo listado con dichos complementos, podemos movernos rápidamente entre listados con (Alt+L) en dicho listado de deshabilitados también podremos marcar aquellos que queramos habilitar con la barra espaciadora.
+Si disponemos de complementos deshabilitados entonces tendremos un segundo listado con dichos complementos, podemos movernos rápidamente entre listados con (Alt+L) en dicho listado de complementos deshabilitados también podremos marcar aquellos que queramos habilitar con la barra espaciadora.
 
-Podemos marcar complementos en los dos listados teniendo en cuenta que la acción se realizara a la inversa deshabilitando aquellos complementos marcados en el listado de habilitados como habilitando aquellos complementos que estén marcados en el listado de deshabilitados.
+Podemos marcar complementos en los dos listados teniendo en cuenta que la acción se realizara a la inversa deshabilitando aquellos complementos marcados en el listado de complementos habilitados como habilitando aquellos complementos que estén marcados en el listado de complementos deshabilitados.
 
 Esta categoría también tiene un botón selección pero con una pequeña diferencia, cuando lo pulsemos contendrá un submenú para cada listado pudiendo seleccionar o deseleccionar todo para el listado que elijamos.
 
@@ -168,7 +168,7 @@ Si tabulamos caeremos en tres cuadros combinados:
 
 * Seleccione una revisión: En este cuadro combinado con dejarlo a 0 es suficiente no obstante he puesto hasta 9 también por si acaso.
 
-Si tabulamos tenemos de nuevo el botón seleccionar que nos permitirá seleccionar o deseleccionar todos los complementos que hay en la lista.
+Si tabulamos tenemos de nuevo el botón Selección que nos permitirá seleccionar o deseleccionar todos los complementos que hay en la lista.
 
 Si volvemos a tabular caeremos en el botón Procesar o accedemos rápidamente con (Alt+P).
 
@@ -176,15 +176,15 @@ Bien si pulsamos este botón nos desplegara un menú con las siguientes opciones
 
 * Procesar instalados, si elegimos esta opción empezara el proceso de cambiar el manifiesto a los complementos que tengamos instalados y hayamos seleccionado. Se cambiará por lo que tengamos elegido en los cuadros combinados de versión mayor, menor y revisión.
 
-* Procesar un archivo de complemento, si elegimos esta opción nos abrirá una ventana de abrir archivo donde tendremos que elegir el archivo de complemento que deseamos cambiar el manifiesto. Decir que antes tenemos que elegir la versión mayor, menor y revisión para que se le aplique.
+* Procesar un archivo de complemento, si elegimos esta opción nos abrirá una ventana de Abrir archivo donde tendremos que elegir el archivo de complemento que deseamos cambiar el manifiesto. Decir que antes tenemos que elegir la versión mayor, menor y revisión para que se le aplique.
 
-Si elegimos cambiar el manifiesto a un archivo y el proceso fue satisfactorio, en el directorio origen del complemento se generara otro complemento con el mismo nombre pero con la coletilla “_gen_modify_manifest” este será el que contenga el manifiesto modificado para poder ser usado.
+Si elegimos cambiar el manifiesto a un archivo y el proceso fue satisfactorio, en el directorio origen del complemento se generara otro complemento con el mismo nombre pero con la coletilla identificativa “_gen_modify_manifest” este será el que contenga el manifiesto modificado para poder ser usado.
 
 Con cualquiera de las dos opciones se nos dejara el foco en el cuadro de solo lectura y se nos informara con lo que suceda.
 
-El comportamiento será igual que en las anteriores categorías con los botones aceptar y cancelar.
+El comportamiento será igual que en las anteriores categorías con los botones Aceptar y Cancelar.
 
-Recuerdo que si elegimos un archivo de complemento antes debemos cambiar los cuadros combinados de versión mayor, menor y revisión para que se aplique al archivo que elijamos dicha configuración al manifiesto.
+Recuerda que si elegimos un archivo de complemento antes debemos cambiar los cuadros combinados de versión mayor, menor y revisión para que se aplique al archivo que elijamos dicha configuración al manifiesto.
 
 ### Advertencia
 
@@ -192,11 +192,11 @@ El uso de esta utilidad y sus resultados queda exclusivamente bajo la responsabi
 
 ## Documentación de complementos
 
-En esta categoría y visto que hay a gente que le cuesta encontrar como leer la documentación de los complementos podremos justamente eso, consultar la documentación que los autores han escrito para saber el manejo de los complementos.
+En esta categoría y visto que hay a gente que le cuesta encontrar como leer la documentación de los complementos podremos justamente hacer eso, consultar la documentación que los autores han escrito para saber el manejo de los complementos.
 
 En esta categoría encontraremos una lista con acceso rápido (Alt+L) en la cual se mostrarán todos los complementos que tienen documentación quedando excluidos aquellos que por cualquier motivo no tienen documentación.
 
-Si tabulamos encontraremos un botón llamado Abrir documentación del complemento o acceso rápido (Alt+A), si pulsamos o llamamos a dicho botón desde la lista se abrirá en nuestro navegador por defecto la documentación del complemento que tengamos elegido en la lista.
+Si tabulamos encontraremos un botón llamado "Abrir documentación del complemento" o acceso rápido (Alt+A), si pulsamos o llamamos a dicho botón desde la lista se abrirá en nuestro navegador por defecto la documentación del complemento que tengamos elegido en la lista.
 
 # Traductores y colaboradores:
 
@@ -204,6 +204,7 @@ Si alguien desea colaborar con traducciones puede hacerlo por el repositorio de 
 
 * Inglés: Traducción automatica
 * Turco: umut korkmaz
+* Francés: Rémy Ruiz
 
 # Registro de cambios.
 ## Información sobre las actualizaciones:

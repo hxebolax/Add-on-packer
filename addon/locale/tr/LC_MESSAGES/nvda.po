@@ -268,7 +268,7 @@ msgid "Complemento de NVDA (*.nvda-addon)|*.nvda-addon"
 msgstr "NVDA Eklentisi (*.nvda-addon)|*.nvda-addon"
 
 #: addon\globalPlugins\addonPackager\main.py:577
-msgid "Seleccione un complemento de NVDAd"
+msgid "Seleccione un complemento de NVDA"
 msgstr "Bir NVDA Eklentisi Seç"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:111

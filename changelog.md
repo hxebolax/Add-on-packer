@@ -1,1 +1,1 @@
-* Añadido idioma Turco
+* Añadido idioma francés

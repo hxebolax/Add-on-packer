@@ -194,6 +194,7 @@ Birisi çevirilerle işbirliği yapmak isterse, bunu Github eklenti deposu arac�
 
 * İngilizce: Otomatik çeviri
 * Türkçe: Umut KORKMAZ
+* Fransızca: Rémy Ruiz
 
 # Değişiklik Günlüğü:
 ## Güncelleme bilgileri:

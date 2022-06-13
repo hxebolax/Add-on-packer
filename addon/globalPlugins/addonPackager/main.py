@@ -574,7 +574,7 @@ class VentanaPrincipal(wx.Dialog):
 				utilidades.ManifiestosInstalados(self, self.selectionManifiestos, mayor, menor, revision)
 		elif id == 14:  # Manifiestos procesar fichero.
 			wildcard = _("Complemento de NVDA (*.nvda-addon)|*.nvda-addon")
-			dlg = wx.FileDialog(None, message=_("Seleccione un complemento de NVDAd"), defaultDir=os.getcwd(), defaultFile="", wildcard=wildcard, style=wx.FD_OPEN | wx.FD_CHANGE_DIR | wx.FD_FILE_MUST_EXIST | wx.FD_PREVIEW)
+			dlg = wx.FileDialog(None, message=_("Seleccione un complemento de NVDA"), defaultDir=os.getcwd(), defaultFile="", wildcard=wildcard, style=wx.FD_OPEN | wx.FD_CHANGE_DIR | wx.FD_FILE_MUST_EXIST | wx.FD_PREVIEW)
 			if dlg.ShowModal() == wx.ID_OK:
 				fichero = dlg.GetPath()
 				dlg.Destroy()
