@@ -1,1 +1,2 @@
-* Añadido idioma francés
+* Añadido idioma árabe
+* Actualizado idioma inglés

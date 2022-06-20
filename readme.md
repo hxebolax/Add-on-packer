@@ -202,9 +202,10 @@ Si tabulamos encontraremos un botón llamado "Abrir documentación del complemen
 
 Si alguien desea colaborar con traducciones puede hacerlo por el repositorio de Github del complemento o mandando un correo electrónico a xebolax@gmail.com
 
-* Inglés: Traducción automatica
+* Inglés: Dragan Ratkovich (documentación  traducción automatica)
 * Turco: umut korkmaz
 * Francés: Rémy Ruiz
+* Árabe: Wafiq Taher
 
 # Registro de cambios.
 ## Información sobre las actualizaciones:
