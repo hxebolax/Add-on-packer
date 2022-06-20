@@ -5,19 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'addonPackager' '1.0'\n"
+"Project-Id-Version: 'addonPackager' '1.0.2'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2022-06-09 15:57+0200\n"
-"PO-Revision-Date: 2022-06-09 16:25+0200\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2022-06-20 13:50+0400\n"
+"PO-Revision-Date: 2022-06-20 15:06+0400\n"
+"Last-Translator: Dragan Ratkovich\n"
+"Language-Team: Dragan Ratkovich\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"X-Generator: Poedit 3.1\n"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
@@ -42,16 +41,16 @@ msgid ""
 "Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de "
 "complementos nativo de NVDA."
 msgstr ""
-"Set of utilities for easy management of NVDA plug-ins.\n"
+"A set of utilities for convenient work with add-ons for NVDA.\n"
 "\n"
-"* Plug-in packager.\n"
-"* Multiple add-on installer.\n"
-"* Uninstall add-ons.\n"
-"* Enable/disable plugins.\n"
-"* Manifest modifier, installed and from uninstalled file.\n"
-"* Add-on documentation.\n"
+"* Add-on packer.\n"
+"* Multiple Addons Installer.\n"
+"* Remove add-ons.\n"
+"* Enable / disable add-ons.\n"
+"* Manifest file modifier for both installed and non-installed add-ons.\n"
+"* Documentation for add-ons.\n"
 "\n"
-"All areas are user-friendly and time-saving compared to NVDA's native add-on "
+"All areas are user-friendly and save time compared to NVDA's native add-on "
 "manager."
 
 #: addon\globalPlugins\addonPackager\__init__.py:34
@@ -67,25 +66,25 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"There is a pending action to restart NVDA.\n"
+"Waiting for NVDA restart.\n"
 "\n"
-"For security reasons the plug-in cannot be used until it is restarted.\n"
+"For security reasons, the add-on cannot be used until you restart.\n"
 "\n"
-"do you want to restart NVDA now?"
+"¿Do you want to restart NVDA now?"
 
 #: addon\globalPlugins\addonPackager\__init__.py:56
 msgid "Pregunta"
-msgstr "Ask"
+msgstr "Question"
 
 #: addon\globalPlugins\addonPackager\__init__.py:66
 msgid "Muestra la ventana de Utilidades para los complementos de NVDA"
-msgstr "Displays the Utilities window for NVDA plug-ins"
+msgstr "Displays the utilities window for NVDA add-ons"
 
 #: addon\globalPlugins\addonPackager\__init__.py:76
 #: addon\globalPlugins\addonPackager\__init__.py:78
 msgid ""
 "Ya hay una instancia de Utilidades para los complementos de NVDA abierta."
-msgstr "There is already an instance of Utilities for NVDA add-ons open."
+msgstr "An instance of Utilities for NVDA add-ons is already open."
 
 #: addon\globalPlugins\addonPackager\__init__.py:76
 #: addon\globalPlugins\addonPackager\main.py:354
@@ -94,14 +93,14 @@ msgstr "Information"
 
 #: addon\globalPlugins\addonPackager\main.py:41
 msgid "Empaquetador de complementos"
-msgstr "Complement packer"
+msgstr "Add-on packer"
 
 #: addon\globalPlugins\addonPackager\main.py:45
 #: addon\globalPlugins\addonPackager\main.py:68
 #: addon\globalPlugins\addonPackager\main.py:88
 #: addon\globalPlugins\addonPackager\main.py:175
 msgid "&Lista de complementos:"
-msgstr "&list of complements:"
+msgstr "&List of add-ons:"
 
 #: addon\globalPlugins\addonPackager\main.py:54
 #: addon\globalPlugins\addonPackager\main.py:77
@@ -109,7 +108,7 @@ msgstr "&list of complements:"
 #: addon\globalPlugins\addonPackager\main.py:123
 #: addon\globalPlugins\addonPackager\main.py:164
 msgid "&Selección"
-msgstr "&Selection"
+msgstr "&Select"
 
 #: addon\globalPlugins\addonPackager\main.py:57
 msgid "&Generar"
@@ -117,11 +116,11 @@ msgstr "&Generate"
 
 #: addon\globalPlugins\addonPackager\main.py:61
 msgid "Instalador múltiple"
-msgstr "Multiple installer"
+msgstr "Install multiple"
 
 #: addon\globalPlugins\addonPackager\main.py:65
 msgid "&Seleccione un directorio con complementos a instalar..."
-msgstr "&Select a directory with plug-ins to install..."
+msgstr "Select &directory with add-ons to install..."
 
 #: addon\globalPlugins\addonPackager\main.py:80
 msgid "&Instalar"
@@ -129,28 +128,28 @@ msgstr "&Install"
 
 #: addon\globalPlugins\addonPackager\main.py:84
 msgid "Desinstala complementos"
-msgstr "Uninstall plug-ins"
+msgstr "Remove add-ons"
 
 #: addon\globalPlugins\addonPackager\main.py:100
 msgid "&Desinstalar"
-msgstr "&Uninstall"
+msgstr "&Remove"
 
 #: addon\globalPlugins\addonPackager\main.py:104
 msgid "Habilita / deshabilita complementos"
-msgstr "Enable/disable plug-ins"
+msgstr "Enable / disable add-ons"
 
 #: addon\globalPlugins\addonPackager\main.py:108
 msgid "&Lista de complementos habilitados:"
-msgstr "&list of enabled add-ons:"
+msgstr "List of &enabled add-ons:"
 
 #: addon\globalPlugins\addonPackager\main.py:114
 msgid "&Lista de complementos deshabilitados:"
-msgstr "&list of disabled add-ons:"
+msgstr "List of disa&bled add-ons:"
 
 #: addon\globalPlugins\addonPackager\main.py:126
 #: addon\globalPlugins\addonPackager\main.py:167
 msgid "&Procesar"
-msgstr "&Processing"
+msgstr "&Process"
 
 #: addon\globalPlugins\addonPackager\main.py:130
 msgid "Modificador de manifiestos"
@@ -158,31 +157,31 @@ msgstr "Manifest modifier"
 
 #: addon\globalPlugins\addonPackager\main.py:134
 msgid "&Lista de complementos instalados:"
-msgstr "&list of installed plug-ins:"
+msgstr "List of ins&talled add-ons:"
 
 #: addon\globalPlugins\addonPackager\main.py:143
 msgid "Seleccione versión Mayor:"
-msgstr "Select Major version:"
+msgstr "Select major version:"
 
 #: addon\globalPlugins\addonPackager\main.py:149
 msgid "Seleccione versión Menor:"
-msgstr "Select Minor version:"
+msgstr "Choose a minor version:"
 
 #: addon\globalPlugins\addonPackager\main.py:155
 msgid "Seleccione una revisión:"
-msgstr "Select a revision:"
+msgstr "Select revision:"
 
 #: addon\globalPlugins\addonPackager\main.py:171
 msgid "Documentación de complementos"
-msgstr "Add-on documentation"
+msgstr "Documentation for add-ons"
 
 #: addon\globalPlugins\addonPackager\main.py:181
 msgid "&Abrir documentación del complemento"
-msgstr "&Open plug-in documentation"
+msgstr "&Open add-on documentation"
 
 #: addon\globalPlugins\addonPackager\main.py:187
 msgid "&Estado:"
-msgstr "&State:"
+msgstr "StatUs:"
 
 #: addon\globalPlugins\addonPackager\main.py:199
 msgid "&Aceptar"
@@ -214,11 +213,11 @@ msgstr "&Select all"
 #: addon\globalPlugins\addonPackager\main.py:417
 #: addon\globalPlugins\addonPackager\main.py:439
 msgid "&Deseleccionar todo"
-msgstr "&Deselect all"
+msgstr "Deselect a&ll"
 
 #: addon\globalPlugins\addonPackager\main.py:331
 msgid "Tiene que seleccionar un complemento para continuar."
-msgstr "You must select a plug-in to continue."
+msgstr "You must select an add-on to continue."
 
 #: addon\globalPlugins\addonPackager\main.py:331
 #: addon\globalPlugins\addonPackager\main.py:376
@@ -232,34 +231,34 @@ msgstr "Error"
 #: addon\globalPlugins\addonPackager\main.py:334
 #: addon\globalPlugins\addonPackager\main.py:348
 msgid "Seleccione un directorio:"
-msgstr "Select a directory:"
+msgstr "Select directory:"
 
 #: addon\globalPlugins\addonPackager\main.py:354
 msgid "No se encontraron complementos en el directorio que selecciono."
-msgstr "No plugins were found in the directory I select."
+msgstr "No add-ons were found in the selected directory."
 
 #: addon\globalPlugins\addonPackager\main.py:376
 #: addon\globalPlugins\addonPackager\main.py:395
 #: addon\globalPlugins\addonPackager\main.py:426
 #: addon\globalPlugins\addonPackager\main.py:562
 msgid "Necesita elegir al menos un complemento para continuar."
-msgstr "You need to choose at least one complement to continue."
+msgstr "You must select at least one add-on to continue."
 
 #: addon\globalPlugins\addonPackager\main.py:414
 msgid "Complementos &habilitados"
-msgstr "Complements & Enabled"
+msgstr "Add-ons enabled"
 
 #: addon\globalPlugins\addonPackager\main.py:418
 msgid "Complementos &deshabilitados"
-msgstr "Add-ons & Disabled"
+msgstr "Add-ons disabled"
 
 #: addon\globalPlugins\addonPackager\main.py:444
 msgid "Procesar &instalados"
-msgstr "Process &installed"
+msgstr "Process the &installation"
 
 #: addon\globalPlugins\addonPackager\main.py:445
 msgid "Procesar un archivo de &complemento"
-msgstr "Processing a &complement file"
+msgstr "Process add-on &file"
 
 #. Manifiestos procesar fichero.
 #: addon\globalPlugins\addonPackager\main.py:576
@@ -268,11 +267,11 @@ msgstr "NVDA add-on (*.nvda-addon)|*.nvda-addon"
 
 #: addon\globalPlugins\addonPackager\main.py:577
 msgid "Seleccione un complemento de NVDA"
-msgstr "Select an NVDAd plug-in"
+msgstr "Select NVDA add-on"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:111
 msgid "Creando el complemento: {} {}"
-msgstr "Creating the complement: {} {}"
+msgstr "Generating add-on: {} {}"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:115
 msgid ""
@@ -280,9 +279,9 @@ msgid ""
 "\n"
 "Pulse aceptar para continuar."
 msgstr ""
-"All complements were generated correctly.\n"
+"All add-ons were successfully generated.\n"
 "\n"
-"Click OK to continue."
+"Click ok to continue."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:121
 #: addon\globalPlugins\addonPackager\utilidades.py:203
@@ -297,15 +296,15 @@ msgid ""
 "\n"
 "Vuelva a intentarlo."
 msgstr ""
-"An unexpected error occurred\n"
+"An unexpected error has occurred. \n"
 "\n"
 "Error: {}\n"
 "\n"
-"Please try again."
+"Try again."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:144
 msgid "Instalando el complemento: {}"
-msgstr "Installing the plug-in: {}"
+msgstr "Installing add-on: {}"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:167
 msgid ""
@@ -315,11 +314,11 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"The installation was completed correctly.\n"
+"Installation completed successfully.\n"
 "\n"
-"NVDA needs to be restarted to apply the installations.\n"
+"You must restart NVDA for these changes to take effect.\n"
 "\n"
-"do you want to restart NVDA now?"
+"¿Do you want to restart NVDA now?"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:177
 msgid ""
@@ -329,11 +328,11 @@ msgid ""
 "\n"
 "Busque un complemento compatible."
 msgstr ""
-"The plug-in could not be installed.\n"
+"Failed to install add-on.\n"
 "\n"
-"Compatibility failure.\n"
+"Compatibility error.\n"
 "\n"
-"Search for a compatible plug-in."
+"Find a compatible add-on."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:188
 msgid ""
@@ -351,14 +350,13 @@ msgid ""
 msgstr ""
 "Installation completed successfully.\n"
 "\n"
-"But there are add-ons that could not be installed.\n"
+"But there are add-ons that failed to install.\n"
 "\n"
-"The following plugins are incompatible, please look for a compatible "
-"version:\n"
+"The following add-ons are incompatible, please find a compatible version:\n"
 "\n"
 "{}\n"
 "\n"
-"NVDA requires a restart to apply the installations.\n"
+"You must restart NVDA for these changes to take effect.\n"
 "¿Do you want to restart NVDA now?"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:212
@@ -372,18 +370,18 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"An unexpected error occurred\n"
+"An unexpected error has occurred. \n"
 "\n"
 "Error: {}\n"
 "\n"
-"However there were add-ons that were installed and NVDA needs to restart to "
-"apply the changes.\n"
+"However, add-ons have been installed and NVDA needs to be restarted for the "
+"changes to take effect.\n"
 "\n"
-"do you want to restart NVDA now?"
+"¿Desea reiniciar NVDA ahora?"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:237
 msgid "Desinstalando el complemento: {}"
-msgstr "Uninstalling the plug-in: {}"
+msgstr "Removing an add-on: {}"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:244
 msgid ""
@@ -393,11 +391,11 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"The uninstallation was successfully completed.\n"
+"Removal completed successfully.\n"
 "\n"
-"NVDA needs to be restarted to apply the changes.\n"
+"NVDA needs to be restarted for the changes to take effect.\n"
 "\n"
-"do you want to restart NVDA now?"
+"¿Do you want to restart NVDA now?"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:262
 msgid ""
@@ -410,22 +408,22 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"An unexpected error occurred\n"
+"An unexpected error has occurred. \n"
 "\n"
 "Error: {}\n"
 "\n"
-"However there were plugins that were uninstalled and NVDA needs to restart "
-"to apply the changes.\n"
+"However, some add-ons have been removed and NVDA needs to be restarted for "
+"the changes to take effect.\n"
 "\n"
-"do you want to restart NVDA now?"
+"¿Do you want to restart NVDA now?"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:310
 msgid "Buscando complementos en {}..."
-msgstr "Searching for complements in {}..."
+msgstr "Search add-ons in {}..."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:314
 msgid "No hay complementos compatibles en el directorio."
-msgstr "There are no compatible plug-ins in the directory."
+msgstr "There are no supported add-ons in the directory."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:318
 msgid ""
@@ -444,19 +442,19 @@ msgid ""
 "\n"
 "Pulse aceptar para continuar."
 msgstr ""
-"The extraction of information from the plug-ins was successfully completed.\n"
+"Retrieval of add-on information completed successfully.\n"
 "\n"
-"However, the directory you entered contains unsupported plugins.\n"
+"However, the directory you specified contains unsupported add-ons.\n"
 "\n"
-"* Plugins with manifest failure: {}.\n"
-"\n"
-"{}\n"
-"\n"
-"* Plugins not compatible with current api: {}.\n"
+"* Add-ons with incompatible manifest: {}.\n"
 "\n"
 "{}\n"
 "\n"
-"Press accept to continue."
+"* Add-ons not supported by the current API: {}.\n"
+"\n"
+"{}\n"
+"\n"
+"Click ok to continue."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:334
 msgid ""
@@ -464,17 +462,17 @@ msgid ""
 "\n"
 "Pulse aceptar para continuar."
 msgstr ""
-"The extraction of information from the plug-ins was successfully completed.\n"
+"Retrieval of add-on information completed successfully.\n"
 "\n"
-"Click OK to continue."
+"Click ok to continue."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:357
 msgid "Deshabilitando complementos..."
-msgstr "Disabling plug-ins..."
+msgstr "Disabling add-ons..."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:367
 msgid "Habilitando complementos..."
-msgstr "Enabling plug-ins..."
+msgstr "Enabling add-ons..."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:376
 msgid ""
@@ -484,11 +482,11 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"The process of enabling and disabling is successfully completed.\n"
+"The enabling and disabling process completed successfully.\n"
 "\n"
-"NVDA needs to be restarted to apply the changes.\n"
+"NVDA needs to be restarted for the changes to take effect.\n"
 "\n"
-"do you want to restart NVDA now?"
+"¿Do you want to restart NVDA now?"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:394
 msgid ""
@@ -501,18 +499,18 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"An unexpected error occurred\n"
+"An unexpected error has occurred. \n"
 "\n"
 "Error: {}\n"
 "\n"
-"However there were add-ons that were enabled or disabled and NVDA needs to "
-"restart to apply the changes.\n"
+"However, there were add-ons that were enabled or disabled and NVDA needs to "
+"be restarted for the changes to take effect.\n"
 "\n"
-"do you want to restart NVDA now?"
+"¿Do you want to restart NVDA now?"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:423
 msgid "Cambiando el manifiesto al complemento: {}"
-msgstr "Changing the manifest to the complement: {}"
+msgstr "Change manifest to add-on: {}"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:430
 msgid ""
@@ -522,11 +520,11 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"Manifests were changed correctly.\n"
+"Manifests successfully changed.\n"
 "\n"
-"For the action to take effect NVDA has to be restarted.\n"
+"You must restart NVDA for the action to take effect.\n"
 "\n"
-"do you want to restart NVDA now?"
+"¿Do you want to restart NVDA now?"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:448
 msgid ""
@@ -539,18 +537,18 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"An unexpected error occurred\n"
+"An unexpected error has occurred. \n"
 "\n"
 "Error: {}\n"
 "\n"
-"However there were plugins that had their manifest changed and NVDA needs to "
-"restart to apply the changes.\n"
+"However, there have been add-ons whose manifests have changed and NVDA needs "
+"to be restarted for the changes to take effect.\n"
 "\n"
-"do you want to restart NVDA now?"
+"¿Do you want to restart NVDA now?"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:477
 msgid "Trabajando en el complemento: {}"
-msgstr "Working in complement: {}"
+msgstr "Add-on work: {}"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:492
 msgid ""
@@ -562,10 +560,10 @@ msgid ""
 "\n"
 "Pulse aceptar para continuar."
 msgstr ""
-"The manifest was changed correctly.\n"
+"Manifest changed successfully.\n"
 "\n"
-"An add-in was generated with the changed manifest in:\n"
+"An add-on with a modified manifest was generated in:\n"
 "\n"
 "{}\n"
 "\n"
-"Click OK to continue."
+"Click ok to continue."
