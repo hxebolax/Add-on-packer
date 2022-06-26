@@ -1,2 +1,2 @@
-* Añadido idioma árabe
-* Actualizado idioma inglés
+* Añadido idioma Alemán
+* Añadido idioma Ruso

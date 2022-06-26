@@ -4,4 +4,4 @@ echo Creando complemento...
 scons --clean
 scons
 scons pot
-addonPackager-1.0.3.nvda-addon
+addonPackager-1.0.4.nvda-addon
