@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AddonPacker\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2022-06-14 22:25+0300\n"
-"PO-Revision-Date: 2022-06-14 22:31+0300\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2022-07-11 18:54+0300\n"
+"PO-Revision-Date: 2022-07-11 18:55+0300\n"
+"Last-Translator: Ukrainian NVDA Community <vp88.mobile@gmail.com>\n"
 "Language-Team: Ukrainian NVDA Community\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Basepath: ../../../..\n"
 "X-Poedit-SearchPath-0: addon/globalPlugins/addonPackager/__init__.py\n"
 "X-Poedit-SearchPath-1: addon/globalPlugins/addonPackager/ajustes.py\n"
@@ -20,11 +20,46 @@ msgstr ""
 "X-Poedit-SearchPath-3: addon/globalPlugins/addonPackager/utilidades.py\n"
 "X-Poedit-SearchPath-4: buildVars.py\n"
 
-#: addon/globalPlugins/addonPackager/__init__.py:34
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:66
+#: addon\globalPlugins\addonPackager\main.py:23
+msgid "Utilidades para los complementos de NVDA"
+msgstr "Інструменти для додатків NVDA"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid ""
+"Conjunto de utilidades para un manejo fácil de complementos para NVDA.\n"
+"\n"
+"* Empaquetador de complementos.\n"
+"* Instalador múltiple de complementos.\n"
+"* Desinstala complementos.\n"
+"* Habilita / deshabilita complementos.\n"
+"* Modificador de manifiestos, instalados y desde archivo no instalado.\n"
+"* Documentación de complementos.\n"
+"\n"
+"Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de "
+"complementos nativo de NVDA."
+msgstr ""
+"Набір інструментів для легкого керування додатками NVDA.\n"
+"\n"
+"* Пакувальник додатків.\n"
+"* Мультивстановлювач, який дозволяє встановити кілька додатків одночасно.\n"
+"* Видалення додатків.\n"
+"* Увімкнення/вимкнення додатків.\n"
+"* Модифікатор маніфесту як встановлених додатків, так і файлів додатків.\n"
+"* Документація додатків.\n"
+"\n"
+"Всі можливості зручні для користувача й заощаджують час, у порівнянні зі "
+"стандартним менеджером додатків NVDA."
+
+#: addon\globalPlugins\addonPackager\__init__.py:34
 msgid "&Utilidades para los complementos de NVDA"
 msgstr "&Інструменти для додатків NVDA"
 
-#: addon/globalPlugins/addonPackager/__init__.py:51
+#: addon\globalPlugins\addonPackager\__init__.py:51
 msgid ""
 "Hay una acción pendiente de reiniciar NVDA.\n"
 "\n"
@@ -39,211 +74,208 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/__init__.py:56
+#: addon\globalPlugins\addonPackager\__init__.py:56
 msgid "Pregunta"
 msgstr "Попередження"
 
-#: addon/globalPlugins/addonPackager/__init__.py:66
+#: addon\globalPlugins\addonPackager\__init__.py:66
 msgid "Muestra la ventana de Utilidades para los complementos de NVDA"
 msgstr "Показує вікно інструментів для додатків NVDA"
 
-#: addon/globalPlugins/addonPackager/__init__.py:66
-#: addon/globalPlugins/addonPackager/main.py:23 buildVars.py:23
-msgid "Utilidades para los complementos de NVDA"
-msgstr "Інструменти для додатків NVDA"
-
-#: addon/globalPlugins/addonPackager/__init__.py:76
-#: addon/globalPlugins/addonPackager/__init__.py:78
+#: addon\globalPlugins\addonPackager\__init__.py:76
+#: addon\globalPlugins\addonPackager\__init__.py:78
 msgid ""
 "Ya hay una instancia de Utilidades para los complementos de NVDA abierta."
 msgstr "Одну копію Інструментів для додатків NVDA вже запущено."
 
-#: addon/globalPlugins/addonPackager/__init__.py:76
-#: addon/globalPlugins/addonPackager/main.py:354
+#: addon\globalPlugins\addonPackager\__init__.py:76
+#: addon\globalPlugins\addonPackager\main.py:354
 msgid "Información"
 msgstr "Інформація"
 
-#: addon/globalPlugins/addonPackager/main.py:41
+#: addon\globalPlugins\addonPackager\main.py:41
 msgid "Empaquetador de complementos"
 msgstr "Пакувальник додатків"
 
-#: addon/globalPlugins/addonPackager/main.py:45
-#: addon/globalPlugins/addonPackager/main.py:68
-#: addon/globalPlugins/addonPackager/main.py:88
-#: addon/globalPlugins/addonPackager/main.py:175
+#: addon\globalPlugins\addonPackager\main.py:45
+#: addon\globalPlugins\addonPackager\main.py:68
+#: addon\globalPlugins\addonPackager\main.py:88
+#: addon\globalPlugins\addonPackager\main.py:175
 msgid "&Lista de complementos:"
 msgstr "&Список додатків:"
 
-#: addon/globalPlugins/addonPackager/main.py:54
-#: addon/globalPlugins/addonPackager/main.py:77
-#: addon/globalPlugins/addonPackager/main.py:97
-#: addon/globalPlugins/addonPackager/main.py:123
-#: addon/globalPlugins/addonPackager/main.py:164
+#: addon\globalPlugins\addonPackager\main.py:54
+#: addon\globalPlugins\addonPackager\main.py:77
+#: addon\globalPlugins\addonPackager\main.py:97
+#: addon\globalPlugins\addonPackager\main.py:123
+#: addon\globalPlugins\addonPackager\main.py:164
 msgid "&Selección"
 msgstr "&Вибрати"
 
-#: addon/globalPlugins/addonPackager/main.py:57
+#: addon\globalPlugins\addonPackager\main.py:57
 msgid "&Generar"
 msgstr "&Згенерувати"
 
-#: addon/globalPlugins/addonPackager/main.py:61
+#: addon\globalPlugins\addonPackager\main.py:61
 msgid "Instalador múltiple"
 msgstr "Мультивстановлення"
 
-#: addon/globalPlugins/addonPackager/main.py:65
+#: addon\globalPlugins\addonPackager\main.py:65
 msgid "&Seleccione un directorio con complementos a instalar..."
 msgstr "&Оберіть папку з файлами встановлення додатків..."
 
-#: addon/globalPlugins/addonPackager/main.py:80
+#: addon\globalPlugins\addonPackager\main.py:80
 msgid "&Instalar"
 msgstr "&Встановити"
 
-#: addon/globalPlugins/addonPackager/main.py:84
+#: addon\globalPlugins\addonPackager\main.py:84
 msgid "Desinstala complementos"
 msgstr "Видалення додатків"
 
-#: addon/globalPlugins/addonPackager/main.py:100
+#: addon\globalPlugins\addonPackager\main.py:100
 msgid "&Desinstalar"
 msgstr "&Видалити"
 
-#: addon/globalPlugins/addonPackager/main.py:104
+#: addon\globalPlugins\addonPackager\main.py:104
 msgid "Habilita / deshabilita complementos"
 msgstr "Увімкнення / вимкнення додатків"
 
-#: addon/globalPlugins/addonPackager/main.py:108
+#: addon\globalPlugins\addonPackager\main.py:108
 msgid "&Lista de complementos habilitados:"
 msgstr "&Список увімкнених додатків:"
 
-#: addon/globalPlugins/addonPackager/main.py:114
+#: addon\globalPlugins\addonPackager\main.py:114
 msgid "&Lista de complementos deshabilitados:"
 msgstr "&Список вимкнених додатків:"
 
-#: addon/globalPlugins/addonPackager/main.py:126
-#: addon/globalPlugins/addonPackager/main.py:167
+#: addon\globalPlugins\addonPackager\main.py:126
+#: addon\globalPlugins\addonPackager\main.py:167
 msgid "&Procesar"
 msgstr "&Розпочати"
 
-#: addon/globalPlugins/addonPackager/main.py:130
+#: addon\globalPlugins\addonPackager\main.py:130
 msgid "Modificador de manifiestos"
 msgstr "Редагування маніфестів"
 
-#: addon/globalPlugins/addonPackager/main.py:134
+#: addon\globalPlugins\addonPackager\main.py:134
 msgid "&Lista de complementos instalados:"
 msgstr "&Список встановлених додатків:"
 
-#: addon/globalPlugins/addonPackager/main.py:143
+#: addon\globalPlugins\addonPackager\main.py:143
 msgid "Seleccione versión Mayor:"
 msgstr "Оберіть основну підтримувану версію:"
 
-#: addon/globalPlugins/addonPackager/main.py:149
+#: addon\globalPlugins\addonPackager\main.py:149
 msgid "Seleccione versión Menor:"
 msgstr "Оберіть другорядну підтримувану версію:"
 
-#: addon/globalPlugins/addonPackager/main.py:155
+#: addon\globalPlugins\addonPackager\main.py:155
 msgid "Seleccione una revisión:"
 msgstr "Оберіть редакцію:"
 
-#: addon/globalPlugins/addonPackager/main.py:171
+#: addon\globalPlugins\addonPackager\main.py:171
 msgid "Documentación de complementos"
 msgstr "Документація додатків"
 
-#: addon/globalPlugins/addonPackager/main.py:181
+#: addon\globalPlugins\addonPackager\main.py:181
 msgid "&Abrir documentación del complemento"
 msgstr "&Відкрити документацію додатка"
 
-#: addon/globalPlugins/addonPackager/main.py:187
+#: addon\globalPlugins\addonPackager\main.py:187
 msgid "&Estado:"
 msgstr "&Статус:"
 
-#: addon/globalPlugins/addonPackager/main.py:199
+#: addon\globalPlugins\addonPackager\main.py:199
 msgid "&Aceptar"
 msgstr "&Гаразд"
 
-#: addon/globalPlugins/addonPackager/main.py:202
+#: addon\globalPlugins\addonPackager\main.py:202
 msgid "&Cancelar"
 msgstr "&Скасувати"
 
-#: addon/globalPlugins/addonPackager/main.py:205
+#: addon\globalPlugins\addonPackager\main.py:205
 msgid "Cerrar"
 msgstr "Закрити"
 
-#: addon/globalPlugins/addonPackager/main.py:324
-#: addon/globalPlugins/addonPackager/main.py:369
-#: addon/globalPlugins/addonPackager/main.py:388
-#: addon/globalPlugins/addonPackager/main.py:408
-#: addon/globalPlugins/addonPackager/main.py:412
-#: addon/globalPlugins/addonPackager/main.py:416
-#: addon/globalPlugins/addonPackager/main.py:438
+#: addon\globalPlugins\addonPackager\main.py:324
+#: addon\globalPlugins\addonPackager\main.py:369
+#: addon\globalPlugins\addonPackager\main.py:388
+#: addon\globalPlugins\addonPackager\main.py:408
+#: addon\globalPlugins\addonPackager\main.py:412
+#: addon\globalPlugins\addonPackager\main.py:416
+#: addon\globalPlugins\addonPackager\main.py:438
 msgid "&Seleccionar todo"
 msgstr "&Вибрати всі"
 
-#: addon/globalPlugins/addonPackager/main.py:325
-#: addon/globalPlugins/addonPackager/main.py:370
-#: addon/globalPlugins/addonPackager/main.py:389
-#: addon/globalPlugins/addonPackager/main.py:409
-#: addon/globalPlugins/addonPackager/main.py:413
-#: addon/globalPlugins/addonPackager/main.py:417
-#: addon/globalPlugins/addonPackager/main.py:439
+#: addon\globalPlugins\addonPackager\main.py:325
+#: addon\globalPlugins\addonPackager\main.py:370
+#: addon\globalPlugins\addonPackager\main.py:389
+#: addon\globalPlugins\addonPackager\main.py:409
+#: addon\globalPlugins\addonPackager\main.py:413
+#: addon\globalPlugins\addonPackager\main.py:417
+#: addon\globalPlugins\addonPackager\main.py:439
 msgid "&Deseleccionar todo"
 msgstr "&Зняти всі позначки"
 
-#: addon/globalPlugins/addonPackager/main.py:331
+#: addon\globalPlugins\addonPackager\main.py:331
 msgid "Tiene que seleccionar un complemento para continuar."
 msgstr "Для продовження необхідно вибрати додаток."
 
-#: addon/globalPlugins/addonPackager/main.py:331
-#: addon/globalPlugins/addonPackager/main.py:376
-#: addon/globalPlugins/addonPackager/main.py:395
-#: addon/globalPlugins/addonPackager/main.py:426
-#: addon/globalPlugins/addonPackager/main.py:562
+#: addon\globalPlugins\addonPackager\main.py:331
+#: addon\globalPlugins\addonPackager\main.py:376
+#: addon\globalPlugins\addonPackager\main.py:395
+#: addon\globalPlugins\addonPackager\main.py:426
+#: addon\globalPlugins\addonPackager\main.py:562
 msgid "Error"
 msgstr "Помилка"
 
-#: addon/globalPlugins/addonPackager/main.py:334
-#: addon/globalPlugins/addonPackager/main.py:348
+#. Botón selecciona directorio con complementos instalador.
+#: addon\globalPlugins\addonPackager\main.py:334
+#: addon\globalPlugins\addonPackager\main.py:348
 msgid "Seleccione un directorio:"
 msgstr "Оберіть папку:"
 
-#: addon/globalPlugins/addonPackager/main.py:354
+#: addon\globalPlugins\addonPackager\main.py:354
 msgid "No se encontraron complementos en el directorio que selecciono."
 msgstr "В  обраній папці не знайдено жодного додатка."
 
-#: addon/globalPlugins/addonPackager/main.py:376
-#: addon/globalPlugins/addonPackager/main.py:395
-#: addon/globalPlugins/addonPackager/main.py:426
-#: addon/globalPlugins/addonPackager/main.py:562
+#: addon\globalPlugins\addonPackager\main.py:376
+#: addon\globalPlugins\addonPackager\main.py:395
+#: addon\globalPlugins\addonPackager\main.py:426
+#: addon\globalPlugins\addonPackager\main.py:562
 msgid "Necesita elegir al menos un complemento para continuar."
 msgstr "Для продовження необхідно обрати щонайменше один додаток."
 
-#: addon/globalPlugins/addonPackager/main.py:414
+#: addon\globalPlugins\addonPackager\main.py:414
 msgid "Complementos &habilitados"
 msgstr "Увімкнення &додатків"
 
-#: addon/globalPlugins/addonPackager/main.py:418
+#: addon\globalPlugins\addonPackager\main.py:418
 msgid "Complementos &deshabilitados"
 msgstr "Вимкнення &додатків"
 
-#: addon/globalPlugins/addonPackager/main.py:444
+#: addon\globalPlugins\addonPackager\main.py:444
 msgid "Procesar &instalados"
 msgstr "Розпочати &встановлення"
 
-#: addon/globalPlugins/addonPackager/main.py:445
+#: addon\globalPlugins\addonPackager\main.py:445
 msgid "Procesar un archivo de &complemento"
 msgstr "Опрацювати файл &додатка"
 
-#: addon/globalPlugins/addonPackager/main.py:576
+#. Manifiestos procesar fichero.
+#: addon\globalPlugins\addonPackager\main.py:576
 msgid "Complemento de NVDA (*.nvda-addon)|*.nvda-addon"
 msgstr "Додаток для NVDA (*.nvda-addon)|*.nvda-addon"
 
-#: addon/globalPlugins/addonPackager/main.py:577
+#: addon\globalPlugins\addonPackager\main.py:577
 msgid "Seleccione un complemento de NVDAd"
 msgstr "Оберіть додаток для NVDA"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:111
+#: addon\globalPlugins\addonPackager\utilidades.py:111
 msgid "Creando el complemento: {} {}"
 msgstr "Створити додаток: {} {}"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:115
+#: addon\globalPlugins\addonPackager\utilidades.py:115
 msgid ""
 "Se generaron correctamente todos los complementos.\n"
 "\n"
@@ -253,12 +285,12 @@ msgstr ""
 "\n"
 "Для продовження натисніть «Гаразд»."
 
-#: addon/globalPlugins/addonPackager/utilidades.py:121
-#: addon/globalPlugins/addonPackager/utilidades.py:203
-#: addon/globalPlugins/addonPackager/utilidades.py:253
-#: addon/globalPlugins/addonPackager/utilidades.py:385
-#: addon/globalPlugins/addonPackager/utilidades.py:439
-#: addon/globalPlugins/addonPackager/utilidades.py:502
+#: addon\globalPlugins\addonPackager\utilidades.py:121
+#: addon\globalPlugins\addonPackager\utilidades.py:203
+#: addon\globalPlugins\addonPackager\utilidades.py:253
+#: addon\globalPlugins\addonPackager\utilidades.py:385
+#: addon\globalPlugins\addonPackager\utilidades.py:439
+#: addon\globalPlugins\addonPackager\utilidades.py:502
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -272,11 +304,11 @@ msgstr ""
 "\n"
 "Будь ласка, спробуйте ще раз."
 
-#: addon/globalPlugins/addonPackager/utilidades.py:144
+#: addon\globalPlugins\addonPackager\utilidades.py:144
 msgid "Instalando el complemento: {}"
 msgstr "Встановлення додатка: {}"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:167
+#: addon\globalPlugins\addonPackager\utilidades.py:167
 msgid ""
 "Se completo la instalación correctamente.\n"
 "\n"
@@ -290,7 +322,7 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:177
+#: addon\globalPlugins\addonPackager\utilidades.py:177
 msgid ""
 "No se pudo instalar el complemento.\n"
 "\n"
@@ -304,7 +336,7 @@ msgstr ""
 "\n"
 "Пошукайте сумісний додаток."
 
-#: addon/globalPlugins/addonPackager/utilidades.py:188
+#: addon\globalPlugins\addonPackager\utilidades.py:188
 msgid ""
 "Se completo la instalación correctamente.\n"
 "\n"
@@ -329,7 +361,7 @@ msgstr ""
 "Для застосування змін необхідно перезапустити NVDA.\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:212
+#: addon\globalPlugins\addonPackager\utilidades.py:212
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -349,11 +381,11 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:237
+#: addon\globalPlugins\addonPackager\utilidades.py:237
 msgid "Desinstalando el complemento: {}"
 msgstr "Видалити додаток: {}"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:244
+#: addon\globalPlugins\addonPackager\utilidades.py:244
 msgid ""
 "Se completo la desinstalación correctamente.\n"
 "\n"
@@ -367,7 +399,7 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:262
+#: addon\globalPlugins\addonPackager\utilidades.py:262
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -387,15 +419,15 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:310
+#: addon\globalPlugins\addonPackager\utilidades.py:310
 msgid "Buscando complementos en {}..."
 msgstr "Шукаю додатки в {}..."
 
-#: addon/globalPlugins/addonPackager/utilidades.py:314
+#: addon\globalPlugins\addonPackager\utilidades.py:314
 msgid "No hay complementos compatibles en el directorio."
 msgstr "У папці немає сумісних додатків."
 
-#: addon/globalPlugins/addonPackager/utilidades.py:318
+#: addon\globalPlugins\addonPackager\utilidades.py:318
 msgid ""
 "Se completo con éxito la extracción de información de los complementos.\n"
 "\n"
@@ -425,7 +457,7 @@ msgstr ""
 "\n"
 "Для продовження натисніть «Гаразд»."
 
-#: addon/globalPlugins/addonPackager/utilidades.py:334
+#: addon\globalPlugins\addonPackager\utilidades.py:334
 msgid ""
 "Se completo con éxito la extracción de información de los complementos.\n"
 "\n"
@@ -435,15 +467,15 @@ msgstr ""
 "\n"
 "Для продовження натисніть «Гаразд»."
 
-#: addon/globalPlugins/addonPackager/utilidades.py:357
+#: addon\globalPlugins\addonPackager\utilidades.py:357
 msgid "Deshabilitando complementos..."
 msgstr "Вимкнення додатків..."
 
-#: addon/globalPlugins/addonPackager/utilidades.py:367
+#: addon\globalPlugins\addonPackager\utilidades.py:367
 msgid "Habilitando complementos..."
 msgstr "Увімкнення додатків..."
 
-#: addon/globalPlugins/addonPackager/utilidades.py:376
+#: addon\globalPlugins\addonPackager\utilidades.py:376
 msgid ""
 "Se completo el proceso de habilitar y deshabilitar correctamente.\n"
 "\n"
@@ -457,7 +489,7 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:394
+#: addon\globalPlugins\addonPackager\utilidades.py:394
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -477,11 +509,11 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:423
+#: addon\globalPlugins\addonPackager\utilidades.py:423
 msgid "Cambiando el manifiesto al complemento: {}"
 msgstr "Змінити manifest у додатку: {}"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:430
+#: addon\globalPlugins\addonPackager\utilidades.py:430
 msgid ""
 "Se cambiaron los manifiestos correctamente.\n"
 "\n"
@@ -495,7 +527,7 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:448
+#: addon\globalPlugins\addonPackager\utilidades.py:448
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -515,11 +547,11 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:477
+#: addon\globalPlugins\addonPackager\utilidades.py:477
 msgid "Trabajando en el complemento: {}"
 msgstr "Працюю над додатком: {}"
 
-#: addon/globalPlugins/addonPackager/utilidades.py:492
+#: addon\globalPlugins\addonPackager\utilidades.py:492
 msgid ""
 "Se cambio correctamente el manifiesto.\n"
 "\n"
@@ -536,29 +568,3 @@ msgstr ""
 "{}\n"
 "\n"
 "Для продовження натисніть «Гаразд»."
-
-#: buildVars.py:26
-msgid ""
-"Conjunto de utilidades para un manejo fácil de complementos para NVDA.\n"
-"\n"
-"* Empaquetador de complementos.\n"
-"* Instalador múltiple de complementos.\n"
-"* Desinstala complementos.\n"
-"* Habilita / deshabilita complementos.\n"
-"* Modificador de manifiestos, instalados y desde archivo no instalado.\n"
-"* Documentación de complementos.\n"
-"\n"
-"Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de "
-"complementos nativo de NVDA."
-msgstr ""
-"Набір інструментів для легкого керування додатками NVDA.\n"
-"\n"
-"* Пакувальник додатків.\n"
-"* Мультивстановлювач, який дозволяє встановити кілька додатків одночасно.\n"
-"* Видалення додатків.\n"
-"* Увімкнення/вимкнення додатків.\n"
-"* Модифікатор маніфесту як встановлених додатків, так і файлів додатків.\n"
-"* Документація додатків.\n"
-"\n"
-"Всі можливості зручні для користувача й заощаджують час, у порівнянні зі "
-"стандартним менеджером додатків NVDA."
