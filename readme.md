@@ -208,6 +208,7 @@ Si alguien desea colaborar con traducciones puede hacerlo por el repositorio de 
 * Árabe: Wafiq Taher
 * Alemán: Moritz Wolfart
 * Ruso: Valentin Kupriyanov (comunidad rusa NVDA.RU)
+* Italiano: Leonardo Marenda
 
 # Registro de cambios.
 ## Información sobre las actualizaciones:

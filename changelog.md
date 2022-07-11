@@ -1,2 +1,1 @@
-* Añadido idioma Alemán
-* Añadido idioma Ruso
+* Añadido idioma Italiano

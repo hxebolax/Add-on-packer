@@ -202,9 +202,12 @@ Si nous tabulons, nous trouverons un bouton appelé "Ouvrir la documentation de 
 
 Si quelqu'un souhaite collaborer avec les traductions, il peut le faire via le dépôt de GitHub de l'extension ou en envoyant un e-mail à xebolax@gmail.com
 
-* Anglais: Traduction automatique
+* Anglais: Dragan Ratkovich (traduction automatique)
 * Turc: umut korkmaz
 * Français: Rémy Ruiz
+* Arabe: Wafiq Taher
+* Allemand: Moritz Wolfart
+* Russe: Valentin Kupriyanov (communauté russe NVDA.RU)
 
 # Journal des changements.
 ## Informations sur les mises à jour:
