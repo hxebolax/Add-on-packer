@@ -209,6 +209,7 @@ Si alguien desea colaborar con traducciones puede hacerlo por el repositorio de 
 * Alemán: Moritz Wolfart
 * Ruso: Valentin Kupriyanov (comunidad rusa NVDA.RU)
 * Italiano: Leonardo Marenda
+* Ucraniano: Vova Mobile
 
 # Registro de cambios.
 ## Información sobre las actualizaciones:
