@@ -213,6 +213,7 @@ Si alguien desea colaborar con traducciones puede hacerlo por el repositorio de 
 
 # Registro de cambios.
 ## Información sobre las actualizaciones:
+
 Este complemento seguirá la siguiente ruta de actualizaciones:
 
 Solo las versiones de tipo mayor.menor (por ejemplo v3.1) son listados en este historial.
@@ -224,6 +225,53 @@ Los cambios en el complemento se reflejarán en esta sección explicando las nov
 El documento principal no se modificará siendo una orientación para el usuario.
 
 El usuario es el responsable de revisar esta sección para estar informados de los cambios.
+
+## Versión 1.1.
+
+* Corregidos errores.
+
+* Añadida la posibilidad de hacer y restaurar copias de seguridad.
+
+Ahora tendremos una nueva sección llamada Hacer / restaurar copias de seguridad.
+
+Dicha sección mostrara en una lista las opciones que podemos hacer una copia de seguridad.
+
+Las opciones que en esta versión se pueden guardar en una copia de seguridad son:
+
+* Directorio Diccionarios (\speechDicts)
+* Directorio Perfiles (\profiles)
+* Directorio Scratchpad (\scratchpad)
+* Fichero configuración disparadores de perfiles (profileTriggers.ini)
+* Fichero de configuración gestos de entrada (gestures.ini)
+* Fichero de configuración de NVDA (nvda.ini)
+
+En la lista solo se mostrará aquellos elementos que estén presentes en nuestra copia de NVDA al igual que aquellos directorios que tengan contenido.
+
+Si por ejemplo el directorio de perfiles este vacío no dejara hacer copia de seguridad.
+
+Tendremos que seleccionar por lo menos un elemento de la lista para poder hacer la copia de seguridad.
+
+Si tabulamos encontraremos dos botones:
+
+* Crear copia de seguridad
+
+Si pulsamos este botón se abrirá una ventana clásica de guardar de Windows diciendo que metamos el nombre de nuestra copia de seguridad y donde deseamos guardarla.
+
+Cuando le demos a guardar empezará la copia de seguridad y en el cuadro de solo lectura de estado nos dirá el resultado si todo salió bien o si se produjeron errores.
+
+* Restaurar copia de seguridad
+
+Cuando pulsemos este botón se abrirá una ventana clásica de Windows para abrir un archivo de copia de seguridad, tendremos que buscarlo donde guardamos la copia y dar a abrir.
+
+Una vez abierto el archivo se nos mostrará una ventana con el contenido de la copia de seguridad, en dicha ventana nos aparecerá una lista para seleccionar aquellos elementos que deseemos restaurar.
+
+Cuando lo deseemos pulsamos a restaurar y en el cuadro de estado nos informara de la restauración si fue correcta o hubo algún problema.
+
+ADVERTENCIA:
+
+Cuando restauremos un elemento de NVDA será necesario reiniciar NVDA por lo que cualquier acción que hagamos en Utilidades para los complementos de NVDA su consecuencia será reiniciar NVDA ya pulsemos aceptar, cancelar, cerrar, escape o Alt+F4.
+
+Si se produce un error al restaurar varios elementos con que uno solo sea restaurado igualmente NVDA se reiniciara.
 
 ## Versión 1.0.
 

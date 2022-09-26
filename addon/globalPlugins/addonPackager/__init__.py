@@ -7,11 +7,12 @@ import addonHandler
 import globalVars
 import gui
 import ui
-import config
 import core
 from scriptHandler import script
 import wx
 from threading import Thread
+import os
+import sys
 from . import ajustes
 from . import main
 
@@ -67,7 +68,7 @@ Por motivos de seguridad el complemento no podrá ser usado hasta que no reinici
 	def script_menuApp(self, event, menu=False):
 		if ajustes.IS_WinON == False:
 			if ajustes.reinicio == False:
-				HiloComplemento(1).start()
+				HiloComplemento(self, 1).start()
 			else:
 				ajustes.IS_WinON = True
 				wx.CallAfter(self.runMsgReinicio)
@@ -84,15 +85,16 @@ if globalVars.appArgs.secure:
 	GlobalPlugin = globalPluginHandler.GlobalPlugin # noqa: F811 
 
 class HiloComplemento(Thread):
-	def __init__(self, opcion):
+	def __init__(self, frame, opcion):
 		super(HiloComplemento, self).__init__()
 
+		self.frame = frame
 		self.opcion = opcion
 		self.daemon = True
 
 	def run(self):
 		def appLauncherMain():
-			self._main = main.VentanaPrincipal(gui.mainFrame)
+			self._main = main.VentanaPrincipal(gui.mainFrame, self.frame)
 			gui.mainFrame.prePopup()
 			self._main.Show()
 

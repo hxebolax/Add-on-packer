@@ -14,6 +14,8 @@ import fnmatch
 import string
 import random
 import shutil
+import json
+from . import ajustes
 
 addonHandler.initTranslation()
 
@@ -52,28 +54,75 @@ def isAddonCompatible(
 def GetAddons(directory, extension):
 	return [f for f in os.listdir(directory) if f.endswith(extension)]
 
-def zipfolder(foldername, target_dir):            
-	zipobj = zipfile.ZipFile(foldername + '.nvda-addon', 'w', zipfile.ZIP_DEFLATED)
+def ponerComentario(archivo, comentario):
+	with zipfile.ZipFile(archivo, 'a') as zip:
+		zip.comment = comentario.encode("utf-8")
+
+def leerComentario(archivo):
+	with zipfile.ZipFile(archivo, 'r') as zip:
+		comentario = zip.comment.decode("utf-8")
+	return comentario
+
+def extraeZip(fichero, destino, ficheroZip):
+	try:
+		with zipfile.ZipFile(ficheroZip) as archive:
+			for file in archive.namelist():
+				if file.startswith(fichero):
+					archive.extract(file, destino)
+		return True
+	except:
+		return False
+
+def anadirAlZip(fichero, ficheroZip):
+	try:
+		with zipfile.ZipFile(ficheroZip, 'a') as zipf:
+			zipf.write(fichero, os.path.basename(fichero))
+		return True
+	except:
+		return False
+
+def zipfolder(foldername, target_dir, addon=True, barraProgreso=False, frame=None):
+	if addon:
+		zipobj = zipfile.ZipFile(foldername + '.nvda-addon', 'w', zipfile.ZIP_DEFLATED)
+	else:
+		zipobj = zipfile.ZipFile(foldername, 'w', zipfile.ZIP_DEFLATED)
+	total = 0
 	rootlen = len(target_dir) + 1
 	for base, dirs, files in os.walk(target_dir):
-		if '__pycache__' in dirs:
-			dirs.remove('__pycache__')
-		for file in files:
-			fn = os.path.join(base, file)
+		if addon:
+			if '__pycache__' in dirs:
+				dirs.remove('__pycache__')
+		for fname in files:
+			path = os.path.join(base, fname)
+			total += os.path.getsize(path)
+
+		current = 0
+	for base, dirs, files in os.walk(target_dir):
+		for fname in files:
+			path = os.path.join(base, fname)
+			fn = os.path.join(base, fname)
+			percent = 100 * current / total + 1
+			if barraProgreso:
+				wx.CallAfter(frame.onProgreso, int(percent))
 			zipobj.write(fn, fn[rootlen:])
+			current += os.path.getsize(path)
 	zipobj.close()
 
-def descomprimir_zip(frame, archivo, directorio_destino):
-	zf = zipfile.ZipFile(archivo)
-	uncompress_size = sum((file.file_size for file in zf.infolist()))
-	extracted_size = 0
-	for file in zf.infolist():
-		extracted_size += file.file_size
-		progress = (lambda x, y: (int(x), int(x*y) % y/y))((extracted_size * 100/uncompress_size), 1e0)
-#	print(os.path.basename(file.filename))
-#	print(progress[0], " ", file.file_name)
-		wx.CallAfter(frame.onProgreso, progress[0])
-		zf.extract(file, directorio_destino)
+def descomprimir_zip(frame, archivo, directorio_destino, progreso=True):
+	try:
+		zf = zipfile.ZipFile(archivo)
+		uncompress_size = sum((file.file_size for file in zf.infolist()))
+		extracted_size = 0
+		for file in zf.infolist():
+			extracted_size += file.file_size
+			if progreso:
+				progress = (lambda x, y: (int(x), int(x*y) % y/y))((extracted_size * 100/uncompress_size), 1e0)
+				wx.CallAfter(frame.onProgreso, progress[0])
+			zf.extract(file, directorio_destino)
+		return True
+	except Exception as e:
+		print(e)
+		return False
 
 def findReplace(directory, find, replace, filePattern):
 	for path, dirs, files in os.walk(os.path.abspath(directory)):
@@ -505,3 +554,308 @@ Error: {}
 
 Vuelva a intentarlo.""").format(e)
 			wx.CallAfter(self.frame.onError, msg)
+
+class crearBackup(Thread):
+	def __init__(self, frame, ficheroCopia, comentario):
+		super(crearBackup, self).__init__()
+
+		self.frame = frame
+		self.ficheroCopia = ficheroCopia
+		self.comentario = comentario
+
+		self.daemon = True
+		self.start()
+
+	def run(self):
+		error = []
+		try:
+			zipobj = zipfile.ZipFile(self.ficheroCopia, 'w', zipfile.ZIP_DEFLATED)
+			zipobj.close()
+			ponerComentario(self.ficheroCopia, json.dumps(self.comentario))
+			for i in self.comentario:
+				id = i
+				fichero = self.comentario.get(id)
+				if id == 0: # Diccionario
+					wx.CallAfter(self.frame.onTextoEstado, _("Añadiendo el directorio de diccionarios..."))
+					zipfolder(os.path.join(ajustes.dirConfig, fichero), ajustes.dict_directorios.get(id), False, False)
+					p = anadirAlZip(os.path.join(ajustes.dirConfig, fichero), self.ficheroCopia)
+					if p:
+						os.remove(os.path.join(ajustes.dirConfig, fichero))
+					else:
+						error.append(_("No se pudo agregar el directorio de diccionarios a la copia de seguridad."))
+				if id == 1: # Perfiles
+					wx.CallAfter(self.frame.onTextoEstado, _("Añadiendo el directorio de Perfiles..."))
+					zipfolder(os.path.join(ajustes.dirConfig, fichero), ajustes.dict_directorios.get(id), False, False)
+					p = anadirAlZip(os.path.join(ajustes.dirConfig, fichero), self.ficheroCopia)
+					if p:
+						os.remove(os.path.join(ajustes.dirConfig, fichero))
+					else:
+						error.append(_("No se pudo agregar el directorio de Perfiles a la copia de seguridad."))
+				if id == 2: # Scratchpad
+					wx.CallAfter(self.frame.onTextoEstado, _("Añadiendo el directorio de Scratchpad..."))
+					zipfolder(os.path.join(ajustes.dirConfig, fichero), ajustes.dict_directorios.get(id), False, False)
+					p = anadirAlZip(os.path.join(ajustes.dirConfig, fichero), self.ficheroCopia)
+					if p:
+						os.remove(os.path.join(ajustes.dirConfig, fichero))
+					else:
+						error.append(_("No se pudo agregar el directorio de Scratchpad a la copia de seguridad."))
+
+				if id == 3: # Fichero configuración disparadores de perfiles
+					wx.CallAfter(self.frame.onTextoEstado, _("Añadiendo el Fichero configuración disparadores de perfiles..."))
+					p = anadirAlZip(ajustes.dict_directorios.get(id), os.path.join(ajustes.dirConfig, fichero))
+					if p:
+						z = anadirAlZip(os.path.join(ajustes.dirConfig, fichero), self.ficheroCopia)
+						if z:
+							os.remove(os.path.join(ajustes.dirConfig, fichero))
+						else:
+							error.append(_("No se pudo agregar el Fichero configuración disparadores de perfiles a la copia de seguridad."))
+					else:
+						error.append(_("No se pudo agregar el Fichero configuración disparadores de perfiles a la copia de seguridad."))
+
+				if id == 4: # Fichero de configuración gestos de entrada
+					wx.CallAfter(self.frame.onTextoEstado, _("Añadiendo el Fichero de configuración gestos de entrada..."))
+					p = anadirAlZip(ajustes.dict_directorios.get(id), os.path.join(ajustes.dirConfig, fichero))
+					if p:
+						z = anadirAlZip(os.path.join(ajustes.dirConfig, fichero), self.ficheroCopia)
+						if z:
+							os.remove(os.path.join(ajustes.dirConfig, fichero))
+						else:
+							error.append(_("No se pudo agregar el Fichero de configuración gestos de entrada a la copia de seguridad."))
+					else:
+						error.append(_("No se pudo agregar el Fichero de configuración gestos de entrada a la copia de seguridad."))
+
+				if id == 5: # Fichero de configuración de NVDA
+					wx.CallAfter(self.frame.onTextoEstado, _("Añadiendo el Fichero de configuración de NVDA..."))
+					p = anadirAlZip(ajustes.dict_directorios.get(id), os.path.join(ajustes.dirConfig, fichero))
+					if p:
+						z = anadirAlZip(os.path.join(ajustes.dirConfig, fichero), self.ficheroCopia)
+						if z:
+							os.remove(os.path.join(ajustes.dirConfig, fichero))
+						else:
+							error.append(_("No se pudo agregar el Fichero de configuración de NVDA a la copia de seguridad."))
+					else:
+						error.append(_("No se pudo agregar el Fichero de configuración de NVDA a la copia de seguridad."))
+
+				try:
+					os.remove(os.path.join(ajustes.dirConfig, fichero))
+				except:
+					pass
+				wx.CallAfter(self.frame.onProgreso, i+1)
+
+		except Exception as e:
+			error.append(e)
+
+		if len(error) == 0:
+			msg = \
+_("""Se creo la copia de seguridad correctamente en:
+
+{}
+
+Pulse aceptar para continuar.""").format(self.ficheroCopia)
+			wx.CallAfter(self.frame.onCorrecto, msg, ["copiaseguridad"])
+		else:
+			try:
+				os.remove(self.ficheroCopia)
+			except:
+				pass
+			if len(error) == 1:
+				msg = \
+_("""Se produjo el siguiente error:
+
+{}
+
+No se pudo crear la copia de seguridad.""").format(error[0])
+				wx.CallAfter(self.frame.onError, msg, ["copiaseguridad"])
+			else:
+				msg = \
+_("""Se produjeron los siguientes errores:
+
+{}
+
+No se pudo crear la copia de seguridad.""").format("\n".join(error))
+				wx.CallAfter(self.frame.onError, msg, ["copiaseguridad"])
+
+class RestaurarBackup(Thread):
+	def __init__(self, frame, ficheroCopia, comentario):
+		super(RestaurarBackup, self).__init__()
+
+		self.frame = frame
+		self.ficheroCopia = ficheroCopia
+		self.comentario = comentario
+		self.ficheroNVDA = False
+		self.daemon = True
+		self.start()
+
+	def run(self):
+		error = []
+		try:
+			for i in self.comentario:
+				id = i
+				fichero = self.comentario.get(id)
+				if id == 0: # Diccionario
+					wx.CallAfter(self.frame.onTextoEstado, _("Restaurando el directorio de diccionarios..."))
+					p = extraeZip(fichero, ajustes.dirConfig, self.ficheroCopia)
+					if p:
+						z = descomprimir_zip(self.frame, os.path.join(ajustes.dirConfig, fichero), ajustes.dirDiccionario, False)
+						if z:
+							os.remove(os.path.join(ajustes.dirConfig, fichero))
+							self.ficheroNVDA = True
+						else:
+							os.remove(os.path.join(ajustes.dirConfig, fichero))
+							error.append(_("No se pudo restaurar el directorio de diccionarios."))
+					else:
+						error.append(_("No se pudo restaurar el directorio de diccionarios."))
+				if id == 1: # Perfiles
+					wx.CallAfter(self.frame.onTextoEstado, _("Restaurando el directorio de Perfiles..."))
+					p = extraeZip(fichero, ajustes.dirConfig, self.ficheroCopia)
+					if p:
+						z = descomprimir_zip(self.frame, os.path.join(ajustes.dirConfig, fichero), ajustes.dirProfile, False)
+						if z:
+							os.remove(os.path.join(ajustes.dirConfig, fichero))
+							self.ficheroNVDA = True
+						else:
+							os.remove(os.path.join(ajustes.dirConfig, fichero))
+							error.append(_("No se pudo restaurar el directorio de Perfiles."))
+					else:
+						error.append(_("No se pudo restaurar el directorio de Perfiles."))
+
+				if id == 2: # Scratchpad
+					wx.CallAfter(self.frame.onTextoEstado, _("Restaurando el directorio de Scratchpad..."))
+					p = extraeZip(fichero, ajustes.dirConfig, self.ficheroCopia)
+					if p:
+						z = descomprimir_zip(self.frame, os.path.join(ajustes.dirConfig, fichero), ajustes.dirScratchpad, False)
+						if z:
+							os.remove(os.path.join(ajustes.dirConfig, fichero))
+							self.ficheroNVDA = True
+						else:
+							os.remove(os.path.join(ajustes.dirConfig, fichero))
+							error.append(_("No se pudo restaurar el directorio de Scratchpad."))
+					else:
+						error.append(_("No se pudo restaurar el directorio de Scratchpad."))
+
+				if id == 3: # Fichero configuración disparadores de perfiles
+					wx.CallAfter(self.frame.onTextoEstado, _("Restaurando el Fichero configuración disparadores de perfiles..."))
+					p = extraeZip(fichero, ajustes.dirConfig, self.ficheroCopia)
+					if p:
+						try:
+							try:
+								os.remove(os.path.join(ajustes.dirConfig, "profileTriggers.ini"))
+							except:
+								pass
+							z = descomprimir_zip(self.frame, os.path.join(ajustes.dirConfig, fichero), ajustes.dirConfig, False)
+							if z:
+								os.remove(os.path.join(ajustes.dirConfig, fichero))
+								self.ficheroNVDA = True
+							else:
+								os.remove(os.path.join(ajustes.dirConfig, fichero))
+								error.append(_("No se pudo restaurar el Fichero configuración disparadores de perfiles."))
+						except Exception as e:
+							error.append(_("No se pudo restaurar el Fichero configuración disparadores de perfiles."))
+					else:
+						error.append(_("No se pudo restaurar el Fichero configuración disparadores de perfiles."))
+
+				if id == 4: # Fichero configuración gestos de entrada
+					wx.CallAfter(self.frame.onTextoEstado, _("Restaurando el Fichero configuración gestos de entrada..."))
+					p = extraeZip(fichero, ajustes.dirConfig, self.ficheroCopia)
+					if p:
+						try:
+							try:
+								os.remove(os.path.join(ajustes.dirConfig, "gestures.ini"))
+							except:
+								pass
+							z = descomprimir_zip(self.frame, os.path.join(ajustes.dirConfig, fichero), ajustes.dirConfig, False)
+							if z:
+								os.remove(os.path.join(ajustes.dirConfig, fichero))
+								self.ficheroNVDA = True
+							else:
+								os.remove(os.path.join(ajustes.dirConfig, fichero))
+								error.append(_("No se pudo restaurar el Fichero configuración de gestos de entrada."))
+						except Exception as e:
+							error.append(_("No se pudo restaurar el Fichero configuración de gestos de entrada."))
+					else:
+						error.append(_("No se pudo restaurar el Fichero configuración gestos de entrada."))
+
+				if id == 5: # Fichero configuración de NVDA
+					wx.CallAfter(self.frame.onTextoEstado, _("Restaurando el Fichero configuración de NVDA..."))
+					p = extraeZip(fichero, ajustes.dirConfig, self.ficheroCopia)
+					if p:
+						try:
+							try:
+								os.remove(os.path.join(ajustes.dirConfig, "nvda.ini"))
+							except:
+								pass
+							z = descomprimir_zip(self.frame, os.path.join(ajustes.dirConfig, fichero), ajustes.dirConfig, False)
+							if z:
+								os.remove(os.path.join(ajustes.dirConfig, fichero))
+								self.ficheroNVDA = True
+							else:
+								os.remove(os.path.join(ajustes.dirConfig, fichero))
+								error.append(_("No se pudo restaurar el Fichero configuración de NVDA."))
+						except Exception as e:
+							error.append(_("No se pudo restaurar el Fichero configuración de NVDA."))
+					else:
+						error.append(_("No se pudo restaurar el Fichero configuración de NVDA."))
+				wx.CallAfter(self.frame.onProgreso, i+1)
+		except Exception as e:
+			error.append(e)
+
+		if len(error) == 0:
+			if self.ficheroNVDA:
+				msg = \
+_("""La restauración fue un éxito.
+
+Al restaurar la configuración de NVDA es necesario reiniciar el lector.
+
+Pulse aceptar o cerrar para reiniciar.""")
+				wx.CallAfter(self.frame.onCorrecto, msg, ["reiniciar"])
+		else:
+			if len(error) == 1:
+				if self.ficheroNVDA:
+					msg = \
+_("""Se produjo el siguiente error:
+
+{}
+
+No se pudo restaurar toda la copia de seguridad.
+
+Pero hay elementos que si pudieron ser restaurados.
+
+Al restaurar la configuración de NVDA es necesario reiniciar el lector.
+
+Pulse cancelar o cerrar para reiniciar.""").format(error[0])
+					wx.CallAfter(self.frame.onError, msg, ["reiniciar"])
+				else:
+					msg = \
+_("""Se produjo el siguiente error:
+
+{}
+
+No se pudo restaurar la copia de seguridad.
+
+Pulse cancelar o cerrar para continuar.""").format(error[0])
+					wx.CallAfter(self.frame.onError, msg, ["copiaseguridad"])
+			else:
+				if self.ficheroNVDA:
+					msg = \
+_("""Se produjeron los siguientes errores:
+
+{}
+
+No se pudo restaurar toda la copia de seguridad.
+
+Pero hay elementos que si pudieron ser restaurados.
+
+Al restaurar la configuración de NVDA es necesario reiniciar el lector.
+
+Pulse cancelar o cerrar para reiniciar.""").format("\n".join(error))
+					wx.CallAfter(self.frame.onError, msg, ["reiniciar"])
+				else:
+					msg = \
+_("""Se produjeron los siguientes errores:
+
+{}
+
+No se pudo restaurar la copia de seguridad.
+
+Pulse cancelar o cerrar para continuar.""").format("\n".join(error))
+					wx.CallAfter(self.frame.onError, msg, ["copiaseguridad"])

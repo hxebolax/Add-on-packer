@@ -3,20 +3,26 @@
 # This file is covered by the GNU General Public License.
 
 import addonHandler
+import globalVars
+import config
 import gui
 from gui.nvdaControls import CustomCheckListBox
 import core
 import winsound
 import wx
+import string
 import os
+import json
 from . import utilidades
 from . import ajustes
 
 addonHandler.initTranslation()
 
 class VentanaPrincipal(wx.Dialog):
-	def __init__(self, parent):
+	def __init__(self, parent, frame):
 		super(VentanaPrincipal, self).__init__(parent, -1)
+
+		self.frame = frame
 
 		ajustes.IS_WinON = True
 		self.SetSize((1000, 800))
@@ -25,7 +31,7 @@ class VentanaPrincipal(wx.Dialog):
 		self.listAddons = list(addonHandler.getAvailableAddons())
 		self.IS_Active = False
 		self.reinicio = False
-		self.listaTemporalInstalador = None
+		self.listaTemporalInstalador = []
 		self.listaComplementosHabilitados = []
 		self.listaComplementosdeshabilitados = []
 		self.dirDocumentacion = []
@@ -167,6 +173,26 @@ class VentanaPrincipal(wx.Dialog):
 		self.procesoManifiestoBTN = wx.Button(self.panel_manifiestos, 111, _("&Procesar"))
 		sizerManifiestosBotones.Add(self.procesoManifiestoBTN, 2, wx.CENTRE, 0)
 #####
+		self.panel_Copia = wx.Panel(self.lista, wx.ID_ANY)
+		self.lista.AddPage(self.panel_Copia, _("Hacer / restaurar copias de seguridad"))
+
+		sizerCopia = wx.BoxSizer(wx.VERTICAL)
+
+		label_12 = wx.StaticText(self.panel_Copia, wx.ID_ANY, _("&Hacer copias de seguridad:"))
+		sizerCopia.Add(label_12, 0, wx.EXPAND, 0)
+
+		self.listbox_hacercopia = CustomCheckListBox(self.panel_Copia, wx.ID_ANY)
+		sizerCopia.Add(self.listbox_hacercopia, 2, wx.EXPAND, 0)
+
+		sizerCopiaBotones = wx.BoxSizer(wx.HORIZONTAL)
+		sizerCopia.Add(sizerCopiaBotones, 0, wx.EXPAND, 0)
+
+		self.hacerCopiaBTN = wx.Button(self.panel_Copia, 113, _("&Crear copia de seguridad"))
+		sizerCopiaBotones.Add(self.hacerCopiaBTN, 2, wx.CENTRE, 0)
+
+		self.restauraCopiaBTN = wx.Button(self.panel_Copia, 114, _(u"&Restaurar copia de seguridad"))
+		sizerCopiaBotones.Add(self.restauraCopiaBTN, 2, wx.CENTRE, 0)
+#####
 		self.panel_documentacion = wx.Panel(self.lista, wx.ID_ANY)
 		self.lista.AddPage(self.panel_documentacion, _(u"Documentación de complementos"))
 
@@ -206,6 +232,8 @@ class VentanaPrincipal(wx.Dialog):
 		sizer_Estado_Botones.Add(self.cerrarBTN, 0, 2, wx.CENTRE, 0)
 
 		self.panel_documentacion.SetSizer(sizerDocumentacion)
+
+		self.panel_Copia.SetSizer(sizerCopia)
 
 		self.panel_manifiestos.SetSizer(sizerManifiestos)
 
@@ -281,6 +309,30 @@ class VentanaPrincipal(wx.Dialog):
 		self.choiceMenor.SetSelection(0)
 		self.choiceRevision.Append(ajustes.revision)
 		self.choiceRevision.SetSelection(0)
+		# Copia de seguridad inicio
+		if os.path.isdir(ajustes.dirDiccionario):
+			if os.listdir(ajustes.dirDiccionario):
+				self.listbox_hacercopia.Append(_("Directorio Diccionarios"))
+				ajustes.listaTempBackupID.append(0)
+		if os.path.isdir(ajustes.dirProfile):
+			if os.listdir(ajustes.dirProfile):
+				self.listbox_hacercopia.Append(_("Directorio Perfiles"))
+				ajustes.listaTempBackupID.append(1)
+		if os.path.isdir(ajustes.dirScratchpad):
+			if os.listdir(ajustes.dirScratchpad):
+				self.listbox_hacercopia.Append(_("Directorio Scratchpad"))
+				ajustes.listaTempBackupID.append(2)
+
+		if os.path.isfile(ajustes.fileDisparadorPerfil):
+			self.listbox_hacercopia.Append(_("Fichero configuración disparadores de perfiles"))
+			ajustes.listaTempBackupID.append(3)
+		if os.path.isfile(ajustes.fileGestos):
+			self.listbox_hacercopia.Append(_("Fichero de configuración gestos de entrada"))
+			ajustes.listaTempBackupID.append(4)
+		if os.path.isfile(ajustes.fileNVDA):
+			self.listbox_hacercopia.Append(_("Fichero de configuración de NVDA"))
+			ajustes.listaTempBackupID.append(5)
+		self.listbox_hacercopia.SetSelection(0)
 
 	def onPasar(self, event):
 		return
@@ -448,6 +500,61 @@ class VentanaPrincipal(wx.Dialog):
 		elif id == 112: # boton ver documentación
 			wx.LaunchDefaultBrowser('file://' + self.dirDocumentacion[self.listbox_documentacion.GetSelection()], flags=0)
 
+		elif id == 113: # Botón crear copia seguridad
+			self.seleccionCopia = [i for i in range(self.listbox_hacercopia.GetCount()) if self.listbox_hacercopia.IsChecked(i)]
+			if len(self.seleccionCopia) == 0:
+				gui.messageBox(_("Necesita elegir al menos un elemento de copia de seguridad de la lista para continuar."), _("Error"), wx.ICON_ERROR)
+				self.listbox_hacercopia.SetFocus()
+			else:
+				dict_comentario = {}
+				for i in self.seleccionCopia:
+					dict_comentario[ajustes.listaTempBackupID.index(i)] = utilidades.id_generator(15, string.ascii_uppercase + string.ascii_lowercase + string.digits)
+				wildcard = _("Archivo de copia de seguridad de NVDA (*.nvda-backup)|*.nvda-backup")
+				dlg = wx.FileDialog(None, message=_("Guardar la copia de seguridad en..."), defaultDir=os.getcwd(), defaultFile="", wildcard=wildcard, style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
+				if dlg.ShowModal() == wx.ID_OK:
+					ficheroCopia = dlg.GetPath()
+					dlg.Destroy()
+					self.IS_Active = True
+					self.progreso.SetRange(len(self.seleccionCopia))
+					self.lista.Disable()
+					self.cerrarBTN.Disable()
+					self.textEstado.Enable()
+					self.textEstado.SetFocus()
+					utilidades.crearBackup(self, ficheroCopia, dict_comentario)
+				else:
+					dlg.Destroy()
+					self.listbox_hacercopia.SetFocus()
+		elif id == 114: # Botón restaurar copia de seguridad
+			wildcard = _("Archivo de copia de seguridad de NVDA (*.nvda-backup)|*.nvda-backup")
+			dlg = wx.FileDialog(None, message=_("Seleccione un archivo de copia de seguridad de NVDA"), defaultDir=os.getcwd(), defaultFile="", wildcard=wildcard, style=wx.FD_OPEN | wx.FD_CHANGE_DIR | wx.FD_FILE_MUST_EXIST | wx.FD_PREVIEW)
+			if dlg.ShowModal() == wx.ID_OK:
+				fichero = dlg.GetPath()
+				dlg.Destroy()
+				dlg = RestauraBackupDLG(fichero)
+				result = dlg.ShowModal()
+				if result == 0: # Restaurar
+					dlg.Destroy()
+					ficheroCopia = dlg.ficheroCopia
+					diccionario = dlg.diccionario
+					seleccion = dlg.seleccionCopia
+					diccionarioFinal = {}
+					for i in seleccion:
+						diccionarioFinal[i] = diccionario.get(str(i))
+					self.IS_Active = True
+					self.progreso.SetRange(len(seleccion))
+					self.lista.Disable()
+					self.cerrarBTN.Disable()
+					self.textEstado.Enable()
+					self.textEstado.SetFocus()
+					utilidades.RestaurarBackup(self, ficheroCopia, diccionarioFinal)
+
+				else:  # Cancelar
+					dlg.Destroy()
+					self.listbox_hacercopia.SetFocus()
+			else:
+				dlg.Destroy()
+				self.listbox_hacercopia.SetFocus()
+
 		elif id== 197: # Botón aceptar general.
 			if self.reinicio:
 				core.restart()
@@ -466,6 +573,39 @@ class VentanaPrincipal(wx.Dialog):
 						self.listbox_Instalador.Append("{} {}".format(self.listaTemporalInstalador[1][i], self.listaTemporalInstalador[2][i]))
 					self.listbox_Instalador.SetSelection(0)
 					self.listbox_Instalador.SetFocus()
+				elif self.listaTemporalInstalador[-1] == "copiaseguridad":
+					self.listbox_hacercopia.Clear()
+					if os.path.isdir(ajustes.dirDiccionario):
+						if os.listdir(ajustes.dirDiccionario):
+							self.listbox_hacercopia.Append(_("Directorio Diccionarios"))
+							ajustes.listaTempBackupID.append(0)
+					if os.path.isdir(ajustes.dirProfile):
+						if os.listdir(ajustes.dirProfile):
+							self.listbox_hacercopia.Append(_("Directorio Perfiles"))
+							ajustes.listaTempBackupID.append(1)
+					if os.path.isdir(ajustes.dirScratchpad):
+						if os.listdir(ajustes.dirScratchpad):
+							self.listbox_hacercopia.Append(_("Directorio Scratchpad"))
+							ajustes.listaTempBackupID.append(2)
+
+					if os.path.isfile(ajustes.fileDisparadorPerfil):
+						self.listbox_hacercopia.Append(_("Fichero configuración disparadores de perfiles"))
+						ajustes.listaTempBackupID.append(3)
+					if os.path.isfile(ajustes.fileGestos):
+						self.listbox_hacercopia.Append(_("Fichero de configuración gestos de entrada"))
+						ajustes.listaTempBackupID.append(4)
+					if os.path.isfile(ajustes.fileNVDA):
+						self.listbox_hacercopia.Append(_("Fichero de configuración de NVDA"))
+						ajustes.listaTempBackupID.append(5)
+					self.listbox_hacercopia.SetSelection(0)
+					self.listbox_hacercopia.SetFocus()
+				elif self.listaTemporalInstalador[-1] == "reiniciar":
+					try:
+						config.conf.profiles[0]["general"]["saveConfigurationOnExit"] = False
+					except:
+						config.conf["general"]["saveConfigurationOnExit"] = False
+					core.restart()
+
 		elif id == 198: # Botón cancelar general.
 			if self.reinicio:
 				pass
@@ -477,8 +617,52 @@ class VentanaPrincipal(wx.Dialog):
 					return
 				elif self.listaTemporalInstalador[-1] == "instalador":
 					self.directorioInstaladorBTN.SetFocus()
+				elif self.listaTemporalInstalador[-1] == "copiaseguridad":
+					self.listbox_hacercopia.Clear()
+					if os.path.isdir(ajustes.dirDiccionario):
+						if os.listdir(ajustes.dirDiccionario):
+							self.listbox_hacercopia.Append(_("Directorio Diccionarios"))
+							ajustes.listaTempBackupID.append(0)
+					if os.path.isdir(ajustes.dirProfile):
+						if os.listdir(ajustes.dirProfile):
+							self.listbox_hacercopia.Append(_("Directorio Perfiles"))
+							ajustes.listaTempBackupID.append(1)
+					if os.path.isdir(ajustes.dirScratchpad):
+						if os.listdir(ajustes.dirScratchpad):
+							self.listbox_hacercopia.Append(_("Directorio Scratchpad"))
+							ajustes.listaTempBackupID.append(2)
+
+					if os.path.isfile(ajustes.fileDisparadorPerfil):
+						self.listbox_hacercopia.Append(_("Fichero configuración disparadores de perfiles"))
+						ajustes.listaTempBackupID.append(3)
+					if os.path.isfile(ajustes.fileGestos):
+						self.listbox_hacercopia.Append(_("Fichero de configuración gestos de entrada"))
+						ajustes.listaTempBackupID.append(4)
+					if os.path.isfile(ajustes.fileNVDA):
+						self.listbox_hacercopia.Append(_("Fichero de configuración de NVDA"))
+						ajustes.listaTempBackupID.append(5)
+					self.listbox_hacercopia.SetSelection(0)
+					self.listbox_hacercopia.SetFocus()
+
+				elif self.listaTemporalInstalador[-1] == "reiniciar":
+					try:
+						config.conf.profiles[0]["general"]["saveConfigurationOnExit"] = False
+					except:
+						config.conf["general"]["saveConfigurationOnExit"] = False
+					core.restart()
+
 		elif id == 199: # Botón cerrar general.
-			self.onSalir(None)
+			try:
+				if self.listaTemporalInstalador[-1] == "reiniciar":
+					try:
+						config.conf.profiles[0]["general"]["saveConfigurationOnExit"] = False
+					except:
+						config.conf["general"]["saveConfigurationOnExit"] = False
+					core.restart()
+				else:
+					self.onSalir(None)
+			except:
+				self.onSalir(None)
 
 	def onSeleccion(self, event):
 		id = event.GetId()
@@ -593,11 +777,30 @@ class VentanaPrincipal(wx.Dialog):
 
 	def onkeyVentanaDialogo(self, event):
 		if event.GetKeyCode() == 27: # Pulsamos ESC y cerramos la ventana
-			self.onSalir(None)
+			try:
+				if self.listaTemporalInstalador[-1] == "reiniciar":
+					try:
+						config.conf.profiles[0]["general"]["saveConfigurationOnExit"] = False
+					except:
+						config.conf["general"]["saveConfigurationOnExit"] = False
+					core.restart()
+				else:
+					self.onSalir(None)
+			except:
+				self.onSalir(None)
 		else:
 			event.Skip()
 
 	def onSalir(self, event):
+		try:
+			if self.listaTemporalInstalador[-1] == "reiniciar":
+				try:
+					config.conf.profiles[0]["general"]["saveConfigurationOnExit"] = False
+				except:
+					config.conf["general"]["saveConfigurationOnExit"] = False
+				core.restart()
+		except:
+			pass
 		if self.IS_Active:
 			return
 		else:
@@ -606,3 +809,82 @@ class VentanaPrincipal(wx.Dialog):
 			ajustes.IS_WinON = False
 			self.Destroy()
 			gui.mainFrame.postPopup()
+
+class RestauraBackupDLG(wx.Dialog):
+	def __init__(self, fichero):
+		super(RestauraBackupDLG, self).__init__(None, -1)
+
+		self.ficheroCopia = fichero
+		self.diccionario = None
+		self.seleccionCopia = []
+
+		self.SetSize((640, 480))
+		self.SetTitle(_("Restaurar copia de seguridad de NVDA"))
+
+		self.panel_principal = wx.Panel(self, wx.ID_ANY)
+
+		sizer_principal = wx.BoxSizer(wx.VERTICAL)
+
+		label_1 = wx.StaticText(self.panel_principal, wx.ID_ANY, _("&Contenido de la copia de seguridad:"))
+		sizer_principal.Add(label_1, 0, wx.EXPAND, 0)
+
+		self.listbox_RestauraCopia = CustomCheckListBox(self.panel_principal, wx.ID_ANY)
+		sizer_principal.Add(self.listbox_RestauraCopia, 1, wx.EXPAND, 0)
+
+		sizer_botones = wx.BoxSizer(wx.HORIZONTAL)
+		sizer_principal.Add(sizer_botones, 0, wx.EXPAND, 0)
+
+		self.restaurarBTN = wx.Button(self.panel_principal, wx.ID_ANY, _("&Restaurar"))
+		sizer_botones.Add(self.restaurarBTN, 2, wx.EXPAND, 0)
+
+		self.CerrarBTN = wx.Button(self.panel_principal, wx.ID_ANY, _("&Cerrar"))
+		sizer_botones.Add(self.CerrarBTN, 2, wx.EXPAND, 0)
+
+		self.panel_principal.SetSizer(sizer_principal)
+
+		self.Layout()
+		self.Centre()
+		self.cargaEventos()
+		self.inicio()
+
+	def cargaEventos(self):
+		self.restaurarBTN.Bind(wx.EVT_BUTTON,self.onRestaurar)
+		self.CerrarBTN.Bind(wx.EVT_BUTTON, self.onCerrar)
+		self.Bind(wx.EVT_CLOSE, self.onCerrar)
+		self.Bind(wx.EVT_CHAR_HOOK, self.on_keyVentanaDialogo)
+
+	def inicio(self):
+		self.diccionario = json.loads(utilidades.leerComentario(self.ficheroCopia))
+		for i in self.diccionario:
+			id = int(i)
+			if id == 0:
+				self.listbox_RestauraCopia.Append(_("Directorio Diccionarios"))
+			if id == 1:
+				self.listbox_RestauraCopia.Append(_("Directorio Perfiles"))
+			if id == 2:
+				self.listbox_RestauraCopia.Append(_("Directorio Scratchpad"))
+			if id == 3:
+				self.listbox_RestauraCopia.Append(_("Fichero configuración disparadores de perfiles"))
+			if id == 4:
+				self.listbox_RestauraCopia.Append(_("Fichero de configuración gestos de entrada"))
+			if id == 5:
+				self.listbox_RestauraCopia.Append(_("Fichero de configuración de NVDA"))
+		self.listbox_RestauraCopia.SetSelection(0)
+		self.listbox_RestauraCopia.SetFocus()
+
+	def onRestaurar(self, event):
+		self.seleccionCopia = [i for i in range(self.listbox_RestauraCopia.GetCount()) if self.listbox_RestauraCopia.IsChecked(i)]
+		if len(self.seleccionCopia) == 0:
+			gui.messageBox(_("Necesita elegir al menos un elemento de copia de seguridad de la lista para continuar."), _("Error"), wx.ICON_ERROR)
+			self.listbox_RestauraCopia.SetFocus()
+		else:
+			self.EndModal(0)
+
+	def on_keyVentanaDialogo(self, event):
+		if event.GetKeyCode() == 27: # Pulsamos ESC y cerramos la ventana
+			self.EndModal(1)
+		else:
+			event.Skip()
+
+	def onCerrar(self, event):
+		self.EndModal(1)
