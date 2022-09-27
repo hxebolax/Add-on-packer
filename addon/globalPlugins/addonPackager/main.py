@@ -508,7 +508,7 @@ class VentanaPrincipal(wx.Dialog):
 			else:
 				dict_comentario = {}
 				for i in self.seleccionCopia:
-					dict_comentario[ajustes.listaTempBackupID.index(i)] = utilidades.id_generator(15, string.ascii_uppercase + string.ascii_lowercase + string.digits)
+					dict_comentario[ajustes.listaTempBackupID[i]] = utilidades.id_generator(15, string.ascii_uppercase + string.ascii_lowercase + string.digits)
 				wildcard = _("Archivo de copia de seguridad de NVDA (*.nvda-backup)|*.nvda-backup")
 				dlg = wx.FileDialog(None, message=_("Guardar la copia de seguridad en..."), defaultDir=os.getcwd(), defaultFile="", wildcard=wildcard, style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
 				if dlg.ShowModal() == wx.ID_OK:
@@ -538,8 +538,9 @@ class VentanaPrincipal(wx.Dialog):
 					diccionario = dlg.diccionario
 					seleccion = dlg.seleccionCopia
 					diccionarioFinal = {}
+					temp = [int(i) for i in diccionario.keys()]
 					for i in seleccion:
-						diccionarioFinal[i] = diccionario.get(str(i))
+						diccionarioFinal[temp[i]] = diccionario.get(str(temp[i]))
 					self.IS_Active = True
 					self.progreso.SetRange(len(seleccion))
 					self.lista.Disable()

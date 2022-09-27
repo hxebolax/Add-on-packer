@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'EklentiPaketleyici' '1.0'\n"
+"Project-Id-Version: 'EklentiPaketleyici' '1.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2022-06-09 15:57+0200\n"
-"PO-Revision-Date: 2022-06-10 02:03+0300\n"
+"POT-Creation-Date: 2022-09-26 19:10+0200\n"
+"PO-Revision-Date: 2022-09-26 22:39+0300\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language: tr_TR\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:66
-#: addon\globalPlugins\addonPackager\main.py:23
+#: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:67
+#: addon\globalPlugins\addonPackager\main.py:29
 msgid "Utilidades para los complementos de NVDA"
 msgstr "NVDA Eklentileri için Yardımcı Araçlar"
 
@@ -54,11 +54,11 @@ msgstr ""
 "Tüm alanların kullanımı kolaydır ve NVDA'nın yerel eklenti yöneticisine "
 "kıyasla zamandan tasarruf sağlar."
 
-#: addon\globalPlugins\addonPackager\__init__.py:34
+#: addon\globalPlugins\addonPackager\__init__.py:35
 msgid "&Utilidades para los complementos de NVDA"
 msgstr "NVDA Eklentileri için Yard&ımcı Araçlar"
 
-#: addon\globalPlugins\addonPackager\__init__.py:51
+#: addon\globalPlugins\addonPackager\__init__.py:52
 msgid ""
 "Hay una acción pendiente de reiniciar NVDA.\n"
 "\n"
@@ -74,208 +74,307 @@ msgstr ""
 "\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\__init__.py:56
+#: addon\globalPlugins\addonPackager\__init__.py:57
 msgid "Pregunta"
 msgstr "Sor"
 
-#: addon\globalPlugins\addonPackager\__init__.py:66
+#: addon\globalPlugins\addonPackager\__init__.py:67
 msgid "Muestra la ventana de Utilidades para los complementos de NVDA"
 msgstr "NVDA eklentileri için Yardımcı Araçlar penceresini gösterir"
 
-#: addon\globalPlugins\addonPackager\__init__.py:76
-#: addon\globalPlugins\addonPackager\__init__.py:78
+#: addon\globalPlugins\addonPackager\__init__.py:77
+#: addon\globalPlugins\addonPackager\__init__.py:79
 msgid ""
 "Ya hay una instancia de Utilidades para los complementos de NVDA abierta."
 msgstr "Zaten Açık bir pencere var."
 
-#: addon\globalPlugins\addonPackager\__init__.py:76
-#: addon\globalPlugins\addonPackager\main.py:354
+#: addon\globalPlugins\addonPackager\__init__.py:77
+#: addon\globalPlugins\addonPackager\main.py:406
 msgid "Información"
 msgstr "Bilgi"
 
-#: addon\globalPlugins\addonPackager\main.py:41
+#: addon\globalPlugins\addonPackager\main.py:47
 msgid "Empaquetador de complementos"
 msgstr "Eklenti Paketleyici"
 
-#: addon\globalPlugins\addonPackager\main.py:45
-#: addon\globalPlugins\addonPackager\main.py:68
-#: addon\globalPlugins\addonPackager\main.py:88
-#: addon\globalPlugins\addonPackager\main.py:175
+#: addon\globalPlugins\addonPackager\main.py:51
+#: addon\globalPlugins\addonPackager\main.py:74
+#: addon\globalPlugins\addonPackager\main.py:94
+#: addon\globalPlugins\addonPackager\main.py:201
 msgid "&Lista de complementos:"
 msgstr "Ek&lenti Listesi:"
 
-#: addon\globalPlugins\addonPackager\main.py:54
-#: addon\globalPlugins\addonPackager\main.py:77
-#: addon\globalPlugins\addonPackager\main.py:97
-#: addon\globalPlugins\addonPackager\main.py:123
-#: addon\globalPlugins\addonPackager\main.py:164
+#: addon\globalPlugins\addonPackager\main.py:60
+#: addon\globalPlugins\addonPackager\main.py:83
+#: addon\globalPlugins\addonPackager\main.py:103
+#: addon\globalPlugins\addonPackager\main.py:129
+#: addon\globalPlugins\addonPackager\main.py:170
 msgid "&Selección"
 msgstr "&seç"
 
-#: addon\globalPlugins\addonPackager\main.py:57
+#: addon\globalPlugins\addonPackager\main.py:63
 msgid "&Generar"
 msgstr "&Oluştur"
 
-#: addon\globalPlugins\addonPackager\main.py:61
+#: addon\globalPlugins\addonPackager\main.py:67
 msgid "Instalador múltiple"
 msgstr "Çoklu yükleyici"
 
-#: addon\globalPlugins\addonPackager\main.py:65
+#: addon\globalPlugins\addonPackager\main.py:71
 msgid "&Seleccione un directorio con complementos a instalar..."
 msgstr "Yüklemek istediğiniz eklentilerin bulunduğu bir dizin &Sseçin..."
 
-#: addon\globalPlugins\addonPackager\main.py:80
+#: addon\globalPlugins\addonPackager\main.py:86
 msgid "&Instalar"
 msgstr "Y&ükle"
 
-#: addon\globalPlugins\addonPackager\main.py:84
+#: addon\globalPlugins\addonPackager\main.py:90
 msgid "Desinstala complementos"
 msgstr "Eklentileri kaldır"
 
-#: addon\globalPlugins\addonPackager\main.py:100
+#: addon\globalPlugins\addonPackager\main.py:106
 msgid "&Desinstalar"
 msgstr "kaldı&r"
 
-#: addon\globalPlugins\addonPackager\main.py:104
+#: addon\globalPlugins\addonPackager\main.py:110
 msgid "Habilita / deshabilita complementos"
 msgstr "Eklentileri etkinleştir/devre dışı bırak"
 
-#: addon\globalPlugins\addonPackager\main.py:108
+#: addon\globalPlugins\addonPackager\main.py:114
 msgid "&Lista de complementos habilitados:"
 msgstr "Etkin ek&lentilerin listesi:"
 
-#: addon\globalPlugins\addonPackager\main.py:114
+#: addon\globalPlugins\addonPackager\main.py:120
 msgid "&Lista de complementos deshabilitados:"
 msgstr "Devre dışı bırakılan eklentilerin &listesi:"
 
-#: addon\globalPlugins\addonPackager\main.py:126
-#: addon\globalPlugins\addonPackager\main.py:167
+#: addon\globalPlugins\addonPackager\main.py:132
+#: addon\globalPlugins\addonPackager\main.py:173
 msgid "&Procesar"
 msgstr "&Uygula"
 
-#: addon\globalPlugins\addonPackager\main.py:130
+#: addon\globalPlugins\addonPackager\main.py:136
 msgid "Modificador de manifiestos"
 msgstr "Manifest Değiştirici"
 
-#: addon\globalPlugins\addonPackager\main.py:134
+#: addon\globalPlugins\addonPackager\main.py:140
 msgid "&Lista de complementos instalados:"
 msgstr "Yüklü ek&lentilerin listesi:"
 
-#: addon\globalPlugins\addonPackager\main.py:143
+#: addon\globalPlugins\addonPackager\main.py:149
 msgid "Seleccione versión Mayor:"
 msgstr "Ana sürümü seç:"
 
-#: addon\globalPlugins\addonPackager\main.py:149
+#: addon\globalPlugins\addonPackager\main.py:155
 msgid "Seleccione versión Menor:"
 msgstr "Ara sürümü seç:"
 
-#: addon\globalPlugins\addonPackager\main.py:155
+#: addon\globalPlugins\addonPackager\main.py:161
 msgid "Seleccione una revisión:"
 msgstr "Düzeltme sürümünü seç:"
 
-#: addon\globalPlugins\addonPackager\main.py:171
+#: addon\globalPlugins\addonPackager\main.py:177
+msgid "Hacer / restaurar copias de seguridad"
+msgstr "Yedekleme yap / Yedeği geri yükle"
+
+#: addon\globalPlugins\addonPackager\main.py:181
+msgid "&Hacer copias de seguridad:"
+msgstr "&Yedekleme yapın:"
+
+#: addon\globalPlugins\addonPackager\main.py:190
+msgid "&Crear copia de seguridad"
+msgstr "Yedek &Oluştur"
+
+#: addon\globalPlugins\addonPackager\main.py:193
+msgid "&Restaurar copia de seguridad"
+msgstr "Yedeği ge&ri yükle"
+
+#: addon\globalPlugins\addonPackager\main.py:197
 msgid "Documentación de complementos"
 msgstr "Eklenti Belgeleri"
 
-#: addon\globalPlugins\addonPackager\main.py:181
+#: addon\globalPlugins\addonPackager\main.py:207
 msgid "&Abrir documentación del complemento"
 msgstr "Eklenti belgesini &aç"
 
-#: addon\globalPlugins\addonPackager\main.py:187
+#: addon\globalPlugins\addonPackager\main.py:213
 msgid "&Estado:"
 msgstr "d&urum:"
 
-#: addon\globalPlugins\addonPackager\main.py:199
+#: addon\globalPlugins\addonPackager\main.py:225
 msgid "&Aceptar"
 msgstr "Ka&bul Et"
 
-#: addon\globalPlugins\addonPackager\main.py:202
+#: addon\globalPlugins\addonPackager\main.py:228
 msgid "&Cancelar"
 msgstr "İ&ptal"
 
-#: addon\globalPlugins\addonPackager\main.py:205
+#: addon\globalPlugins\addonPackager\main.py:231
 msgid "Cerrar"
 msgstr "Kapat"
 
-#: addon\globalPlugins\addonPackager\main.py:324
-#: addon\globalPlugins\addonPackager\main.py:369
-#: addon\globalPlugins\addonPackager\main.py:388
-#: addon\globalPlugins\addonPackager\main.py:408
-#: addon\globalPlugins\addonPackager\main.py:412
-#: addon\globalPlugins\addonPackager\main.py:416
-#: addon\globalPlugins\addonPackager\main.py:438
+#: addon\globalPlugins\addonPackager\main.py:315
+#: addon\globalPlugins\addonPackager\main.py:580
+#: addon\globalPlugins\addonPackager\main.py:624
+#: addon\globalPlugins\addonPackager\main.py:861
+msgid "Directorio Diccionarios"
+msgstr "Sözlükler dizini"
+
+#: addon\globalPlugins\addonPackager\main.py:319
+#: addon\globalPlugins\addonPackager\main.py:584
+#: addon\globalPlugins\addonPackager\main.py:628
+#: addon\globalPlugins\addonPackager\main.py:863
+msgid "Directorio Perfiles"
+msgstr "Profiller Dizini"
+
+#: addon\globalPlugins\addonPackager\main.py:323
+#: addon\globalPlugins\addonPackager\main.py:588
+#: addon\globalPlugins\addonPackager\main.py:632
+#: addon\globalPlugins\addonPackager\main.py:865
+msgid "Directorio Scratchpad"
+msgstr "Not Defteri Dizini"
+
+#: addon\globalPlugins\addonPackager\main.py:327
+#: addon\globalPlugins\addonPackager\main.py:592
+#: addon\globalPlugins\addonPackager\main.py:636
+#: addon\globalPlugins\addonPackager\main.py:867
+msgid "Fichero configuración disparadores de perfiles"
+msgstr "Profil tetikleyici yapılandırma dosyası"
+
+#: addon\globalPlugins\addonPackager\main.py:330
+#: addon\globalPlugins\addonPackager\main.py:595
+#: addon\globalPlugins\addonPackager\main.py:639
+#: addon\globalPlugins\addonPackager\main.py:869
+msgid "Fichero de configuración gestos de entrada"
+msgstr "Girdi hareketleri yapılandırma dosyası"
+
+#: addon\globalPlugins\addonPackager\main.py:333
+#: addon\globalPlugins\addonPackager\main.py:598
+#: addon\globalPlugins\addonPackager\main.py:642
+#: addon\globalPlugins\addonPackager\main.py:871
+msgid "Fichero de configuración de NVDA"
+msgstr "NVDA yapılandırma dosyası"
+
+#: addon\globalPlugins\addonPackager\main.py:376
+#: addon\globalPlugins\addonPackager\main.py:421
+#: addon\globalPlugins\addonPackager\main.py:440
+#: addon\globalPlugins\addonPackager\main.py:460
+#: addon\globalPlugins\addonPackager\main.py:464
+#: addon\globalPlugins\addonPackager\main.py:468
+#: addon\globalPlugins\addonPackager\main.py:490
 msgid "&Seleccionar todo"
 msgstr "&Tümünü Seç"
 
-#: addon\globalPlugins\addonPackager\main.py:325
-#: addon\globalPlugins\addonPackager\main.py:370
-#: addon\globalPlugins\addonPackager\main.py:389
-#: addon\globalPlugins\addonPackager\main.py:409
-#: addon\globalPlugins\addonPackager\main.py:413
-#: addon\globalPlugins\addonPackager\main.py:417
-#: addon\globalPlugins\addonPackager\main.py:439
+#: addon\globalPlugins\addonPackager\main.py:377
+#: addon\globalPlugins\addonPackager\main.py:422
+#: addon\globalPlugins\addonPackager\main.py:441
+#: addon\globalPlugins\addonPackager\main.py:461
+#: addon\globalPlugins\addonPackager\main.py:465
+#: addon\globalPlugins\addonPackager\main.py:469
+#: addon\globalPlugins\addonPackager\main.py:491
 msgid "&Deseleccionar todo"
 msgstr "Se&çimi temizle"
 
-#: addon\globalPlugins\addonPackager\main.py:331
+#: addon\globalPlugins\addonPackager\main.py:383
 msgid "Tiene que seleccionar un complemento para continuar."
 msgstr "Devam edebilmek için bir eklenti seçmelisiniz."
 
-#: addon\globalPlugins\addonPackager\main.py:331
-#: addon\globalPlugins\addonPackager\main.py:376
-#: addon\globalPlugins\addonPackager\main.py:395
-#: addon\globalPlugins\addonPackager\main.py:426
-#: addon\globalPlugins\addonPackager\main.py:562
+#: addon\globalPlugins\addonPackager\main.py:383
+#: addon\globalPlugins\addonPackager\main.py:428
+#: addon\globalPlugins\addonPackager\main.py:447
+#: addon\globalPlugins\addonPackager\main.py:478
+#: addon\globalPlugins\addonPackager\main.py:506
+#: addon\globalPlugins\addonPackager\main.py:746
+#: addon\globalPlugins\addonPackager\main.py:878
 msgid "Error"
 msgstr "Hata"
 
 #. Botón selecciona directorio con complementos instalador.
-#: addon\globalPlugins\addonPackager\main.py:334
-#: addon\globalPlugins\addonPackager\main.py:348
+#: addon\globalPlugins\addonPackager\main.py:386
+#: addon\globalPlugins\addonPackager\main.py:400
 msgid "Seleccione un directorio:"
 msgstr "Bir dizin seç:"
 
-#: addon\globalPlugins\addonPackager\main.py:354
+#: addon\globalPlugins\addonPackager\main.py:406
 msgid "No se encontraron complementos en el directorio que selecciono."
 msgstr "Seçtiğiniz dizinde eklenti bulunamadı."
 
-#: addon\globalPlugins\addonPackager\main.py:376
-#: addon\globalPlugins\addonPackager\main.py:395
-#: addon\globalPlugins\addonPackager\main.py:426
-#: addon\globalPlugins\addonPackager\main.py:562
+#: addon\globalPlugins\addonPackager\main.py:428
+#: addon\globalPlugins\addonPackager\main.py:447
+#: addon\globalPlugins\addonPackager\main.py:478
+#: addon\globalPlugins\addonPackager\main.py:746
 msgid "Necesita elegir al menos un complemento para continuar."
 msgstr "Devam edebilmek için en az bir eklenti seçmelisiniz."
 
-#: addon\globalPlugins\addonPackager\main.py:414
+#: addon\globalPlugins\addonPackager\main.py:466
 msgid "Complementos &habilitados"
 msgstr "&Etkin Olan Eklentiler"
 
-#: addon\globalPlugins\addonPackager\main.py:418
+#: addon\globalPlugins\addonPackager\main.py:470
 msgid "Complementos &deshabilitados"
 msgstr "&Devre dışı Olan Eklentiler"
 
-#: addon\globalPlugins\addonPackager\main.py:444
+#: addon\globalPlugins\addonPackager\main.py:496
 msgid "Procesar &instalados"
 msgstr "Dosyaya &Uygula"
 
-#: addon\globalPlugins\addonPackager\main.py:445
+#: addon\globalPlugins\addonPackager\main.py:497
 msgid "Procesar un archivo de &complemento"
 msgstr "&Eklenti Paketine uygula"
 
+#: addon\globalPlugins\addonPackager\main.py:506
+#: addon\globalPlugins\addonPackager\main.py:878
+#| msgid "Necesita elegir al menos un complemento para continuar."
+msgid ""
+"Necesita elegir al menos un elemento de copia de seguridad de la lista para "
+"continuar."
+msgstr "Devam etmek için listeden en az bir yedekleme öğesi seçmelisiniz."
+
+#. Botón restaurar copia de seguridad
+#: addon\globalPlugins\addonPackager\main.py:512
+#: addon\globalPlugins\addonPackager\main.py:528
+msgid "Archivo de copia de seguridad de NVDA (*.nvda-backup)|*.nvda-backup"
+msgstr "NVDA Yedekleme Dosyası (*.nvda-backup)|*.nvda-backup"
+
+#: addon\globalPlugins\addonPackager\main.py:513
+msgid "Guardar la copia de seguridad en..."
+msgstr "Yedeklemeyi şuraya kaydet..."
+
+#: addon\globalPlugins\addonPackager\main.py:529
+#| msgid "Seleccione un complemento de NVDA"
+msgid "Seleccione un archivo de copia de seguridad de NVDA"
+msgstr "Bir NVDA yedekleme dosyası seç"
+
 #. Manifiestos procesar fichero.
-#: addon\globalPlugins\addonPackager\main.py:576
+#: addon\globalPlugins\addonPackager\main.py:760
 msgid "Complemento de NVDA (*.nvda-addon)|*.nvda-addon"
 msgstr "NVDA Eklentisi (*.nvda-addon)|*.nvda-addon"
 
-#: addon\globalPlugins\addonPackager\main.py:577
+#: addon\globalPlugins\addonPackager\main.py:761
 msgid "Seleccione un complemento de NVDA"
 msgstr "Bir NVDA Eklentisi Seç"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:111
+#: addon\globalPlugins\addonPackager\main.py:822
+msgid "Restaurar copia de seguridad de NVDA"
+msgstr "NVDA Yedeğini Geri Yükle"
+
+#: addon\globalPlugins\addonPackager\main.py:828
+msgid "&Contenido de la copia de seguridad:"
+msgstr "Yedekleme i&çeriği:"
+
+#: addon\globalPlugins\addonPackager\main.py:837
+msgid "&Restaurar"
+msgstr "Ye&nile"
+
+#: addon\globalPlugins\addonPackager\main.py:840
+msgid "&Cerrar"
+msgstr "&Kapat"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:160
 msgid "Creando el complemento: {} {}"
 msgstr "Eklenti oluşturuluyor: {} {}"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:115
+#: addon\globalPlugins\addonPackager\utilidades.py:164
 msgid ""
 "Se generaron correctamente todos los complementos.\n"
 "\n"
@@ -285,12 +384,12 @@ msgstr ""
 "\n"
 "Devam etmek için kabul et'e basın."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:121
-#: addon\globalPlugins\addonPackager\utilidades.py:203
-#: addon\globalPlugins\addonPackager\utilidades.py:253
-#: addon\globalPlugins\addonPackager\utilidades.py:385
-#: addon\globalPlugins\addonPackager\utilidades.py:439
-#: addon\globalPlugins\addonPackager\utilidades.py:502
+#: addon\globalPlugins\addonPackager\utilidades.py:170
+#: addon\globalPlugins\addonPackager\utilidades.py:252
+#: addon\globalPlugins\addonPackager\utilidades.py:302
+#: addon\globalPlugins\addonPackager\utilidades.py:434
+#: addon\globalPlugins\addonPackager\utilidades.py:488
+#: addon\globalPlugins\addonPackager\utilidades.py:551
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -304,11 +403,11 @@ msgstr ""
 "\n"
 "Tekrar deneyin."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:144
+#: addon\globalPlugins\addonPackager\utilidades.py:193
 msgid "Instalando el complemento: {}"
 msgstr "Eklenti yükleniyor: {}"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:167
+#: addon\globalPlugins\addonPackager\utilidades.py:216
 msgid ""
 "Se completo la instalación correctamente.\n"
 "\n"
@@ -323,7 +422,7 @@ msgstr ""
 "\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:177
+#: addon\globalPlugins\addonPackager\utilidades.py:226
 msgid ""
 "No se pudo instalar el complemento.\n"
 "\n"
@@ -337,7 +436,7 @@ msgstr ""
 "\n"
 "Uyumlu bir eklenti arayın."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:188
+#: addon\globalPlugins\addonPackager\utilidades.py:237
 msgid ""
 "Se completo la instalación correctamente.\n"
 "\n"
@@ -363,7 +462,7 @@ msgstr ""
 "Kurulumu tamamlamak için NVDA'nın yeniden başlatılması gerekiyor.\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:212
+#: addon\globalPlugins\addonPackager\utilidades.py:261
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -383,11 +482,11 @@ msgstr ""
 "\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:237
+#: addon\globalPlugins\addonPackager\utilidades.py:286
 msgid "Desinstalando el complemento: {}"
 msgstr "Eklenti kaldırılıyor: {}"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:244
+#: addon\globalPlugins\addonPackager\utilidades.py:293
 msgid ""
 "Se completo la desinstalación correctamente.\n"
 "\n"
@@ -401,7 +500,7 @@ msgstr ""
 "\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:262
+#: addon\globalPlugins\addonPackager\utilidades.py:311
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -421,15 +520,15 @@ msgstr ""
 "\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:310
+#: addon\globalPlugins\addonPackager\utilidades.py:359
 msgid "Buscando complementos en {}..."
 msgstr "{} içinde eklentiler aranıyor..."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:314
+#: addon\globalPlugins\addonPackager\utilidades.py:363
 msgid "No hay complementos compatibles en el directorio."
 msgstr "Dizinde desteklenen eklenti yok."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:318
+#: addon\globalPlugins\addonPackager\utilidades.py:367
 msgid ""
 "Se completo con éxito la extracción de información de los complementos.\n"
 "\n"
@@ -460,7 +559,7 @@ msgstr ""
 "\n"
 "Devam etmek için kabul et'e basın."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:334
+#: addon\globalPlugins\addonPackager\utilidades.py:383
 msgid ""
 "Se completo con éxito la extracción de información de los complementos.\n"
 "\n"
@@ -470,15 +569,15 @@ msgstr ""
 "\n"
 "Devam etmek için kabul et'e basın."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:357
+#: addon\globalPlugins\addonPackager\utilidades.py:406
 msgid "Deshabilitando complementos..."
 msgstr "Eklentiler devre dışı bırakılıyor..."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:367
+#: addon\globalPlugins\addonPackager\utilidades.py:416
 msgid "Habilitando complementos..."
 msgstr "Eklentiler etkinleştiriliyor..."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:376
+#: addon\globalPlugins\addonPackager\utilidades.py:425
 msgid ""
 "Se completo el proceso de habilitar y deshabilitar correctamente.\n"
 "\n"
@@ -492,7 +591,7 @@ msgstr ""
 "\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:394
+#: addon\globalPlugins\addonPackager\utilidades.py:443
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -512,11 +611,11 @@ msgstr ""
 "\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:423
+#: addon\globalPlugins\addonPackager\utilidades.py:472
 msgid "Cambiando el manifiesto al complemento: {}"
 msgstr "Manifest dosysı değiştiriliyor: {}"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:430
+#: addon\globalPlugins\addonPackager\utilidades.py:479
 msgid ""
 "Se cambiaron los manifiestos correctamente.\n"
 "\n"
@@ -531,7 +630,7 @@ msgstr ""
 "\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:448
+#: addon\globalPlugins\addonPackager\utilidades.py:497
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -551,11 +650,11 @@ msgstr ""
 "\n"
 "NVDA'yı şimdi yeniden başlatmak istiyor musunuz?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:477
+#: addon\globalPlugins\addonPackager\utilidades.py:526
 msgid "Trabajando en el complemento: {}"
 msgstr "Eklenti üzerinde çalışılıyor: {}"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:492
+#: addon\globalPlugins\addonPackager\utilidades.py:541
 msgid ""
 "Se cambio correctamente el manifiesto.\n"
 "\n"
@@ -572,3 +671,285 @@ msgstr ""
 "{}\n"
 "\n"
 "Devam etmek için kabul et'e basın."
+
+#. Diccionario
+#: addon\globalPlugins\addonPackager\utilidades.py:579
+msgid "Añadiendo el directorio de diccionarios..."
+msgstr "Sözlükler dizini ekleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:585
+msgid ""
+"No se pudo agregar el directorio de diccionarios a la copia de seguridad."
+msgstr "Sözlükler dizini yedeklemeye eklenemedi."
+
+#. Perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:587
+msgid "Añadiendo el directorio de Perfiles..."
+msgstr "Profiller dizini ekleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:593
+msgid "No se pudo agregar el directorio de Perfiles a la copia de seguridad."
+msgstr "Profiller dizini yedeklemeye eklenemedi."
+
+#. Scratchpad
+#: addon\globalPlugins\addonPackager\utilidades.py:595
+msgid "Añadiendo el directorio de Scratchpad..."
+msgstr "Not defteri dizini ekleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:601
+msgid "No se pudo agregar el directorio de Scratchpad a la copia de seguridad."
+msgstr "Not defteri dizini yedeklemeye eklenemedi."
+
+#. Fichero configuración disparadores de perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:604
+msgid "Añadiendo el Fichero configuración disparadores de perfiles..."
+msgstr "Profil tetikleyici yapılandırma dosyası ekleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:611
+#: addon\globalPlugins\addonPackager\utilidades.py:613
+msgid ""
+"No se pudo agregar el Fichero configuración disparadores de perfiles a la "
+"copia de seguridad."
+msgstr "Profil tetikleyici yapılandırma dosyası yedeklemeye eklenemedi."
+
+#. Fichero de configuración gestos de entrada
+#: addon\globalPlugins\addonPackager\utilidades.py:616
+msgid "Añadiendo el Fichero de configuración gestos de entrada..."
+msgstr "Girdi hareketleri yapılandırma dosyası ekleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:623
+#: addon\globalPlugins\addonPackager\utilidades.py:625
+msgid ""
+"No se pudo agregar el Fichero de configuración gestos de entrada a la copia "
+"de seguridad."
+msgstr "Girdi hareketleri yapılandırma dosyası yedeklemeye eklenemedi."
+
+#. Fichero de configuración de NVDA
+#: addon\globalPlugins\addonPackager\utilidades.py:628
+msgid "Añadiendo el Fichero de configuración de NVDA..."
+msgstr "NVDA Yapılandırma Dosyası Ekleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:635
+#: addon\globalPlugins\addonPackager\utilidades.py:637
+msgid ""
+"No se pudo agregar el Fichero de configuración de NVDA a la copia de "
+"seguridad."
+msgstr "NVDA Yapılandırma Dosyası yedeklemeye eklenemedi."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:650
+#| msgid ""
+#| "Se generaron correctamente todos los complementos.\n"
+#| "\n"
+#| "Pulse aceptar para continuar."
+msgid ""
+"Se creo la copia de seguridad correctamente en:\n"
+"\n"
+"{}\n"
+"\n"
+"Pulse aceptar para continuar."
+msgstr ""
+"Yedekleme başarıyla oluşturuldu:\n"
+"\n"
+"{}\n"
+"\n"
+"Devam etmek için kabul et'e basın."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:663
+msgid ""
+"Se produjo el siguiente error:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo crear la copia de seguridad."
+msgstr ""
+"Aşağıdaki hata oluştu:\n"
+"\n"
+"{}\n"
+"\n"
+"Yedek oluşturulamadı."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:671
+msgid ""
+"Se produjeron los siguientes errores:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo crear la copia de seguridad."
+msgstr ""
+"Şu hatalar oluştu:\n"
+"\n"
+"{}\n"
+"\n"
+"Yedek oluşturulamadı."
+
+#. Diccionario
+#: addon\globalPlugins\addonPackager\utilidades.py:696
+msgid "Restaurando el directorio de diccionarios..."
+msgstr "Sözlükler dizini geri yükleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:705
+#: addon\globalPlugins\addonPackager\utilidades.py:707
+#| msgid "No se encontraron complementos en el directorio que selecciono."
+msgid "No se pudo restaurar el directorio de diccionarios."
+msgstr "Sözlükler dizini geri yüklenemedi."
+
+#. Perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:709
+msgid "Restaurando el directorio de Perfiles..."
+msgstr "Profiller dizini geri yükleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:718
+#: addon\globalPlugins\addonPackager\utilidades.py:720
+msgid "No se pudo restaurar el directorio de Perfiles."
+msgstr "Profiller dizini geri yüklenemedi."
+
+#. Scratchpad
+#: addon\globalPlugins\addonPackager\utilidades.py:723
+msgid "Restaurando el directorio de Scratchpad..."
+msgstr "Not defteri dizini geri yükleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:732
+#: addon\globalPlugins\addonPackager\utilidades.py:734
+msgid "No se pudo restaurar el directorio de Scratchpad."
+msgstr "Not defteri dizini geri yüklenemedi."
+
+#. Fichero configuración disparadores de perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:737
+msgid "Restaurando el Fichero configuración disparadores de perfiles..."
+msgstr "Profil tetikleyici yapılandırma dosyası geri yükleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:751
+#: addon\globalPlugins\addonPackager\utilidades.py:753
+#: addon\globalPlugins\addonPackager\utilidades.py:755
+msgid "No se pudo restaurar el Fichero configuración disparadores de perfiles."
+msgstr "Profil tetikleyici yapılandırma dosyası geri yüklenemedi."
+
+#. Fichero configuración gestos de entrada
+#: addon\globalPlugins\addonPackager\utilidades.py:758
+msgid "Restaurando el Fichero configuración gestos de entrada..."
+msgstr "Girdi hareketleri yapılandırma dosyası geri yükleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:772
+#: addon\globalPlugins\addonPackager\utilidades.py:774
+msgid "No se pudo restaurar el Fichero configuración de gestos de entrada."
+msgstr "Girdi hareketleri yapılandırma dosyası geri yüklenemedi."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:776
+msgid "No se pudo restaurar el Fichero configuración gestos de entrada."
+msgstr "Girdi hareketlerii yapılandırma dosyası geri yüklenemedi."
+
+#. Fichero configuración de NVDA
+#: addon\globalPlugins\addonPackager\utilidades.py:779
+msgid "Restaurando el Fichero configuración de NVDA..."
+msgstr "NVDA Yapılandırma Dosyası Geri Yükleniyor..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:793
+#: addon\globalPlugins\addonPackager\utilidades.py:795
+#: addon\globalPlugins\addonPackager\utilidades.py:797
+msgid "No se pudo restaurar el Fichero configuración de NVDA."
+msgstr "NVDA Yapılandırma Dosyası geri yüklenemedi."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:805
+msgid ""
+"La restauración fue un éxito.\n"
+"\n"
+"Al restaurar la configuración de NVDA es necesario reiniciar el lector.\n"
+"\n"
+"Pulse aceptar o cerrar para reiniciar."
+msgstr ""
+"Geri yükleme işlemi başarılı.\n"
+"\n"
+"NVDA ayarlarının geri yüklenmesi, Ekran okuyucunun yeniden başlatılmasını "
+"gerektirir.\n"
+"\n"
+"Yeniden başlatmak için tamam veya kapat'ı tıklayın."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:815
+msgid ""
+"Se produjo el siguiente error:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar toda la copia de seguridad.\n"
+"\n"
+"Pero hay elementos que si pudieron ser restaurados.\n"
+"\n"
+"Al restaurar la configuración de NVDA es necesario reiniciar el lector.\n"
+"\n"
+"Pulse cancelar o cerrar para reiniciar."
+msgstr ""
+"Aşağıdaki hata oluştu:\n"
+"\n"
+"{}\n"
+"\n"
+"Tüm yedekleme geri yüklenemedi.\n"
+"\n"
+"Ancak geri yüklenebilecek öğeler bulunuyor.\n"
+"\n"
+"NVDA ayarlarının geri yüklenmesi, Ekran okuyucunun yeniden başlatılmasını "
+"gerektirir.\n"
+"\n"
+"Yeniden başlatmak için iptal veya kapat'a basın."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:829
+msgid ""
+"Se produjo el siguiente error:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar la copia de seguridad.\n"
+"\n"
+"Pulse cancelar o cerrar para continuar."
+msgstr ""
+"Aşağıdaki hata oluştu:\n"
+"\n"
+"{}\n"
+"\n"
+"Yedek geri yüklenemedi.\n"
+"\n"
+"Devam etmek için iptal veya kapat'a basın."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:840
+msgid ""
+"Se produjeron los siguientes errores:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar toda la copia de seguridad.\n"
+"\n"
+"Pero hay elementos que si pudieron ser restaurados.\n"
+"\n"
+"Al restaurar la configuración de NVDA es necesario reiniciar el lector.\n"
+"\n"
+"Pulse cancelar o cerrar para reiniciar."
+msgstr ""
+"Şu hatalar oluştu:\n"
+"\n"
+"{}\n"
+"\n"
+"Tüm yedekleme geri yüklenemedi.\n"
+"\n"
+"Ancak geri yüklenebilecek öğeler bulunuyor.\n"
+"\n"
+"NVDA ayarlarının geri yüklenmesi, Ekran okuyucunun yeniden başlatılmasını "
+"gerektirir.\n"
+"\n"
+"Yeniden başlatmak için iptal veya kapat'a basın."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:854
+msgid ""
+"Se produjeron los siguientes errores:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar la copia de seguridad.\n"
+"\n"
+"Pulse cancelar o cerrar para continuar."
+msgstr ""
+"Şu hatalar oluştu:\n"
+"\n"
+"{}\n"
+"\n"
+"Yedek geri yüklenemedi.\n"
+"\n"
+"Devam etmek için iptal veya kapat'a basın."

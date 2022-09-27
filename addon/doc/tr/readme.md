@@ -192,9 +192,14 @@ Eğer bir defa sekme tuşuna basarsak, listeden seçtiğimiz eklentinin belgesin
 
 Birisi çevirilerle işbirliği yapmak isterse, bunu Github eklenti deposu aracılığıyla veya <xebolax@gmail.com> adresine e-posta göndererek yapabilir.  
 
-* İngilizce: Otomatik çeviri
+* İngilizce: Dragan Ratkovich (otomatik çeviri belgeleri)
 * Türkçe: Umut KORKMAZ
 * Fransızca: Rémy Ruiz
+* Arapça: Wafiq Taher
+* Almanca: Moritz Wolfart
+* Rusça: Valentin Kupriyanov (NVDA.RU Rus topluluğu)
+* İtalyanca: Leonardo Marenda
+* Ukraynaca: Vova Mobile
 
 # Değişiklik Günlüğü:
 ## Güncelleme bilgileri:
@@ -210,15 +215,49 @@ Ana belge, kullanıcı için bir yönlendirme olarak değiştirilmeyecektir.
 
 Değişikliklerden haberdar olmak için bu bölümü incelemek kullanıcının sorumluluğundadır.  
 
+## Sürüm 1.1.:
+
+* Hatalar düzeltildi.
+* Yedekleme yapma ve Yedeği geri yükleme özelliği eklendi.
+
+Artık, Yedekleme yap / Yedeği geri yükle adlı bir bölümümüz olacak.  
+
+Bu bölüm bir liste halinde yedekleme yapabileceğimiz seçenekleri gösterecektir.  
+
+Bu sürümde bir yedeklemeye kaydedilebilecek seçenekler şunlardır:
+
+* Sözlükler Dizini (\speechDicts)
+* Profiller Dizini (\profiles)
+* Scratchpad dizini (\scratchpad)
+* Profil tetikleyici yapılandırma dosyası (profileTriggers.ini)
+* Girdi hareketleri yapılandırma dosyası (gestures.ini)
+* NVDA yapılandırma dosyası (nvda.ini)
+
+Yalnızca NVDA kopyamızda bulunan öğeler ve içeriği olan dizinler listede gösterilecektir.  
+
+Örneğin, profiller dizini boşsa, yedeklemeye izin vermez.  
+
+Yedekleme yapabilmek için listeden en az bir öğe seçmemiz gerekir.  
+
+Sekme tuşuna bastığımızda iki adet buton ile karşılaşırız:  
+
+* yedek oluştur:
+Bu düğmeye basarsak, klasik bir Windows kaydetme penceresi açılır, yedeğimizin adını ve nereye kaydetmek istediğimizi sorar.  
+Kaydet'e bastığımızda yedekleme başlayacak ve salt okunur durum kutusunda her şey yolunda gittiyse veya hatalar varsa sonucu bize bildirecektir.
+* Yedeği geri yükle:
+Bu düğmeye bastığımızda, bir yedekleme dosyasını açmak için klasik bir Windows penceresi açılacak, kopyayı kaydettiğimiz yeri bulmamız ve açmamız gerekecek.  
+Dosya açıldığında, yedeklemenin içeriğini içeren bir pencere gösterilecektir, bu pencerede geri yüklemek istediğimiz öğeleri seçmek için bir liste görünecektir.  
+İstediğimiz zaman geri yükle'ye basıyoruz ve durum kutusunda geri yükleme işleminin doğru olup olmadığını veya bir sorun olup olmadığını bize bildirecek.  
+UYARI:
+Bir NVDA öğesini geri yüklediğimizde, NVDA'yı yeniden başlatmamız gerekecek, bu nedenle NVDA Eklentileri için Yardımcı araçlarda yaptığımız herhangi bir işlem NVDA'nın yeniden başlatılmasıyla sonuçlanacak. Kabul et, iptal et, kapat, çık veya Alt+F4 tuşlarına basıyoruz.
+Geri yüklenmesi için birden çok öğe seçilirse ve sadece birisi yüklenebilirse, Eklenti hata oluştuğunu bildirir ve NVDA'yı yeniden başlatır.
+
 ## Sürüm 1.0:
 
 ♪ İlk Sürüm.  
 
-Yeni işlevlerin dahil edilmesiyle birlikte eski Eklenti Paketleyici ne sıfırdan yeniden yazılacaktır.  
+Yeni işlevlerin dahil edilmesiyle birlikte eski Eklenti Paketleyici sıfırdan yeniden yazılacaktır.  
 
 Eklenti, NVDA eklentileri için yardımcı araçlar adını alır. Ancak, NVDA dahili olarak (addonPackager) adını kullanmaya devam eder.  
 
 Bu eklentide, Manifest değiştirici bulunduğundan. CriCriCri eklentisi artık bakım almayacaktır.  
-
-ArgosTranslate tarafından çevrildi
-

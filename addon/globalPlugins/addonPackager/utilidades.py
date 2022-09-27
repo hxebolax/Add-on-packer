@@ -121,7 +121,6 @@ def descomprimir_zip(frame, archivo, directorio_destino, progreso=True):
 			zf.extract(file, directorio_destino)
 		return True
 	except Exception as e:
-		print(e)
 		return False
 
 def findReplace(directory, find, replace, filePattern):
@@ -683,6 +682,7 @@ class RestaurarBackup(Thread):
 		self.ficheroCopia = ficheroCopia
 		self.comentario = comentario
 		self.ficheroNVDA = False
+
 		self.daemon = True
 		self.start()
 
