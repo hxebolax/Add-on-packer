@@ -208,9 +208,12 @@ Si quelqu'un souhaite collaborer avec les traductions, il peut le faire via le d
 * Arabe: Wafiq Taher
 * Allemand: Moritz Wolfart
 * Russe: Valentin Kupriyanov (communauté russe NVDA.RU)
+* Italien: Leonardo Marenda
+* Ukrainien: Vova Mobile
 
 # Journal des changements.
 ## Informations sur les mises à jour:
+
 Cette extension suivra la route de mise à jour suivante:
 
 Seules les versions du type majeure.mineure (par exemple v3.1) sont recensées dans cet historique.
@@ -222,6 +225,57 @@ Les modifications de l'extension seront reflétées dans cette section expliquan
 Le document principal ne sera pas modifié étant une orientation pour l'utilisateur.
 
 L'utilisateur est responsable de la révision de cette section pour être informé des modifications.
+
+## Version 1.2.
+
+* Des erreurs graves ont été corrigés dans la sauvegarde.
+
+## Version 1.1.
+
+* Des erreurs ont été corrigés.
+
+* Ajout de la possibilité de faire et de restaurer des sauvegardes.
+
+Maintenant, nous aurons une nouvelle section appelée Faire / restaurer des sauvegardes.
+
+Cette section affichera dans une liste les options que nous pouvons faire lors d'une sauvegarde.
+
+Les options dans cette version qui peuvent être enregistrées dans une sauvegarde  sont:
+
+* Répertoire Dictionnaires (\speechDicts)
+* Répertoire Profils (\profiles)
+* Répertoire Bloc-notes du Développeur (\scratchpad)
+* Fichier de configuration déclencheurs de profils (profileTriggers.ini)
+* Fichier de configuration gestes de commandes (gestures.ini)
+* Fichier de configuration NVDA (nvda.ini)
+
+Dans la liste s'affichera uniquement les éléments qui sont présents dans notre copie de NVDA ainsi que les répertoires qui ont du contenu.
+
+Si, par exemple, le Répertoire Profils est vide ne laissera pas faire une sauvegarde.
+
+Nous devrons sélectionner au moins un élément de la liste pour pouvoir faire la sauvegarde.
+
+Si nous tabulons, nous trouverons deux boutons:
+
+* Créer une sauvegarde
+
+Si nous appuyons sur ce bouton, une fenêtre classique d'enregistrement de Windows s'ouvrira en disant que nous mettions le nom de notre sauvegarde et où nous voulons l'enregistrer.
+
+Lorsque nous appuyons sur Enregistrer, la sauvegarde commencera et dans la zone de texte en lecture seule de l'état nous dira le résultat  si tout s'est bien passé ou lorsque des erreurs se produise.
+
+* Restaurer une sauvegarde
+
+Lorsque nous appuyons sur ce bouton, une fenêtre classique de Windows s'ouvrira pour ouvrir un fichier de sauvegarde, nous devrons rechercher où  nous avons enregistré la copie et appuyer sur Ouvrir.
+
+Une fois le fichier ouvert, une fenêtre sera affichée avec le contenu de la sauvegarde, dans cette fenêtre, une liste apparaîtra pour sélectionner les éléments que nous voulons restaurer.
+
+Lorsque nous souhaitons appuyer sur Restaurer et dans la zone de texte en lecture seule de l'état nous informera si la restauration a réussi ou qu'il y a un problème.
+
+MISE EN GARDE:
+
+Lorsque nous restaurons un élément de NVDA, il sera nécessaire de redémarrer NVDA afin que toute action que nous effectuons avec l'extension Utilitaires pour les extensions de NVDA sa conséquence sera de redémarrer NVDA soit si nous appuyons sur OK, Annuler, Fermer, Échap ou Alt+F4.
+
+Si une erreur se produit lors de la restauration de plusieurs éléments alors que l'un est restauré également NVDA redémarrera.
 
 ## Version 1.0.
 
