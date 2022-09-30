@@ -1,1 +1,1 @@
-* Actualizados  idiomas francés y portugués.
+* Actualizado idioma Ruso.
