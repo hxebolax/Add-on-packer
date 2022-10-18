@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'addonPackager' '1.0'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2022-06-09 15:57+0200\n"
-"PO-Revision-Date: 2022-06-15 07:43+0200\n"
+"POT-Creation-Date: 2022-10-18 18:43+0200\n"
+"PO-Revision-Date: 2022-10-18 18:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. Add-on summary, usually the user visible name of the addon.
@@ -43,17 +43,17 @@ msgid ""
 "Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de "
 "complementos nativo de NVDA."
 msgstr ""
-"مجموعة من الأدوات لإدارة البرامج المساعدة ل NVDA بسهولة. \n"
+"مجموعة من الأدوات لإدارة إضافات  NVDA بسهولة. \n"
 "\n"
-"* حزمة المكونات الإضافية.\n"
-"* تثبيت إضافات متعددة. \n"
-"* إلغاء تثبيت الوظائف الإضافية. \n"
-"* تمكين / تعطيل المكونات الإضافية. \n"
+"* تحزيم الإضافات.\n"
+"* تثبيت مجموعة إضافات . \n"
+"* إلغاء تثبيت مجموعة إضافات. \n"
+"* تفعيل / تعطيل مجموعة إضافات. \n"
 "* تعديل بيانات التوافق للإضافات، مثبت ومن ملف غير مثبت.\n"
-"* ملفات المساعدة للوظائف .\n"
+"* ملفات المساعدة للإضافات .\n"
 "\n"
-"جميع المناطق سهلة الاستخدام وموفرة للوقت مقارنة بمدير الوظائف الإضافية "
-"الأصلي ل NVDA."
+"جميع العناصر سهلة الاستخدام وموفرة للوقت مقارنة بمدير الإضافات الأفتراضي "
+"للNVDA."
 
 #: addon\globalPlugins\addonPackager\__init__.py:34
 msgid "&Utilidades para los complementos de NVDA"
@@ -68,9 +68,9 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"هناك إجراء معلق لإعادة تشغيل NVDA. \n"
+"هناك إجراء معلق يحتاج إعادة  تشغيل NVDA. \n"
 "\n"
-"لأسباب تتعلق بالأمان ، لا يمكن استخدام المكون الإضافي حتى يتم إعادة تشغيله.\n"
+"لأسباب تتعلق بالأمان، لا يمكن استخدام الإضافة حتى يتم إعادة تشغيله.\n"
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن?"
 
@@ -80,13 +80,13 @@ msgstr "سؤال"
 
 #: addon\globalPlugins\addonPackager\__init__.py:66
 msgid "Muestra la ventana de Utilidades para los complementos de NVDA"
-msgstr "يعرض نافذة الأدوات المساعدة الخاصة بمكونات NVDA الإضافية"
+msgstr "يعرض نافذة الأدوات المساعدة الخاصة بإضافات NVDA"
 
 #: addon\globalPlugins\addonPackager\__init__.py:76
 #: addon\globalPlugins\addonPackager\__init__.py:78
 msgid ""
 "Ya hay una instancia de Utilidades para los complementos de NVDA abierta."
-msgstr "يوجد بالفعل نافذة للأدوات المساعدة مفتوحة."
+msgstr "يوجد بالفعل نافذة مفتوحة لإضافة الأدوات المساعدة."
 
 #: addon\globalPlugins\addonPackager\__init__.py:76
 #: addon\globalPlugins\addonPackager\main.py:354
@@ -95,7 +95,7 @@ msgstr "معلومات"
 
 #: addon\globalPlugins\addonPackager\main.py:41
 msgid "Empaquetador de complementos"
-msgstr "حزم الإضافات"
+msgstr "تحزيم الإضافات"
 
 #: addon\globalPlugins\addonPackager\main.py:45
 #: addon\globalPlugins\addonPackager\main.py:68
@@ -110,11 +110,11 @@ msgstr "&قائمة الإضافات:"
 #: addon\globalPlugins\addonPackager\main.py:123
 #: addon\globalPlugins\addonPackager\main.py:164
 msgid "&Selección"
-msgstr "&اختيار"
+msgstr "ت&حديد"
 
 #: addon\globalPlugins\addonPackager\main.py:57
 msgid "&Generar"
-msgstr "&توليد"
+msgstr "إ&نشاء"
 
 #: addon\globalPlugins\addonPackager\main.py:61
 msgid "Instalador múltiple"
@@ -122,7 +122,7 @@ msgstr "التثبيت المتعدد"
 
 #: addon\globalPlugins\addonPackager\main.py:65
 msgid "&Seleccione un directorio con complementos a instalar..."
-msgstr "&حدد دليلاً به مكونات إضافية لتثبيتها ..."
+msgstr "أ&ختر مجلد به إضافات لتثبيتها ..."
 
 #: addon\globalPlugins\addonPackager\main.py:80
 msgid "&Instalar"
@@ -130,23 +130,23 @@ msgstr "&تثبيت"
 
 #: addon\globalPlugins\addonPackager\main.py:84
 msgid "Desinstala complementos"
-msgstr "إلغاء تثبيت الملحقات"
+msgstr "إزالة الإضافات"
 
 #: addon\globalPlugins\addonPackager\main.py:100
 msgid "&Desinstalar"
-msgstr "&الغاء التثبيت"
+msgstr "&إزالة التثبيت"
 
 #: addon\globalPlugins\addonPackager\main.py:104
 msgid "Habilita / deshabilita complementos"
-msgstr "تمكينو / تعطيل الملحقات"
+msgstr "تفعيل/ تعطيل الإضافات"
 
 #: addon\globalPlugins\addonPackager\main.py:108
 msgid "&Lista de complementos habilitados:"
-msgstr "&قائمة الوظائف الإضافية المُمَكّنَة:"
+msgstr "&قائمة الإضافات المفعلة:"
 
 #: addon\globalPlugins\addonPackager\main.py:114
 msgid "&Lista de complementos deshabilitados:"
-msgstr "&قائمة الوظائف الإضافية المعطلة:"
+msgstr "&قائمة الإضافات المعطلة:"
 
 #: addon\globalPlugins\addonPackager\main.py:126
 #: addon\globalPlugins\addonPackager\main.py:167
@@ -159,7 +159,7 @@ msgstr "تعديل ملف Manifest"
 
 #: addon\globalPlugins\addonPackager\main.py:134
 msgid "&Lista de complementos instalados:"
-msgstr "&قائمة الملحقات المثبتة:"
+msgstr "&قائمة الإضافات المثبتة:"
 
 #: addon\globalPlugins\addonPackager\main.py:143
 msgid "Seleccione versión Mayor:"
@@ -167,7 +167,7 @@ msgstr "حدد الإصدار الرئيسي:"
 
 #: addon\globalPlugins\addonPackager\main.py:149
 msgid "Seleccione versión Menor:"
-msgstr "حدد نسخة ثانوية:"
+msgstr "حدد الإصدار الفرعي:"
 
 #: addon\globalPlugins\addonPackager\main.py:155
 msgid "Seleccione una revisión:"
@@ -179,7 +179,7 @@ msgstr "ملفات المساعدة"
 
 #: addon\globalPlugins\addonPackager\main.py:181
 msgid "&Abrir documentación del complemento"
-msgstr "&فتح وثائق البرنامج المساعد"
+msgstr "&فتح ملف مساعدة الإضافة"
 
 #: addon\globalPlugins\addonPackager\main.py:187
 msgid "&Estado:"
@@ -205,7 +205,7 @@ msgstr "إغلاق"
 #: addon\globalPlugins\addonPackager\main.py:416
 #: addon\globalPlugins\addonPackager\main.py:438
 msgid "&Seleccionar todo"
-msgstr "&اختر الكل"
+msgstr "&تحديد الكل"
 
 #: addon\globalPlugins\addonPackager\main.py:325
 #: addon\globalPlugins\addonPackager\main.py:370
@@ -219,7 +219,7 @@ msgstr "&الغاء تحديد الكل"
 
 #: addon\globalPlugins\addonPackager\main.py:331
 msgid "Tiene que seleccionar un complemento para continuar."
-msgstr "يجب عليك تحديد ملحق للمتابعة."
+msgstr "يجب عليك تحديد إضافة للمتابعة."
 
 #: addon\globalPlugins\addonPackager\main.py:331
 #: addon\globalPlugins\addonPackager\main.py:376
@@ -233,22 +233,22 @@ msgstr "خطأ"
 #: addon\globalPlugins\addonPackager\main.py:334
 #: addon\globalPlugins\addonPackager\main.py:348
 msgid "Seleccione un directorio:"
-msgstr "حدد دليلاً:"
+msgstr "اختر مجلد:"
 
 #: addon\globalPlugins\addonPackager\main.py:354
 msgid "No se encontraron complementos en el directorio que selecciono."
-msgstr "لم يتم العثور على مكونات إضافية في الدليل الذي تحدده."
+msgstr "لم يتم العثور على إضافات في المجلد الذي اخترته."
 
 #: addon\globalPlugins\addonPackager\main.py:376
 #: addon\globalPlugins\addonPackager\main.py:395
 #: addon\globalPlugins\addonPackager\main.py:426
 #: addon\globalPlugins\addonPackager\main.py:562
 msgid "Necesita elegir al menos un complemento para continuar."
-msgstr "تحتاج إلى اختيار إضافةواحدة على الأقل للمتابعة."
+msgstr "تحتاج إلى اختيار إضافة واحدة على الأقل للمتابعة."
 
 #: addon\globalPlugins\addonPackager\main.py:414
 msgid "Complementos &habilitados"
-msgstr "&تمكين الإضافات"
+msgstr "&تفعيل الإضافات"
 
 #: addon\globalPlugins\addonPackager\main.py:418
 msgid "Complementos &deshabilitados"
@@ -269,7 +269,7 @@ msgstr "إضافة NVDA (*.nvda-addon)|*.nvda-addon"
 
 #: addon\globalPlugins\addonPackager\main.py:577
 msgid "Seleccione un complemento de NVDA"
-msgstr "حدد المكون الإضافي NVDA"
+msgstr "حدد إضافة NVDA"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:111
 msgid "Creando el complemento: {} {}"
@@ -281,7 +281,7 @@ msgid ""
 "\n"
 "Pulse aceptar para continuar."
 msgstr ""
-"تم إنشاء كافة الملحقات بشكل صحيح.\n"
+"تم تحزيم كافة الإضافات بشكل صحيح.\n"
 "\n"
 "انقر فوق \"موافق\" للمتابعة."
 
@@ -302,11 +302,11 @@ msgstr ""
 "\n"
 "خطأ{} \n"
 "\n"
-"حاول مرة اخرى."
+"حاول مرة أخرى."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:144
 msgid "Instalando el complemento: {}"
-msgstr "تثبيت المكون الإضافي: {}"
+msgstr "تثبيت إضافة: {}"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:167
 msgid ""
@@ -330,11 +330,11 @@ msgid ""
 "\n"
 "Busque un complemento compatible."
 msgstr ""
-"تعذر تثبيت المكون الإضافي.\n"
+"تعذر تثبيت الإضافة.\n"
 "\n"
-"فشل التوافق.\n"
+"غير متوافقة.\n"
 "\n"
-"ابحث عن مكون إضافي متوافق."
+"ابحث عن إضافة متوافقة."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:188
 msgid ""
@@ -352,9 +352,9 @@ msgid ""
 msgstr ""
 "تم التثبيت بنجاح.\n"
 "\n"
-"لكن هناك وظائف إضافية لا يمكن تثبيتها.\n"
+"لكن هناك إضافات لا يمكن تثبيتها.\n"
 "\n"
-"المكونات الإضافية التالية غير متوافقة ، الرجاء البحث عن إصدار متوافق: \n"
+"الإضافات التالية غير متوافقة ، الرجاء البحث عن إصدار متوافق: \n"
 "\n"
 "{}\n"
 "\n"
@@ -383,7 +383,7 @@ msgstr ""
 
 #: addon\globalPlugins\addonPackager\utilidades.py:237
 msgid "Desinstalando el complemento: {}"
-msgstr "إزالة المكوّن الإضافي: {}"
+msgstr "إزالة الإضافة"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:244
 msgid ""
@@ -414,18 +414,18 @@ msgstr ""
 "\n"
 "خطأ: {}\n"
 "\n"
-"ومع ذلك ، فقد تم إلغاء تثبيت ملحقات إضافية ويحتاج NVDA إلى إعادة التشغيل "
-"لتطبيق التغييرات.\n"
+"ومع ذلك، فقد تم إزالة بعض الإضافات ويحتاج NVDA إلى إعادة التشغيل لتطبيق "
+"التغييرات.\n"
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن؟"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:310
 msgid "Buscando complementos en {}..."
-msgstr "البحث عن المكونات الإضافية في {} ..."
+msgstr "البحث عن الإضافات في {} ..."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:314
 msgid "No hay complementos compatibles en el directorio."
-msgstr "لا توجد مكونات إضافية مدعومة في الدليل."
+msgstr "لا يحتوي المجلد الذي قمت باختياره على إضافات مدعومة."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:318
 msgid ""
@@ -444,19 +444,19 @@ msgid ""
 "\n"
 "Pulse aceptar para continuar."
 msgstr ""
-"اكتمل استخراج معلومات البرنامج المساعد بنجاح.\n"
+"اكتمل استخراج معلومات الإضافة بنجاح.\n"
 "\n"
-"ومع ذلك ، يحتوي الدليل الذي أدخلته على مكونات إضافية غير مدعمة.\n"
+"ومع ذلك، يحتوي المجلد الذي حدته على إضافات غير مدعومة.\n"
 "\n"
-"* فشل البرنامج المساعد في البيان: {}\n"
-"\n"
-"{}\n"
-"\n"
-"* لا تدعم واجهة برمجة التطبيقات الحالية المكونات الإضافية: {}.\n"
+"* لم تنجح الإضافة في التقرير: {}\n"
 "\n"
 "{}\n"
 "\n"
-"اضغط على قبول للمتابعة."
+"* لا تدعم واجهة برمجة التطبيقات الحالية الإضافات: {}.\n"
+"\n"
+"{}\n"
+"\n"
+"اضغط على موافق للمتابعة."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:334
 msgid ""
@@ -464,17 +464,17 @@ msgid ""
 "\n"
 "Pulse aceptar para continuar."
 msgstr ""
-"تم إكمال استخراج المعلومات من الوظائف الإضافية بنجاح. \n"
+"تم استخراج المعلومات من الإضافات بنجاح. \n"
 "\n"
 "انقر فوق \"موافق\" للمتابعة."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:357
 msgid "Deshabilitando complementos..."
-msgstr "جارٍ تعطيل المكونات الإضافية ..."
+msgstr "جارٍ تعطيل الإضافات..."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:367
 msgid "Habilitando complementos..."
-msgstr "جارٍ تمكين المكونات الإضافية ..."
+msgstr "جارٍ تفعيل الإضافات..."
 
 #: addon\globalPlugins\addonPackager\utilidades.py:376
 msgid ""
@@ -484,7 +484,7 @@ msgid ""
 "\n"
 "¿Desea reiniciar NVDA ahora?"
 msgstr ""
-"تم إكمال عملية التمكين والتعطيل بنجاح. \n"
+"تم إكمال عملية التفعيل والتعطيل بنجاح. \n"
 "\n"
 "يحتاج NVDA إلى إعادة التشغيل لتطبيق التغييرات. \n"
 "\n"
@@ -505,14 +505,14 @@ msgstr ""
 "\n"
 "خطأ: {} \n"
 "\n"
-"لكن كان هناك ملحقات تم تمكينها أو تعطيلها ويحتاج NVDA إلى إعادة التشغيل "
-"لتطبيق التغييرات.\n"
+"لكن هناك إضافات تم تفعيلها أو تعطيلها ويحتاج NVDA إلى إعادة التشغيل لتطبيق "
+"التغييرات.\n"
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن؟"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:423
 msgid "Cambiando el manifiesto al complemento: {}"
-msgstr "تغيير البيان إلى المكون الإضافي: {}"
+msgstr "تغيير البياناتل إضافة: {}"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:430
 msgid ""
@@ -543,14 +543,14 @@ msgstr ""
 "\n"
 "خطأ: {} \n"
 "\n"
-"ومع ذلك ، هناك ملحقات تم تغيير بيانها ويحتاج NVDA إلى إعادة التشغيل لتطبيق "
+"ومع ذلك، هناك إضافات تم تغيير معلوماتها ويحتاج NVDA إلى إعادة التشغيل لتطبيق "
 "التغييرات.\n"
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن؟"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:477
 msgid "Trabajando en el complemento: {}"
-msgstr "العمل على المكون الإضافي: {}"
+msgstr "العمل على إضافة: {}"
 
 #: addon\globalPlugins\addonPackager\utilidades.py:492
 msgid ""
@@ -562,9 +562,9 @@ msgid ""
 "\n"
 "Pulse aceptar para continuar."
 msgstr ""
-"تم تغيير البيان بنجاح.\n"
+"تم تغيير المعلومات بنجاح.\n"
 "\n"
-"تم إنشاء مكون إضافي مع تغيير البيان إلى: \n"
+"تم إنشاء إضافة مع تغيير المعلومات إلى: \n"
 "\n"
 "{}\n"
 "\n"
