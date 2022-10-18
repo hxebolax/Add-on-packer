@@ -1,1 +1,1 @@
-* Actualizado idioma Ruso.
+* Actualizado idioma Ucraniano.
