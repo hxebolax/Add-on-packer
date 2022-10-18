@@ -96,8 +96,11 @@ def zipfolder(foldername, target_dir, addon=True, barraProgreso=False, frame=Non
 			path = os.path.join(base, fname)
 			total += os.path.getsize(path)
 
-		current = 0
+	current = 0
 	for base, dirs, files in os.walk(target_dir):
+		if addon:
+			if '__pycache__' in dirs:
+				dirs.remove('__pycache__')
 		for fname in files:
 			path = os.path.join(base, fname)
 			fn = os.path.join(base, fname)

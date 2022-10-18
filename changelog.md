@@ -1,1 +1,1 @@
-* Actualizado idioma Ucraniano.
+* Ya no se incluye el directorio __pycache__ al generar complementos
