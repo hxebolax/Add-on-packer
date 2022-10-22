@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'addonPackager' '1.0'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2022-10-18 18:43+0200\n"
-"PO-Revision-Date: 2022-10-18 18:53+0200\n"
+"POT-Creation-Date: 2022-10-19 01:25+0200\n"
+"PO-Revision-Date: 2022-10-19 02:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -22,8 +22,8 @@ msgstr ""
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:66
-#: addon\globalPlugins\addonPackager\main.py:23
+#: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:67
+#: addon\globalPlugins\addonPackager\main.py:29
 msgid "Utilidades para los complementos de NVDA"
 msgstr "الأدوات المساعدة لإضافات NVDA"
 
@@ -38,28 +38,30 @@ msgid ""
 "* Desinstala complementos.\n"
 "* Habilita / deshabilita complementos.\n"
 "* Modificador de manifiestos, instalados y desde archivo no instalado.\n"
+"* Hacer / restaurar copias de seguridad de la configuración de NVDA.\n"
 "* Documentación de complementos.\n"
 "\n"
 "Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de "
 "complementos nativo de NVDA."
 msgstr ""
-"مجموعة من الأدوات لإدارة إضافات  NVDA بسهولة. \n"
+"مجموعة من الأدوات لإدارة إضافات NVDA بسهولة. .\n"
 "\n"
 "* تحزيم الإضافات.\n"
-"* تثبيت مجموعة إضافات . \n"
-"* إلغاء تثبيت مجموعة إضافات. \n"
-"* تفعيل / تعطيل مجموعة إضافات. \n"
+"* تثبيت مجموعة إضافات.\n"
+"* إلغاء تثبيت مجموعة إضافات.\n"
+"* تفعيل / تعطيل مجموعة إضافات.\n"
 "* تعديل بيانات التوافق للإضافات، مثبت ومن ملف غير مثبت.\n"
-"* ملفات المساعدة للإضافات .\n"
+"* إنشاء / استعادة نسخة احتياطية لإعدادات NVDA\n"
+"* ملفات المساعدة للإضافات.\n"
 "\n"
 "جميع العناصر سهلة الاستخدام وموفرة للوقت مقارنة بمدير الإضافات الأفتراضي "
 "للNVDA."
 
-#: addon\globalPlugins\addonPackager\__init__.py:34
+#: addon\globalPlugins\addonPackager\__init__.py:35
 msgid "&Utilidades para los complementos de NVDA"
 msgstr "&الأدوات المساعدة لإضافات NVDA"
 
-#: addon\globalPlugins\addonPackager\__init__.py:51
+#: addon\globalPlugins\addonPackager\__init__.py:52
 msgid ""
 "Hay una acción pendiente de reiniciar NVDA.\n"
 "\n"
@@ -74,208 +76,305 @@ msgstr ""
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن?"
 
-#: addon\globalPlugins\addonPackager\__init__.py:56
+#: addon\globalPlugins\addonPackager\__init__.py:57
 msgid "Pregunta"
 msgstr "سؤال"
 
-#: addon\globalPlugins\addonPackager\__init__.py:66
+#: addon\globalPlugins\addonPackager\__init__.py:67
 msgid "Muestra la ventana de Utilidades para los complementos de NVDA"
 msgstr "يعرض نافذة الأدوات المساعدة الخاصة بإضافات NVDA"
 
-#: addon\globalPlugins\addonPackager\__init__.py:76
-#: addon\globalPlugins\addonPackager\__init__.py:78
+#: addon\globalPlugins\addonPackager\__init__.py:77
+#: addon\globalPlugins\addonPackager\__init__.py:79
 msgid ""
 "Ya hay una instancia de Utilidades para los complementos de NVDA abierta."
 msgstr "يوجد بالفعل نافذة مفتوحة لإضافة الأدوات المساعدة."
 
-#: addon\globalPlugins\addonPackager\__init__.py:76
-#: addon\globalPlugins\addonPackager\main.py:354
+#: addon\globalPlugins\addonPackager\__init__.py:77
+#: addon\globalPlugins\addonPackager\main.py:406
 msgid "Información"
 msgstr "معلومات"
 
-#: addon\globalPlugins\addonPackager\main.py:41
+#: addon\globalPlugins\addonPackager\main.py:47
 msgid "Empaquetador de complementos"
 msgstr "تحزيم الإضافات"
 
-#: addon\globalPlugins\addonPackager\main.py:45
-#: addon\globalPlugins\addonPackager\main.py:68
-#: addon\globalPlugins\addonPackager\main.py:88
-#: addon\globalPlugins\addonPackager\main.py:175
+#: addon\globalPlugins\addonPackager\main.py:51
+#: addon\globalPlugins\addonPackager\main.py:74
+#: addon\globalPlugins\addonPackager\main.py:94
+#: addon\globalPlugins\addonPackager\main.py:201
 msgid "&Lista de complementos:"
 msgstr "&قائمة الإضافات:"
 
-#: addon\globalPlugins\addonPackager\main.py:54
-#: addon\globalPlugins\addonPackager\main.py:77
-#: addon\globalPlugins\addonPackager\main.py:97
-#: addon\globalPlugins\addonPackager\main.py:123
-#: addon\globalPlugins\addonPackager\main.py:164
+#: addon\globalPlugins\addonPackager\main.py:60
+#: addon\globalPlugins\addonPackager\main.py:83
+#: addon\globalPlugins\addonPackager\main.py:103
+#: addon\globalPlugins\addonPackager\main.py:129
+#: addon\globalPlugins\addonPackager\main.py:170
 msgid "&Selección"
 msgstr "ت&حديد"
 
-#: addon\globalPlugins\addonPackager\main.py:57
+#: addon\globalPlugins\addonPackager\main.py:63
 msgid "&Generar"
 msgstr "إ&نشاء"
 
-#: addon\globalPlugins\addonPackager\main.py:61
+#: addon\globalPlugins\addonPackager\main.py:67
 msgid "Instalador múltiple"
 msgstr "التثبيت المتعدد"
 
-#: addon\globalPlugins\addonPackager\main.py:65
+#: addon\globalPlugins\addonPackager\main.py:71
 msgid "&Seleccione un directorio con complementos a instalar..."
 msgstr "أ&ختر مجلد به إضافات لتثبيتها ..."
 
-#: addon\globalPlugins\addonPackager\main.py:80
+#: addon\globalPlugins\addonPackager\main.py:86
 msgid "&Instalar"
 msgstr "&تثبيت"
 
-#: addon\globalPlugins\addonPackager\main.py:84
+#: addon\globalPlugins\addonPackager\main.py:90
 msgid "Desinstala complementos"
 msgstr "إزالة الإضافات"
 
-#: addon\globalPlugins\addonPackager\main.py:100
+#: addon\globalPlugins\addonPackager\main.py:106
 msgid "&Desinstalar"
 msgstr "&إزالة التثبيت"
 
-#: addon\globalPlugins\addonPackager\main.py:104
+#: addon\globalPlugins\addonPackager\main.py:110
 msgid "Habilita / deshabilita complementos"
 msgstr "تفعيل/ تعطيل الإضافات"
 
-#: addon\globalPlugins\addonPackager\main.py:108
+#: addon\globalPlugins\addonPackager\main.py:114
 msgid "&Lista de complementos habilitados:"
 msgstr "&قائمة الإضافات المفعلة:"
 
-#: addon\globalPlugins\addonPackager\main.py:114
+#: addon\globalPlugins\addonPackager\main.py:120
 msgid "&Lista de complementos deshabilitados:"
 msgstr "&قائمة الإضافات المعطلة:"
 
-#: addon\globalPlugins\addonPackager\main.py:126
-#: addon\globalPlugins\addonPackager\main.py:167
+#: addon\globalPlugins\addonPackager\main.py:132
+#: addon\globalPlugins\addonPackager\main.py:173
 msgid "&Procesar"
 msgstr "&معالجة"
 
-#: addon\globalPlugins\addonPackager\main.py:130
+#: addon\globalPlugins\addonPackager\main.py:136
 msgid "Modificador de manifiestos"
 msgstr "تعديل ملف Manifest"
 
-#: addon\globalPlugins\addonPackager\main.py:134
+#: addon\globalPlugins\addonPackager\main.py:140
 msgid "&Lista de complementos instalados:"
 msgstr "&قائمة الإضافات المثبتة:"
 
-#: addon\globalPlugins\addonPackager\main.py:143
+#: addon\globalPlugins\addonPackager\main.py:149
 msgid "Seleccione versión Mayor:"
 msgstr "حدد الإصدار الرئيسي:"
 
-#: addon\globalPlugins\addonPackager\main.py:149
+#: addon\globalPlugins\addonPackager\main.py:155
 msgid "Seleccione versión Menor:"
 msgstr "حدد الإصدار الفرعي:"
 
-#: addon\globalPlugins\addonPackager\main.py:155
+#: addon\globalPlugins\addonPackager\main.py:161
 msgid "Seleccione una revisión:"
 msgstr "حدد نسخة:"
 
-#: addon\globalPlugins\addonPackager\main.py:171
+#: addon\globalPlugins\addonPackager\main.py:177
+msgid "Hacer / restaurar copias de seguridad"
+msgstr "إنشاء / استعادة النسخة الإحتياطية"
+
+#: addon\globalPlugins\addonPackager\main.py:181
+msgid "&Hacer copias de seguridad:"
+msgstr "&إنشاء نسخة احتياطية"
+
+#: addon\globalPlugins\addonPackager\main.py:190
+msgid "&Crear copia de seguridad"
+msgstr "&انشئ نسخة احتياطية"
+
+#: addon\globalPlugins\addonPackager\main.py:193
+msgid "&Restaurar copia de seguridad"
+msgstr "استرجاع النسخة الاحتياطية"
+
+#: addon\globalPlugins\addonPackager\main.py:197
 msgid "Documentación de complementos"
 msgstr "ملفات المساعدة"
 
-#: addon\globalPlugins\addonPackager\main.py:181
+#: addon\globalPlugins\addonPackager\main.py:207
 msgid "&Abrir documentación del complemento"
 msgstr "&فتح ملف مساعدة الإضافة"
 
-#: addon\globalPlugins\addonPackager\main.py:187
+#: addon\globalPlugins\addonPackager\main.py:213
 msgid "&Estado:"
 msgstr "&الحالة:"
 
-#: addon\globalPlugins\addonPackager\main.py:199
+#: addon\globalPlugins\addonPackager\main.py:225
 msgid "&Aceptar"
 msgstr "&موافق"
 
-#: addon\globalPlugins\addonPackager\main.py:202
+#: addon\globalPlugins\addonPackager\main.py:228
 msgid "&Cancelar"
 msgstr "&إلغاء"
 
-#: addon\globalPlugins\addonPackager\main.py:205
+#: addon\globalPlugins\addonPackager\main.py:231
 msgid "Cerrar"
 msgstr "إغلاق"
 
-#: addon\globalPlugins\addonPackager\main.py:324
-#: addon\globalPlugins\addonPackager\main.py:369
-#: addon\globalPlugins\addonPackager\main.py:388
-#: addon\globalPlugins\addonPackager\main.py:408
-#: addon\globalPlugins\addonPackager\main.py:412
-#: addon\globalPlugins\addonPackager\main.py:416
-#: addon\globalPlugins\addonPackager\main.py:438
+#: addon\globalPlugins\addonPackager\main.py:315
+#: addon\globalPlugins\addonPackager\main.py:581
+#: addon\globalPlugins\addonPackager\main.py:625
+#: addon\globalPlugins\addonPackager\main.py:862
+msgid "Directorio Diccionarios"
+msgstr "قواميس المجلد"
+
+#: addon\globalPlugins\addonPackager\main.py:319
+#: addon\globalPlugins\addonPackager\main.py:585
+#: addon\globalPlugins\addonPackager\main.py:629
+#: addon\globalPlugins\addonPackager\main.py:864
+msgid "Directorio Perfiles"
+msgstr "ملفات تعريف المجلد"
+
+#: addon\globalPlugins\addonPackager\main.py:323
+#: addon\globalPlugins\addonPackager\main.py:589
+#: addon\globalPlugins\addonPackager\main.py:633
+#: addon\globalPlugins\addonPackager\main.py:866
+msgid "Directorio Scratchpad"
+msgstr "مجلد المسودة"
+
+#: addon\globalPlugins\addonPackager\main.py:327
+#: addon\globalPlugins\addonPackager\main.py:593
+#: addon\globalPlugins\addonPackager\main.py:637
+#: addon\globalPlugins\addonPackager\main.py:868
+msgid "Fichero configuración disparadores de perfiles"
+msgstr "ملف إعدادات مشغل الملف الشخصي"
+
+#: addon\globalPlugins\addonPackager\main.py:330
+#: addon\globalPlugins\addonPackager\main.py:596
+#: addon\globalPlugins\addonPackager\main.py:640
+#: addon\globalPlugins\addonPackager\main.py:870
+msgid "Fichero de configuración gestos de entrada"
+msgstr "ملف إعدادات لفتة الإدخال"
+
+#: addon\globalPlugins\addonPackager\main.py:333
+#: addon\globalPlugins\addonPackager\main.py:599
+#: addon\globalPlugins\addonPackager\main.py:643
+#: addon\globalPlugins\addonPackager\main.py:872
+msgid "Fichero de configuración de NVDA"
+msgstr "ملف إعدادات NVDA"
+
+#: addon\globalPlugins\addonPackager\main.py:376
+#: addon\globalPlugins\addonPackager\main.py:421
+#: addon\globalPlugins\addonPackager\main.py:440
+#: addon\globalPlugins\addonPackager\main.py:460
+#: addon\globalPlugins\addonPackager\main.py:464
+#: addon\globalPlugins\addonPackager\main.py:468
+#: addon\globalPlugins\addonPackager\main.py:490
 msgid "&Seleccionar todo"
 msgstr "&تحديد الكل"
 
-#: addon\globalPlugins\addonPackager\main.py:325
-#: addon\globalPlugins\addonPackager\main.py:370
-#: addon\globalPlugins\addonPackager\main.py:389
-#: addon\globalPlugins\addonPackager\main.py:409
-#: addon\globalPlugins\addonPackager\main.py:413
-#: addon\globalPlugins\addonPackager\main.py:417
-#: addon\globalPlugins\addonPackager\main.py:439
+#: addon\globalPlugins\addonPackager\main.py:377
+#: addon\globalPlugins\addonPackager\main.py:422
+#: addon\globalPlugins\addonPackager\main.py:441
+#: addon\globalPlugins\addonPackager\main.py:461
+#: addon\globalPlugins\addonPackager\main.py:465
+#: addon\globalPlugins\addonPackager\main.py:469
+#: addon\globalPlugins\addonPackager\main.py:491
 msgid "&Deseleccionar todo"
 msgstr "&الغاء تحديد الكل"
 
-#: addon\globalPlugins\addonPackager\main.py:331
+#: addon\globalPlugins\addonPackager\main.py:383
 msgid "Tiene que seleccionar un complemento para continuar."
 msgstr "يجب عليك تحديد إضافة للمتابعة."
 
-#: addon\globalPlugins\addonPackager\main.py:331
-#: addon\globalPlugins\addonPackager\main.py:376
-#: addon\globalPlugins\addonPackager\main.py:395
-#: addon\globalPlugins\addonPackager\main.py:426
-#: addon\globalPlugins\addonPackager\main.py:562
+#: addon\globalPlugins\addonPackager\main.py:383
+#: addon\globalPlugins\addonPackager\main.py:428
+#: addon\globalPlugins\addonPackager\main.py:447
+#: addon\globalPlugins\addonPackager\main.py:478
+#: addon\globalPlugins\addonPackager\main.py:506
+#: addon\globalPlugins\addonPackager\main.py:747
+#: addon\globalPlugins\addonPackager\main.py:879
 msgid "Error"
 msgstr "خطأ"
 
 #. Botón selecciona directorio con complementos instalador.
-#: addon\globalPlugins\addonPackager\main.py:334
-#: addon\globalPlugins\addonPackager\main.py:348
+#: addon\globalPlugins\addonPackager\main.py:386
+#: addon\globalPlugins\addonPackager\main.py:400
 msgid "Seleccione un directorio:"
 msgstr "اختر مجلد:"
 
-#: addon\globalPlugins\addonPackager\main.py:354
+#: addon\globalPlugins\addonPackager\main.py:406
 msgid "No se encontraron complementos en el directorio que selecciono."
 msgstr "لم يتم العثور على إضافات في المجلد الذي اخترته."
 
-#: addon\globalPlugins\addonPackager\main.py:376
-#: addon\globalPlugins\addonPackager\main.py:395
-#: addon\globalPlugins\addonPackager\main.py:426
-#: addon\globalPlugins\addonPackager\main.py:562
+#: addon\globalPlugins\addonPackager\main.py:428
+#: addon\globalPlugins\addonPackager\main.py:447
+#: addon\globalPlugins\addonPackager\main.py:478
+#: addon\globalPlugins\addonPackager\main.py:747
 msgid "Necesita elegir al menos un complemento para continuar."
 msgstr "تحتاج إلى اختيار إضافة واحدة على الأقل للمتابعة."
 
-#: addon\globalPlugins\addonPackager\main.py:414
+#: addon\globalPlugins\addonPackager\main.py:466
 msgid "Complementos &habilitados"
 msgstr "&تفعيل الإضافات"
 
-#: addon\globalPlugins\addonPackager\main.py:418
+#: addon\globalPlugins\addonPackager\main.py:470
 msgid "Complementos &deshabilitados"
 msgstr "تعط&يل الإضافات"
 
-#: addon\globalPlugins\addonPackager\main.py:444
+#: addon\globalPlugins\addonPackager\main.py:496
 msgid "Procesar &instalados"
 msgstr "العمليات المث&بتة"
 
-#: addon\globalPlugins\addonPackager\main.py:445
+#: addon\globalPlugins\addonPackager\main.py:497
 msgid "Procesar un archivo de &complemento"
 msgstr "معالجة &ملف الإضافة"
 
+#: addon\globalPlugins\addonPackager\main.py:506
+#: addon\globalPlugins\addonPackager\main.py:879
+msgid ""
+"Necesita elegir al menos un elemento de copia de seguridad de la lista para "
+"continuar."
+msgstr "تحتاج إلى اختيار عنصر احتياطي واحد على الأقل من القائمة للمتابعة."
+
+#. Botón restaurar copia de seguridad
+#: addon\globalPlugins\addonPackager\main.py:512
+#: addon\globalPlugins\addonPackager\main.py:528
+msgid "Archivo de copia de seguridad de NVDA (*.nvda-backup)|*.nvda-backup"
+msgstr "ملف النسخ الاحتياطي NVDA (* .nvda-backup) | * .nvda-backup"
+
+#: addon\globalPlugins\addonPackager\main.py:513
+msgid "Guardar la copia de seguridad en..."
+msgstr "حفظ النسخة الاحتياطية في ..."
+
+#: addon\globalPlugins\addonPackager\main.py:529
+msgid "Seleccione un archivo de copia de seguridad de NVDA"
+msgstr "حدد ملف NVDA للنسخ الاحتياطي"
+
 #. Manifiestos procesar fichero.
-#: addon\globalPlugins\addonPackager\main.py:576
+#: addon\globalPlugins\addonPackager\main.py:761
 msgid "Complemento de NVDA (*.nvda-addon)|*.nvda-addon"
 msgstr "إضافة NVDA (*.nvda-addon)|*.nvda-addon"
 
-#: addon\globalPlugins\addonPackager\main.py:577
+#: addon\globalPlugins\addonPackager\main.py:762
 msgid "Seleccione un complemento de NVDA"
 msgstr "حدد إضافة NVDA"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:111
+#: addon\globalPlugins\addonPackager\main.py:823
+msgid "Restaurar copia de seguridad de NVDA"
+msgstr "استعادة النسخة الاحتياطية من NVDA"
+
+#: addon\globalPlugins\addonPackager\main.py:829
+msgid "&Contenido de la copia de seguridad:"
+msgstr "محتوى النسخ الاحتياطي:"
+
+#: addon\globalPlugins\addonPackager\main.py:838
+msgid "&Restaurar"
+msgstr "إستعادة"
+
+#: addon\globalPlugins\addonPackager\main.py:841
+msgid "&Cerrar"
+msgstr "إغلاق"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:162
 msgid "Creando el complemento: {} {}"
 msgstr "إنشاء الإضافة : {} {}"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:115
+#: addon\globalPlugins\addonPackager\utilidades.py:166
 msgid ""
 "Se generaron correctamente todos los complementos.\n"
 "\n"
@@ -285,12 +384,12 @@ msgstr ""
 "\n"
 "انقر فوق \"موافق\" للمتابعة."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:121
-#: addon\globalPlugins\addonPackager\utilidades.py:203
-#: addon\globalPlugins\addonPackager\utilidades.py:253
-#: addon\globalPlugins\addonPackager\utilidades.py:385
-#: addon\globalPlugins\addonPackager\utilidades.py:439
-#: addon\globalPlugins\addonPackager\utilidades.py:502
+#: addon\globalPlugins\addonPackager\utilidades.py:172
+#: addon\globalPlugins\addonPackager\utilidades.py:254
+#: addon\globalPlugins\addonPackager\utilidades.py:304
+#: addon\globalPlugins\addonPackager\utilidades.py:436
+#: addon\globalPlugins\addonPackager\utilidades.py:490
+#: addon\globalPlugins\addonPackager\utilidades.py:553
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -304,11 +403,11 @@ msgstr ""
 "\n"
 "حاول مرة أخرى."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:144
+#: addon\globalPlugins\addonPackager\utilidades.py:195
 msgid "Instalando el complemento: {}"
 msgstr "تثبيت إضافة: {}"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:167
+#: addon\globalPlugins\addonPackager\utilidades.py:218
 msgid ""
 "Se completo la instalación correctamente.\n"
 "\n"
@@ -322,7 +421,7 @@ msgstr ""
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:177
+#: addon\globalPlugins\addonPackager\utilidades.py:228
 msgid ""
 "No se pudo instalar el complemento.\n"
 "\n"
@@ -336,7 +435,7 @@ msgstr ""
 "\n"
 "ابحث عن إضافة متوافقة."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:188
+#: addon\globalPlugins\addonPackager\utilidades.py:239
 msgid ""
 "Se completo la instalación correctamente.\n"
 "\n"
@@ -361,7 +460,7 @@ msgstr ""
 "يتطلب NVDA إعادة التشغيل لتطبيق التثبيت.\n"
 "¿هل تريد إعادة تشغيل NVDA الآن?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:212
+#: addon\globalPlugins\addonPackager\utilidades.py:263
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -381,11 +480,11 @@ msgstr ""
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:237
+#: addon\globalPlugins\addonPackager\utilidades.py:288
 msgid "Desinstalando el complemento: {}"
 msgstr "إزالة الإضافة"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:244
+#: addon\globalPlugins\addonPackager\utilidades.py:295
 msgid ""
 "Se completo la desinstalación correctamente.\n"
 "\n"
@@ -399,7 +498,7 @@ msgstr ""
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن?"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:262
+#: addon\globalPlugins\addonPackager\utilidades.py:313
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -419,15 +518,15 @@ msgstr ""
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن؟"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:310
+#: addon\globalPlugins\addonPackager\utilidades.py:361
 msgid "Buscando complementos en {}..."
 msgstr "البحث عن الإضافات في {} ..."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:314
+#: addon\globalPlugins\addonPackager\utilidades.py:365
 msgid "No hay complementos compatibles en el directorio."
 msgstr "لا يحتوي المجلد الذي قمت باختياره على إضافات مدعومة."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:318
+#: addon\globalPlugins\addonPackager\utilidades.py:369
 msgid ""
 "Se completo con éxito la extracción de información de los complementos.\n"
 "\n"
@@ -458,7 +557,7 @@ msgstr ""
 "\n"
 "اضغط على موافق للمتابعة."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:334
+#: addon\globalPlugins\addonPackager\utilidades.py:385
 msgid ""
 "Se completo con éxito la extracción de información de los complementos.\n"
 "\n"
@@ -468,15 +567,15 @@ msgstr ""
 "\n"
 "انقر فوق \"موافق\" للمتابعة."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:357
+#: addon\globalPlugins\addonPackager\utilidades.py:408
 msgid "Deshabilitando complementos..."
 msgstr "جارٍ تعطيل الإضافات..."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:367
+#: addon\globalPlugins\addonPackager\utilidades.py:418
 msgid "Habilitando complementos..."
 msgstr "جارٍ تفعيل الإضافات..."
 
-#: addon\globalPlugins\addonPackager\utilidades.py:376
+#: addon\globalPlugins\addonPackager\utilidades.py:427
 msgid ""
 "Se completo el proceso de habilitar y deshabilitar correctamente.\n"
 "\n"
@@ -490,7 +589,7 @@ msgstr ""
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن؟"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:394
+#: addon\globalPlugins\addonPackager\utilidades.py:445
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -510,11 +609,11 @@ msgstr ""
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن؟"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:423
+#: addon\globalPlugins\addonPackager\utilidades.py:474
 msgid "Cambiando el manifiesto al complemento: {}"
 msgstr "تغيير البياناتل إضافة: {}"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:430
+#: addon\globalPlugins\addonPackager\utilidades.py:481
 msgid ""
 "Se cambiaron los manifiestos correctamente.\n"
 "\n"
@@ -528,7 +627,7 @@ msgstr ""
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن؟"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:448
+#: addon\globalPlugins\addonPackager\utilidades.py:499
 msgid ""
 "Se produjo un error inesperado. \n"
 "\n"
@@ -548,11 +647,11 @@ msgstr ""
 "\n"
 "هل تريد إعادة تشغيل NVDA الآن؟"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:477
+#: addon\globalPlugins\addonPackager\utilidades.py:528
 msgid "Trabajando en el complemento: {}"
 msgstr "العمل على إضافة: {}"
 
-#: addon\globalPlugins\addonPackager\utilidades.py:492
+#: addon\globalPlugins\addonPackager\utilidades.py:543
 msgid ""
 "Se cambio correctamente el manifiesto.\n"
 "\n"
@@ -568,4 +667,303 @@ msgstr ""
 "\n"
 "{}\n"
 "\n"
-"اضغط على قبول للمتابعة."
+"اضغط على موافق للمتابعة."
+
+#. Diccionario
+#: addon\globalPlugins\addonPackager\utilidades.py:581
+msgid "Añadiendo el directorio de diccionarios..."
+msgstr "جارٍ إضافة دليل القاموس ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:587
+msgid ""
+"No se pudo agregar el directorio de diccionarios a la copia de seguridad."
+msgstr "فشل في إضافة دليل القاموس إلى النسخ الاحتياطي."
+
+#. Perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:589
+msgid "Añadiendo el directorio de Perfiles..."
+msgstr "إضافة دليل ملفات التعريف ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:595
+msgid "No se pudo agregar el directorio de Perfiles a la copia de seguridad."
+msgstr "فشل في إضافة دليل ملفات التعريف إلى النسخ الاحتياطي."
+
+#. Scratchpad
+#: addon\globalPlugins\addonPackager\utilidades.py:597
+msgid "Añadiendo el directorio de Scratchpad..."
+msgstr "جارٍ إضافة دليل المسودة ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:603
+msgid "No se pudo agregar el directorio de Scratchpad a la copia de seguridad."
+msgstr "فشل في إضافة دليل scratchpad للنسخ الاحتياطي."
+
+#. Fichero configuración disparadores de perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:606
+msgid "Añadiendo el Fichero configuración disparadores de perfiles..."
+msgstr "جارٍ إضافة ملف إعداد مشغل ملف التعريف ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:613
+#: addon\globalPlugins\addonPackager\utilidades.py:615
+msgid ""
+"No se pudo agregar el Fichero configuración disparadores de perfiles a la "
+"copia de seguridad."
+msgstr "فشل في إضافة ملف إعدادات مشغل ملف التعريف للنسخ الاحتياطي."
+
+#. Fichero de configuración gestos de entrada
+#: addon\globalPlugins\addonPackager\utilidades.py:618
+msgid "Añadiendo el Fichero de configuración gestos de entrada..."
+msgstr "جارٍ إضافة ملف إعدادات اختصارات الإدخال ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:625
+#: addon\globalPlugins\addonPackager\utilidades.py:627
+msgid ""
+"No se pudo agregar el Fichero de configuración gestos de entrada a la copia "
+"de seguridad."
+msgstr "فشل في إضافة ملف إعدادات اختصارات الإدخال إلى النسخة الاحتياطية."
+
+#. Fichero de configuración de NVDA
+#: addon\globalPlugins\addonPackager\utilidades.py:630
+msgid "Añadiendo el Fichero de configuración de NVDA..."
+msgstr "جاري إضافة ملف تهيئة NVDA ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:637
+#: addon\globalPlugins\addonPackager\utilidades.py:639
+msgid ""
+"No se pudo agregar el Fichero de configuración de NVDA a la copia de "
+"seguridad."
+msgstr "فشل في إضافة ملف تهيئة NVDA للنسخ الاحتياطي."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:652
+msgid ""
+"Se creo la copia de seguridad correctamente en:\n"
+"\n"
+"{}\n"
+"\n"
+"Pulse aceptar para continuar."
+msgstr ""
+"تم إنشاء النسخة الاحتياطية بنجاح في:\n"
+"\n"
+"{}\n"
+"\n"
+"اضغط على موافق للمتابعة."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:665
+msgid ""
+"Se produjo el siguiente error:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo crear la copia de seguridad."
+msgstr ""
+"حدث الخطأ التالي:\n"
+"\n"
+"{}\n"
+"\n"
+"فشل إنشاء نسخة احتياطية."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:673
+msgid ""
+"Se produjeron los siguientes errores:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo crear la copia de seguridad."
+msgstr ""
+"وقعت الأخطاء التالية:\n"
+"\n"
+"{}\n"
+"\n"
+"فشل إنشاء نسخة احتياطية."
+
+#. Diccionario
+#: addon\globalPlugins\addonPackager\utilidades.py:699
+msgid "Restaurando el directorio de diccionarios..."
+msgstr "استعادة دليل القاموس ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:708
+#: addon\globalPlugins\addonPackager\utilidades.py:710
+msgid "No se pudo restaurar el directorio de diccionarios."
+msgstr "لا يمكن استعادة دليل القاموس."
+
+#. Perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:712
+msgid "Restaurando el directorio de Perfiles..."
+msgstr "استعادة دليل التوصيفات ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:721
+#: addon\globalPlugins\addonPackager\utilidades.py:723
+msgid "No se pudo restaurar el directorio de Perfiles."
+msgstr "تعذرت استعادة دليل ملفات التعريف."
+
+#. Scratchpad
+#: addon\globalPlugins\addonPackager\utilidades.py:726
+msgid "Restaurando el directorio de Scratchpad..."
+msgstr "جارٍ استعادة دليل Scratchpad ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:735
+#: addon\globalPlugins\addonPackager\utilidades.py:737
+msgid "No se pudo restaurar el directorio de Scratchpad."
+msgstr "لا يمكن استعادة دليل المسودة."
+
+#. Fichero configuración disparadores de perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:740
+msgid "Restaurando el Fichero configuración disparadores de perfiles..."
+msgstr "استعادة ملف إعدادات مشغل ملف التعريف ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:754
+#: addon\globalPlugins\addonPackager\utilidades.py:756
+#: addon\globalPlugins\addonPackager\utilidades.py:758
+msgid "No se pudo restaurar el Fichero configuración disparadores de perfiles."
+msgstr "فشل في استعادة ملف إعدادات مشغل ملف التعريف."
+
+#. Fichero configuración gestos de entrada
+#: addon\globalPlugins\addonPackager\utilidades.py:761
+msgid "Restaurando el Fichero configuración gestos de entrada..."
+msgstr "استعادة ملف إعدادات اختصارات الإدخال ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:775
+#: addon\globalPlugins\addonPackager\utilidades.py:777
+msgid "No se pudo restaurar el Fichero configuración de gestos de entrada."
+msgstr "فشل في استعادة ملف إعدادات اختصارات الإدخال."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:779
+msgid "No se pudo restaurar el Fichero configuración gestos de entrada."
+msgstr "فشل في استعادة ملف إعدادات اختصارات الإدخال."
+
+#. Fichero configuración de NVDA
+#: addon\globalPlugins\addonPackager\utilidades.py:782
+msgid "Restaurando el Fichero configuración de NVDA..."
+msgstr "استعادة ملف تهيئة NVDA ..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:796
+#: addon\globalPlugins\addonPackager\utilidades.py:798
+#: addon\globalPlugins\addonPackager\utilidades.py:800
+msgid "No se pudo restaurar el Fichero configuración de NVDA."
+msgstr "فشل في استعادة ملف تهيئة NVDA."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:808
+msgid ""
+"La restauración fue un éxito.\n"
+"\n"
+"Al restaurar la configuración de NVDA es necesario reiniciar el lector.\n"
+"\n"
+"Pulse aceptar o cerrar para reiniciar."
+msgstr ""
+"كانت عملية الترميم ناجحة.\n"
+"\n"
+"تتطلب استعادة إعدادات NVDA إعادة تشغيل القارئ.\n"
+"\n"
+"انقر فوق موافق أو إغلاق لإعادة التشغيل."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:818
+msgid ""
+"Se produjo el siguiente error:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar toda la copia de seguridad.\n"
+"\n"
+"Pero hay elementos que si pudieron ser restaurados.\n"
+"\n"
+"Al restaurar la configuración de NVDA es necesario reiniciar el lector.\n"
+"\n"
+"Pulse cancelar o cerrar para reiniciar."
+msgstr ""
+"حدث الخطأ التالي:\n"
+"\n"
+"{}\n"
+"\n"
+"لا يمكن استعادة النسخة الاحتياطية بالكامل.\n"
+"\n"
+"لكن هناك عناصر يمكن استعادتها.\n"
+"\n"
+"تتطلب استعادة إعدادات NVDA إعادة تشغيل القارئ.\n"
+"\n"
+"اضغط إلغاء أو إغلاق لإعادة التشغيل."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:832
+msgid ""
+"Se produjo el siguiente error:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar la copia de seguridad.\n"
+"\n"
+"Pulse cancelar o cerrar para continuar."
+msgstr ""
+"حدث الخطأ التالي:\n"
+"\n"
+"{}\n"
+"\n"
+"لا يمكن استعادة النسخة الاحتياطية.\n"
+"\n"
+"اضغط إلغاء أو إغلاق للمتابعة."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:843
+msgid ""
+"Se produjeron los siguientes errores:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar toda la copia de seguridad.\n"
+"\n"
+"Pero hay elementos que si pudieron ser restaurados.\n"
+"\n"
+"Al restaurar la configuración de NVDA es necesario reiniciar el lector.\n"
+"\n"
+"Pulse cancelar o cerrar para reiniciar."
+msgstr ""
+"وقعت الأخطاء التالية:\n"
+"\n"
+"{}\n"
+"\n"
+"لا يمكن استعادة النسخة الاحتياطية بالكامل.\n"
+"\n"
+"لكن هناك عناصر يمكن استعادتها.\n"
+"\n"
+"تتطلب استعادة إعدادات NVDA إعادة تشغيل القارئ.\n"
+"\n"
+"اضغط إلغاء أو إغلاق لإعادة التشغيل."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:857
+msgid ""
+"Se produjeron los siguientes errores:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar la copia de seguridad.\n"
+"\n"
+"Pulse cancelar o cerrar para continuar."
+msgstr ""
+"وقعت الأخطاء التالية:\n"
+"\n"
+"{}\n"
+"\n"
+"لا يمكن استعادة النسخة الاحتياطية.\n"
+"\n"
+"اضغط إلغاء أو إغلاق للمتابعة."
+
+#~ msgid ""
+#~ "Conjunto de utilidades para un manejo fácil de complementos para NVDA.\n"
+#~ "\n"
+#~ "* Empaquetador de complementos.\n"
+#~ "* Instalador múltiple de complementos.\n"
+#~ "* Desinstala complementos.\n"
+#~ "* Habilita / deshabilita complementos.\n"
+#~ "* Modificador de manifiestos, instalados y desde archivo no instalado.\n"
+#~ "* Documentación de complementos.\n"
+#~ "\n"
+#~ "Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor "
+#~ "de complementos nativo de NVDA."
+#~ msgstr ""
+#~ "مجموعة من الأدوات لإدارة إضافات  NVDA بسهولة. \n"
+#~ "\n"
+#~ "* تحزيم الإضافات.\n"
+#~ "* تثبيت مجموعة إضافات . \n"
+#~ "* إلغاء تثبيت مجموعة إضافات. \n"
+#~ "* تفعيل / تعطيل مجموعة إضافات. \n"
+#~ "* تعديل بيانات التوافق للإضافات، مثبت ومن ملف غير مثبت.\n"
+#~ "* ملفات المساعدة للإضافات .\n"
+#~ "\n"
+#~ "جميع العناصر سهلة الاستخدام وموفرة للوقت مقارنة بمدير الإضافات الأفتراضي "
+#~ "للNVDA."
