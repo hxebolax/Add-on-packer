@@ -225,6 +225,7 @@ Los cambios en el complemento se reflejarán en esta sección explicando las nov
 El documento principal no se modificará siendo una orientación para el usuario.
 
 El usuario es el responsable de revisar esta sección para estar informados de los cambios.
+
 ## Versión 1.3.
 
 * Se a corregido un error al generar los complementos.

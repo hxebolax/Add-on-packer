@@ -226,6 +226,12 @@ Le document principal ne sera pas modifié étant une orientation pour l'utilisa
 
 L'utilisateur est responsable de la révision de cette section pour être informé des modifications.
 
+## Version 1.3.
+
+* Une erreur a été corrigé lors de la génération des extensions.
+
+La dernière version comprenait le dossier __pycache__ que NVDA génère. Dans cette version, l'extension générée sera égale à celle distribuée par le développeur à l'exclusion du dossier __pycache__ de la branche des répertoires.
+
 ## Version 1.2.
 
 * Des erreurs graves ont été corrigés dans la sauvegarde.

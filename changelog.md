@@ -1,1 +1,3 @@
-* Ya no se incluye el directorio __pycache__ al generar complementos
+* Traducciones actualizadas árabe, ruso, francés, portugués, ucraniano y turco.
+
+* Resto de traducciones actualizadas automáticamente con IA.
