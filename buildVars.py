@@ -35,7 +35,7 @@ addon_info = {
 
 Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de complementos nativo de NVDA."""),
 	# version
-	"addon_version": "1.3.1",
+	"addon_version": "1.3.2",
 	# Author(s)
 	"addon_author": u"Héctor J. Benítez Corredera <xebolax@gmail.com>",
 	# URL for the add-on documentation support
