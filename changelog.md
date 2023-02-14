@@ -1,1 +1,1 @@
-* Idioma Frances corregido.
+* Compatibilidad API 2023
