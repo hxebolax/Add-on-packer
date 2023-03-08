@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AddonPacker\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-02-14 11:34+0200\n"
-"PO-Revision-Date: 2023-02-14 11:38+0200\n"
+"POT-Creation-Date: 2023-03-08 23:51+0200\n"
+"PO-Revision-Date: 2023-03-09 00:05+0200\n"
 "Last-Translator: Ukrainian NVDA Community <vp88.mobile@gmail.com>\n"
 "Language-Team: Ukrainian NVDA Community\n"
 "Language: uk\n"
@@ -22,7 +22,8 @@ msgstr ""
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:67
+#: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:74
+#: addon\globalPlugins\addonPackager\__init__.py:91
 #: addon\globalPlugins\addonPackager\main.py:29
 msgid "Utilidades para los complementos de NVDA"
 msgstr "Інструменти для додатків NVDA"
@@ -40,6 +41,7 @@ msgid ""
 "* Modificador de manifiestos, instalados y desde archivo no instalado.\n"
 "* Hacer / restaurar copias de seguridad de la configuración de NVDA.\n"
 "* Documentación de complementos.\n"
+"* Cerrar NVDA cuando se queda bloqueado.\n"
 "\n"
 "Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de "
 "complementos nativo de NVDA."
@@ -53,15 +55,17 @@ msgstr ""
 "* Модифікатор маніфесту як встановлених додатків, так і файлів додатків.\n"
 "* Створення/відновлення резервних копій конфігурації NVDA.\n"
 "* Документація додатків.\n"
+"Закриття NVDA у разі її зависання.\n"
+"* \n"
 "\n"
 "Всі можливості зручні для користувача й заощаджують час, у порівнянні зі "
 "стандартним менеджером додатків NVDA."
 
-#: addon\globalPlugins\addonPackager\__init__.py:35
+#: addon\globalPlugins\addonPackager\__init__.py:42
 msgid "&Utilidades para los complementos de NVDA"
 msgstr "&Інструменти для додатків NVDA"
 
-#: addon\globalPlugins\addonPackager\__init__.py:52
+#: addon\globalPlugins\addonPackager\__init__.py:59
 msgid ""
 "Hay una acción pendiente de reiniciar NVDA.\n"
 "\n"
@@ -76,24 +80,28 @@ msgstr ""
 "\n"
 "Бажаєте перезапустити NVDA зараз?"
 
-#: addon\globalPlugins\addonPackager\__init__.py:57
+#: addon\globalPlugins\addonPackager\__init__.py:64
 msgid "Pregunta"
 msgstr "Попередження"
 
-#: addon\globalPlugins\addonPackager\__init__.py:67
+#: addon\globalPlugins\addonPackager\__init__.py:74
 msgid "Muestra la ventana de Utilidades para los complementos de NVDA"
 msgstr "Показує вікно інструментів для додатків NVDA"
 
-#: addon\globalPlugins\addonPackager\__init__.py:77
-#: addon\globalPlugins\addonPackager\__init__.py:79
+#: addon\globalPlugins\addonPackager\__init__.py:84
+#: addon\globalPlugins\addonPackager\__init__.py:86
 msgid ""
 "Ya hay una instancia de Utilidades para los complementos de NVDA abierta."
 msgstr "Одну копію Інструментів для додатків NVDA вже запущено."
 
-#: addon\globalPlugins\addonPackager\__init__.py:77
+#: addon\globalPlugins\addonPackager\__init__.py:84
 #: addon\globalPlugins\addonPackager\main.py:406
 msgid "Información"
 msgstr "Інформація"
+
+#: addon\globalPlugins\addonPackager\__init__.py:91
+msgid "Cerrar NVDA cuando se queda bloqueado"
+msgstr "Закрити NVDA у разі зависання"
 
 #: addon\globalPlugins\addonPackager\main.py:47
 msgid "Empaquetador de complementos"
