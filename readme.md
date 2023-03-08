@@ -226,6 +226,22 @@ El documento principal no se modificará siendo una orientación para el usuario
 
 El usuario es el responsable de revisar esta sección para estar informados de los cambios.
 
+## Versión 1.5.
+
+* Cerrar NVDA cuando se queda bloqueado.
+
+Esta nueva opción viene sin interface ni atajo asignado.
+
+Para ello tendremos que ir a Gestos de entrada / Utilidades para los complementos de NVDA / Cerrar NVDA cuando se queda bloqueado y asignarle una combinación de teclas.
+
+Al pulsar esas teclas el NVDA se cerrará.
+
+Esto es útil para cuando se queda bloqueado NVDA.
+
+Existe un complemento llamado Kill NVDA que cierra NVDA.
+
+La diferencia del complemento Kill NVDA y esta función incorporada en Utilidades para los complementos de NVDA es que el primero usa herramientas del sistema y yo uso directamente llamadas al núcleo de Windows por lo que es más robusto y más fiable.
+
 ## Versión 1.4.
 
 * Compatibilidad API 2023.

@@ -32,10 +32,11 @@ addon_info = {
 * Modificador de manifiestos, instalados y desde archivo no instalado.
 * Hacer / restaurar copias de seguridad de la configuración de NVDA.
 * Documentación de complementos.
+* Cerrar NVDA cuando se queda bloqueado.
 
 Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de complementos nativo de NVDA."""),
 	# version
-	"addon_version": "1.4",
+	"addon_version": "1.5",
 	# Author(s)
 	"addon_author": u"Héctor J. Benítez Corredera <xebolax@gmail.com>",
 	# URL for the add-on documentation support

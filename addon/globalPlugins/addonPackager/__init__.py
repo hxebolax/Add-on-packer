@@ -15,9 +15,16 @@ import os
 import sys
 from . import ajustes
 from . import main
+from .kill import kill_process_by_name
 
 addonHandler.initTranslation()
 
+def disableInSecureMode(decoratedCls):
+	if globalVars.appArgs.secure:
+		return globalPluginHandler.GlobalPlugin
+	return decoratedCls
+
+@disableInSecureMode
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
 		super(GlobalPlugin, self).__init__()
@@ -81,8 +88,9 @@ Por motivos de seguridad el complemento no podrá ser usado hasta que no reinici
 	def menuApp(self, event):
 		wx.CallAfter(self.script_menuApp, None, True)
 
-if globalVars.appArgs.secure:
-	GlobalPlugin = globalPluginHandler.GlobalPlugin # noqa: F811 
+	@script(gesture=None, description= _("Cerrar NVDA cuando se queda bloqueado"), category= _("Utilidades para los complementos de NVDA"))
+	def script_kill(self, event):
+		HiloComplemento(None, 2).start()
 
 class HiloComplemento(Thread):
 	def __init__(self, frame, opcion):
@@ -98,6 +106,11 @@ class HiloComplemento(Thread):
 			gui.mainFrame.prePopup()
 			self._main.Show()
 
+		def killNVDA():
+			kill_process_by_name("nvda.exe")
+
 		if self.opcion == 1:
 			wx.CallAfter(appLauncherMain)
+		elif self.opcion == 2:
+			wx.CallAfter(killNVDA)
 
