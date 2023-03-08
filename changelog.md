@@ -1,1 +1,1 @@
-* Compatibilidad API 2023
+* Cerrar NVDA cuando se queda bloqueado.
