@@ -1,0 +1,943 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 'addonPackager' package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'addonPackager' '1.5'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2023-03-08 12:53+0100\n"
+"PO-Revision-Date: 2023-05-27 11:20+0800\n"
+"Last-Translator: 完美很难 <1872265132@qq.com>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: buildVars.py:23 addon\globalPlugins\addonPackager\__init__.py:74
+#: addon\globalPlugins\addonPackager\__init__.py:91
+#: addon\globalPlugins\addonPackager\main.py:29
+msgid "Utilidades para los complementos de NVDA"
+msgstr "NVDA 插件实用程序"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid ""
+"Conjunto de utilidades para un manejo fácil de complementos para NVDA.\n"
+"\n"
+"* Empaquetador de complementos.\n"
+"* Instalador múltiple de complementos.\n"
+"* Desinstala complementos.\n"
+"* Habilita / deshabilita complementos.\n"
+"* Modificador de manifiestos, instalados y desde archivo no instalado.\n"
+"* Hacer / restaurar copias de seguridad de la configuración de NVDA.\n"
+"* Documentación de complementos.\n"
+"* Cerrar NVDA cuando se queda bloqueado.\n"
+"\n"
+"Todas las áreas de fácil manejo y para ahorrar tiempo respecto al gestor de "
+"complementos nativo de NVDA."
+msgstr ""
+"用于轻松管理 NVDA 插件的实用程序集。\n"
+"\n"
+"* 插件包生成。\n"
+"* 批量安装/卸载插件。\n"
+"* 批量启用/禁用插件。\n"
+"* 清单修改，包含已安装和未安装的插件。\n"
+"* 制作/恢复 NVDA 配置的备份副本。\n"
+"* 插件文档。\n"
+"* NVDA 未响应时关闭。\n"
+"\n"
+"与本地 NVDA 插件管理器相比，所有区域都易于使用并节省时间。"
+
+#: addon\globalPlugins\addonPackager\__init__.py:42
+msgid "&Utilidades para los complementos de NVDA"
+msgstr "NVDA 插件实用程序(&T)"
+
+#: addon\globalPlugins\addonPackager\__init__.py:59
+msgid ""
+"Hay una acción pendiente de reiniciar NVDA.\n"
+"\n"
+"Por motivos de seguridad el complemento no podrá ser usado hasta que no "
+"reinicie.\n"
+"\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"有一个等待重启 NVDA 的操作。\n"
+"\n"
+"出于安全原因，在您重启 NVDA 之前，该插件将无法使用。\n"
+"\n"
+"您要现在重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\__init__.py:64
+msgid "Pregunta"
+msgstr "询问"
+
+#: addon\globalPlugins\addonPackager\__init__.py:74
+msgid "Muestra la ventana de Utilidades para los complementos de NVDA"
+msgstr "显示 NVDA 插件实用程序窗口"
+
+#: addon\globalPlugins\addonPackager\__init__.py:84
+#: addon\globalPlugins\addonPackager\__init__.py:86
+msgid ""
+"Ya hay una instancia de Utilidades para los complementos de NVDA abierta."
+msgstr "已有一个打开的 NVDA 插件实用程序实例。"
+
+#: addon\globalPlugins\addonPackager\__init__.py:84
+#: addon\globalPlugins\addonPackager\main.py:406
+msgid "Información"
+msgstr "信息"
+
+#: addon\globalPlugins\addonPackager\__init__.py:91
+msgid "Cerrar NVDA cuando se queda bloqueado"
+msgstr "NVDA 未响应时关闭"
+
+#: addon\globalPlugins\addonPackager\main.py:47
+msgid "Empaquetador de complementos"
+msgstr "插件包生成"
+
+#: addon\globalPlugins\addonPackager\main.py:51
+#: addon\globalPlugins\addonPackager\main.py:74
+#: addon\globalPlugins\addonPackager\main.py:94
+#: addon\globalPlugins\addonPackager\main.py:201
+msgid "&Lista de complementos:"
+msgstr "插件(&L)"
+
+#: addon\globalPlugins\addonPackager\main.py:60
+#: addon\globalPlugins\addonPackager\main.py:83
+#: addon\globalPlugins\addonPackager\main.py:103
+#: addon\globalPlugins\addonPackager\main.py:129
+#: addon\globalPlugins\addonPackager\main.py:170
+msgid "&Selección"
+msgstr "选择(&S)"
+
+#: addon\globalPlugins\addonPackager\main.py:63
+msgid "&Generar"
+msgstr "生成(&G)"
+
+#: addon\globalPlugins\addonPackager\main.py:67
+msgid "Instalador múltiple"
+msgstr "批量安装"
+
+#: addon\globalPlugins\addonPackager\main.py:71
+msgid "&Seleccione un directorio con complementos a instalar..."
+msgstr "选择插件所在文件夹(&S)..."
+
+#: addon\globalPlugins\addonPackager\main.py:86
+msgid "&Instalar"
+msgstr "安装(&I)"
+
+#: addon\globalPlugins\addonPackager\main.py:90
+msgid "Desinstala complementos"
+msgstr "批量卸载"
+
+#: addon\globalPlugins\addonPackager\main.py:106
+msgid "&Desinstalar"
+msgstr "卸载(&D)"
+
+#: addon\globalPlugins\addonPackager\main.py:110
+msgid "Habilita / deshabilita complementos"
+msgstr "启用/禁用"
+
+#: addon\globalPlugins\addonPackager\main.py:114
+msgid "&Lista de complementos habilitados:"
+msgstr "已启用的插件(&L)"
+
+#: addon\globalPlugins\addonPackager\main.py:120
+msgid "&Lista de complementos deshabilitados:"
+msgstr "已禁用的插件(&L)"
+
+#: addon\globalPlugins\addonPackager\main.py:132
+#: addon\globalPlugins\addonPackager\main.py:173
+msgid "&Procesar"
+msgstr "应用(&P)"
+
+#: addon\globalPlugins\addonPackager\main.py:136
+msgid "Modificador de manifiestos"
+msgstr "清单修改"
+
+#: addon\globalPlugins\addonPackager\main.py:140
+msgid "&Lista de complementos instalados:"
+msgstr "已安装的插件(&L)"
+
+#: addon\globalPlugins\addonPackager\main.py:149
+msgid "Seleccione versión Mayor:"
+msgstr "选择主要版本(&M)"
+
+#: addon\globalPlugins\addonPackager\main.py:155
+msgid "Seleccione versión Menor:"
+msgstr "选择次要版本(&N)"
+
+#: addon\globalPlugins\addonPackager\main.py:161
+msgid "Seleccione una revisión:"
+msgstr "选择修订版本(&R)"
+
+#: addon\globalPlugins\addonPackager\main.py:177
+msgid "Hacer / restaurar copias de seguridad"
+msgstr "备份恢复"
+
+#: addon\globalPlugins\addonPackager\main.py:181
+msgid "&Hacer copias de seguridad:"
+msgstr "要备份的内容(&H)"
+
+#: addon\globalPlugins\addonPackager\main.py:190
+msgid "&Crear copia de seguridad"
+msgstr "创建备份(&C)"
+
+#: addon\globalPlugins\addonPackager\main.py:193
+msgid "&Restaurar copia de seguridad"
+msgstr "恢复备份(&R)"
+
+#: addon\globalPlugins\addonPackager\main.py:197
+msgid "Documentación de complementos"
+msgstr "插件文档"
+
+#: addon\globalPlugins\addonPackager\main.py:207
+msgid "&Abrir documentación del complemento"
+msgstr "打开插件文档(&A)"
+
+#: addon\globalPlugins\addonPackager\main.py:213
+msgid "&Estado:"
+msgstr "状态(&E)"
+
+#: addon\globalPlugins\addonPackager\main.py:225
+msgid "&Aceptar"
+msgstr "确定(&O)"
+
+#: addon\globalPlugins\addonPackager\main.py:228
+msgid "&Cancelar"
+msgstr "取消(&C)"
+
+#: addon\globalPlugins\addonPackager\main.py:231
+msgid "Cerrar"
+msgstr "关闭(&C)"
+
+#: addon\globalPlugins\addonPackager\main.py:315
+#: addon\globalPlugins\addonPackager\main.py:581
+#: addon\globalPlugins\addonPackager\main.py:625
+#: addon\globalPlugins\addonPackager\main.py:862
+msgid "Directorio Diccionarios"
+msgstr "字典文件夹"
+
+#: addon\globalPlugins\addonPackager\main.py:319
+#: addon\globalPlugins\addonPackager\main.py:585
+#: addon\globalPlugins\addonPackager\main.py:629
+#: addon\globalPlugins\addonPackager\main.py:864
+msgid "Directorio Perfiles"
+msgstr "配置文件夹"
+
+#: addon\globalPlugins\addonPackager\main.py:323
+#: addon\globalPlugins\addonPackager\main.py:589
+#: addon\globalPlugins\addonPackager\main.py:633
+#: addon\globalPlugins\addonPackager\main.py:866
+msgid "Directorio Scratchpad"
+msgstr "便签文件夹"
+
+#: addon\globalPlugins\addonPackager\main.py:327
+#: addon\globalPlugins\addonPackager\main.py:593
+#: addon\globalPlugins\addonPackager\main.py:637
+#: addon\globalPlugins\addonPackager\main.py:868
+msgid "Fichero configuración disparadores de perfiles"
+msgstr "配置触发文件"
+
+#: addon\globalPlugins\addonPackager\main.py:330
+#: addon\globalPlugins\addonPackager\main.py:596
+#: addon\globalPlugins\addonPackager\main.py:640
+#: addon\globalPlugins\addonPackager\main.py:870
+msgid "Fichero de configuración gestos de entrada"
+msgstr "按键与手势配置"
+
+#: addon\globalPlugins\addonPackager\main.py:333
+#: addon\globalPlugins\addonPackager\main.py:599
+#: addon\globalPlugins\addonPackager\main.py:643
+#: addon\globalPlugins\addonPackager\main.py:872
+msgid "Fichero de configuración de NVDA"
+msgstr "NVDA 设置"
+
+#: addon\globalPlugins\addonPackager\main.py:376
+#: addon\globalPlugins\addonPackager\main.py:421
+#: addon\globalPlugins\addonPackager\main.py:440
+#: addon\globalPlugins\addonPackager\main.py:460
+#: addon\globalPlugins\addonPackager\main.py:464
+#: addon\globalPlugins\addonPackager\main.py:468
+#: addon\globalPlugins\addonPackager\main.py:490
+msgid "&Seleccionar todo"
+msgstr "全选(&S)"
+
+#: addon\globalPlugins\addonPackager\main.py:377
+#: addon\globalPlugins\addonPackager\main.py:422
+#: addon\globalPlugins\addonPackager\main.py:441
+#: addon\globalPlugins\addonPackager\main.py:461
+#: addon\globalPlugins\addonPackager\main.py:465
+#: addon\globalPlugins\addonPackager\main.py:469
+#: addon\globalPlugins\addonPackager\main.py:491
+msgid "&Deseleccionar todo"
+msgstr "取消全选(&D)"
+
+#: addon\globalPlugins\addonPackager\main.py:383
+msgid "Tiene que seleccionar un complemento para continuar."
+msgstr "您必须选择一个插件才能继续。"
+
+#: addon\globalPlugins\addonPackager\main.py:383
+#: addon\globalPlugins\addonPackager\main.py:428
+#: addon\globalPlugins\addonPackager\main.py:447
+#: addon\globalPlugins\addonPackager\main.py:478
+#: addon\globalPlugins\addonPackager\main.py:506
+#: addon\globalPlugins\addonPackager\main.py:747
+#: addon\globalPlugins\addonPackager\main.py:879
+msgid "Error"
+msgstr "错误"
+
+#. Botón selecciona directorio con complementos instalador.
+#: addon\globalPlugins\addonPackager\main.py:386
+#: addon\globalPlugins\addonPackager\main.py:400
+msgid "Seleccione un directorio:"
+msgstr "选择一个文件夹"
+
+#: addon\globalPlugins\addonPackager\main.py:406
+msgid "No se encontraron complementos en el directorio que selecciono."
+msgstr "在选择的文件夹中未找到插件。"
+
+#: addon\globalPlugins\addonPackager\main.py:428
+#: addon\globalPlugins\addonPackager\main.py:447
+#: addon\globalPlugins\addonPackager\main.py:478
+#: addon\globalPlugins\addonPackager\main.py:747
+msgid "Necesita elegir al menos un complemento para continuar."
+msgstr "需要至少选择一个插件才能继续。"
+
+#: addon\globalPlugins\addonPackager\main.py:466
+msgid "Complementos &habilitados"
+msgstr "已启用的插件(&H)"
+
+#: addon\globalPlugins\addonPackager\main.py:470
+msgid "Complementos &deshabilitados"
+msgstr "已禁用的插件(&D)"
+
+#: addon\globalPlugins\addonPackager\main.py:496
+msgid "Procesar &instalados"
+msgstr "处理并安装(&I)"
+
+#: addon\globalPlugins\addonPackager\main.py:497
+msgid "Procesar un archivo de &complemento"
+msgstr "处理插件文件(&P)"
+
+#: addon\globalPlugins\addonPackager\main.py:506
+#: addon\globalPlugins\addonPackager\main.py:879
+msgid ""
+"Necesita elegir al menos un elemento de copia de seguridad de la lista para "
+"continuar."
+msgstr "需至少选择一个备份项目才能继续。"
+
+#. Botón restaurar copia de seguridad
+#: addon\globalPlugins\addonPackager\main.py:512
+#: addon\globalPlugins\addonPackager\main.py:528
+msgid "Archivo de copia de seguridad de NVDA (*.nvda-backup)|*.nvda-backup"
+msgstr "NVDA 备份文件 (*.nvda-backup)|*.nvda-backup"
+
+#: addon\globalPlugins\addonPackager\main.py:513
+msgid "Guardar la copia de seguridad en..."
+msgstr "将备份保存到"
+
+#: addon\globalPlugins\addonPackager\main.py:529
+msgid "Seleccione un archivo de copia de seguridad de NVDA"
+msgstr "选择一个 NVDA 备份文件"
+
+#. Manifiestos procesar fichero.
+#: addon\globalPlugins\addonPackager\main.py:761
+msgid "Complemento de NVDA (*.nvda-addon)|*.nvda-addon"
+msgstr "NVDA 插件包 (*.nvda-addon)|*.nvda-addon"
+
+#: addon\globalPlugins\addonPackager\main.py:762
+msgid "Seleccione un complemento de NVDA"
+msgstr "选择一个 NVDA 插件"
+
+#: addon\globalPlugins\addonPackager\main.py:823
+msgid "Restaurar copia de seguridad de NVDA"
+msgstr "恢复 NVDA 备份"
+
+#: addon\globalPlugins\addonPackager\main.py:829
+msgid "&Contenido de la copia de seguridad:"
+msgstr "要恢复的内容(&C)"
+
+#: addon\globalPlugins\addonPackager\main.py:838
+msgid "&Restaurar"
+msgstr "恢复(&R)"
+
+#: addon\globalPlugins\addonPackager\main.py:841
+msgid "&Cerrar"
+msgstr "关闭(&C)"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:162
+msgid "Creando el complemento: {} {}"
+msgstr "生成插件：{} {}"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:166
+msgid ""
+"Se generaron correctamente todos los complementos.\n"
+"\n"
+"Pulse aceptar para continuar."
+msgstr ""
+"所有插件均已成功生成。\n"
+"\n"
+"单击确定继续。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:172
+#: addon\globalPlugins\addonPackager\utilidades.py:254
+#: addon\globalPlugins\addonPackager\utilidades.py:304
+#: addon\globalPlugins\addonPackager\utilidades.py:436
+#: addon\globalPlugins\addonPackager\utilidades.py:490
+#: addon\globalPlugins\addonPackager\utilidades.py:553
+msgid ""
+"Se produjo un error inesperado. \n"
+"\n"
+"Error: {}\n"
+"\n"
+"Vuelva a intentarlo."
+msgstr ""
+"发生意外错误。\n"
+"\n"
+"错误： {}\n"
+"\n"
+"请再试一次。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:195
+msgid "Instalando el complemento: {}"
+msgstr "安装插件：{}"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:218
+msgid ""
+"Se completo la instalación correctamente.\n"
+"\n"
+"NVDA necesita reiniciarse para aplicar las instalaciones.\n"
+"\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"安装已成功完成。\n"
+"\n"
+"需重启 NVDA 才能应用安装。\n"
+"\n"
+"您要现在重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:228
+msgid ""
+"No se pudo instalar el complemento.\n"
+"\n"
+"Fallo de compatibilidad.\n"
+"\n"
+"Busque un complemento compatible."
+msgstr ""
+"插件无法安装。\n"
+"\n"
+"与此版本的NVDA 不兼容。\n"
+"\n"
+"请查找兼容的插件。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:239
+msgid ""
+"Se completo la instalación correctamente.\n"
+"\n"
+"Pero hay complementos que no se pudieron instalar.\n"
+"\n"
+"Los siguientes complementos son incompatibles, busque una versión "
+"compatible:\n"
+"\n"
+"{}\n"
+"\n"
+"NVDA necesita reiniciarse para aplicar las instalaciones.\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"安装成功完成。\n"
+"\n"
+"部分插件无法安装。\n"
+"\n"
+"以下插件与此版本的 NVDA 不兼容，请查找兼容的插件：\n"
+"\n"
+"{}\n"
+"\n"
+"NVDA 需要重启才能应用更改。\n"
+"您现在要重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:263
+msgid ""
+"Se produjo un error inesperado. \n"
+"\n"
+"Error: {}\n"
+"\n"
+"No obstante hubo complementos que se instalaron y NVDA necesita reiniciar "
+"para aplicar los cambios.\n"
+"\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"发生意外错误。\n"
+"\n"
+"错误： {}\n"
+"\n"
+"部分插件已安装，NVDA 需要重启才能应用更改。\n"
+"\n"
+"您现在要重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:288
+msgid "Desinstalando el complemento: {}"
+msgstr "卸载插件：{}"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:295
+msgid ""
+"Se completo la desinstalación correctamente.\n"
+"\n"
+"NVDA necesita reiniciarse para aplicar los cambios.\n"
+"\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"卸载成功完成。\n"
+"\n"
+"NVDA 需要重启才能应用更改。\n"
+"\n"
+"您现在要重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:313
+msgid ""
+"Se produjo un error inesperado. \n"
+"\n"
+"Error: {}\n"
+"\n"
+"No obstante hubo complementos que se desinstalaron y NVDA necesita reiniciar "
+"para aplicar los cambios.\n"
+"\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"发生意外错误。\n"
+"\n"
+"错误： {}\n"
+"\n"
+"部分插件已卸载，NVDA 需要重启才能应用更改。\n"
+"\n"
+"您现在要重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:361
+msgid "Buscando complementos en {}..."
+msgstr "在 {} 文件夹中搜索插件..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:365
+msgid "No hay complementos compatibles en el directorio."
+msgstr "文件夹中没有兼容的插件。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:369
+msgid ""
+"Se completo con éxito la extracción de información de los complementos.\n"
+"\n"
+"No obstante, el directorio que introdujo contiene complementos no "
+"compatibles.\n"
+"\n"
+"* Complementos con fallo en el manifiesto: {}.\n"
+"\n"
+"{}\n"
+"\n"
+"* Complementos no compatibles con la api actual: {}.\n"
+"\n"
+"{}\n"
+"\n"
+"Pulse aceptar para continuar."
+msgstr ""
+"插件信息提取成功完成。\n"
+"\n"
+"此文件夹中包含不受支持的插件。\n"
+"\n"
+"读取插件清单失败：{}。\n"
+"\n"
+"{}\n"
+"\n"
+"当前 API 不支持的插件：{}。\n"
+"\n"
+"{}\n"
+"\n"
+"按确定继续。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:385
+msgid ""
+"Se completo con éxito la extracción de información de los complementos.\n"
+"\n"
+"Pulse aceptar para continuar."
+msgstr ""
+"插件信息提取成功完成。\n"
+"\n"
+"按确定继续。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:408
+msgid "Deshabilitando complementos..."
+msgstr "禁用插件..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:418
+msgid "Habilitando complementos..."
+msgstr "启用插件..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:427
+msgid ""
+"Se completo el proceso de habilitar y deshabilitar correctamente.\n"
+"\n"
+"NVDA necesita reiniciarse para aplicar los cambios.\n"
+"\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"启用或禁用操作已成功完成。\n"
+"\n"
+"NVDA 需要重启才能应用更改。\n"
+"\n"
+"您现在要重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:445
+msgid ""
+"Se produjo un error inesperado. \n"
+"\n"
+"Error: {}\n"
+"\n"
+"No obstante hubo complementos que se habilitaron o deshabilitaron y NVDA "
+"necesita reiniciar para aplicar los cambios.\n"
+"\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"发生意外错误。\n"
+"\n"
+"错误： {}\n"
+"\n"
+"部分插件已被启用或禁用，NVDA 需要重启才能应用这些更改。\n"
+"\n"
+"您现在要重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:474
+msgid "Cambiando el manifiesto al complemento: {}"
+msgstr "更改插件清单：{}"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:481
+msgid ""
+"Se cambiaron los manifiestos correctamente.\n"
+"\n"
+"Para que la acción tenga efecto NVDA tiene que reiniciarse.\n"
+"\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"更改清单成功。\n"
+"\n"
+"要使操作生效，NVDA 必须重新启动。\n"
+"\n"
+"您现在要重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:499
+msgid ""
+"Se produjo un error inesperado. \n"
+"\n"
+"Error: {}\n"
+"\n"
+"No obstante hubo complementos que se les cambio el manifiesto y NVDA "
+"necesita reiniciar para aplicar los cambios.\n"
+"\n"
+"¿Desea reiniciar NVDA ahora?"
+msgstr ""
+"发生意外错误。\n"
+"\n"
+"错误： {}\n"
+"\n"
+"部分插件的清单已更改，需要重新启动 NVDA 才能应用这些更改。\n"
+"\n"
+"您现在要重启 NVDA 吗？"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:528
+msgid "Trabajando en el complemento: {}"
+msgstr "处理插件：{}"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:543
+msgid ""
+"Se cambio correctamente el manifiesto.\n"
+"\n"
+"Se genero un complemento con el manifiesto cambiado en:\n"
+"\n"
+"{}\n"
+"\n"
+"Pulse aceptar para continuar."
+msgstr ""
+"清单已成功更改。\n"
+"\n"
+"生成了一个插件：\n"
+"\n"
+"{}\n"
+"\n"
+"按确定继续。"
+
+#. Diccionario
+#: addon\globalPlugins\addonPackager\utilidades.py:581
+msgid "Añadiendo el directorio de diccionarios..."
+msgstr "添加字典文件夹..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:587
+msgid ""
+"No se pudo agregar el directorio de diccionarios a la copia de seguridad."
+msgstr "无法将字典文件夹添加到备份。"
+
+#. Perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:589
+msgid "Añadiendo el directorio de Perfiles..."
+msgstr "添加配置文件夹..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:595
+msgid "No se pudo agregar el directorio de Perfiles a la copia de seguridad."
+msgstr "无法将配置文件夹添加到备份中。"
+
+#. Scratchpad
+#: addon\globalPlugins\addonPackager\utilidades.py:597
+msgid "Añadiendo el directorio de Scratchpad..."
+msgstr "添加便签本文件夹..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:603
+msgid "No se pudo agregar el directorio de Scratchpad a la copia de seguridad."
+msgstr "无法将便签本文件夹添加到备份中。"
+
+#. Fichero configuración disparadores de perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:606
+msgid "Añadiendo el Fichero configuración disparadores de perfiles..."
+msgstr "添加配置触发文件..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:613
+#: addon\globalPlugins\addonPackager\utilidades.py:615
+msgid ""
+"No se pudo agregar el Fichero configuración disparadores de perfiles a la "
+"copia de seguridad."
+msgstr "无法将配置触发文件添加到备份。"
+
+#. Fichero de configuración gestos de entrada
+#: addon\globalPlugins\addonPackager\utilidades.py:618
+msgid "Añadiendo el Fichero de configuración gestos de entrada..."
+msgstr "添加按键与手势配置..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:625
+#: addon\globalPlugins\addonPackager\utilidades.py:627
+msgid ""
+"No se pudo agregar el Fichero de configuración gestos de entrada a la copia "
+"de seguridad."
+msgstr "无法将按键与手势配置添加到备份。"
+
+#. Fichero de configuración de NVDA
+#: addon\globalPlugins\addonPackager\utilidades.py:630
+msgid "Añadiendo el Fichero de configuración de NVDA..."
+msgstr "添加 NVDA 设置..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:637
+#: addon\globalPlugins\addonPackager\utilidades.py:639
+msgid ""
+"No se pudo agregar el Fichero de configuración de NVDA a la copia de "
+"seguridad."
+msgstr "无法将 NVDA 设置添加到备份。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:652
+msgid ""
+"Se creo la copia de seguridad correctamente en:\n"
+"\n"
+"{}\n"
+"\n"
+"Pulse aceptar para continuar."
+msgstr ""
+"备份已成功创建于：\n"
+"\n"
+"{}\n"
+"\n"
+"按确定继续。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:665
+msgid ""
+"Se produjo el siguiente error:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo crear la copia de seguridad."
+msgstr ""
+"发生以下错误：\n"
+"\n"
+"{}\n"
+"\n"
+"无法创建备份。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:673
+msgid ""
+"Se produjeron los siguientes errores:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo crear la copia de seguridad."
+msgstr ""
+"发生以下错误：\n"
+"\n"
+"{}\n"
+"\n"
+"无法创建备份。"
+
+#. Diccionario
+#: addon\globalPlugins\addonPackager\utilidades.py:699
+msgid "Restaurando el directorio de diccionarios..."
+msgstr "正在恢复字典文件夹..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:708
+#: addon\globalPlugins\addonPackager\utilidades.py:710
+msgid "No se pudo restaurar el directorio de diccionarios."
+msgstr "无法恢复字典文件夹。"
+
+#. Perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:712
+msgid "Restaurando el directorio de Perfiles..."
+msgstr "正在恢复配置文件夹..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:721
+#: addon\globalPlugins\addonPackager\utilidades.py:723
+msgid "No se pudo restaurar el directorio de Perfiles."
+msgstr "无法恢复配置文件夹。"
+
+#. Scratchpad
+#: addon\globalPlugins\addonPackager\utilidades.py:726
+msgid "Restaurando el directorio de Scratchpad..."
+msgstr "正在恢复便签本文件夹..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:735
+#: addon\globalPlugins\addonPackager\utilidades.py:737
+msgid "No se pudo restaurar el directorio de Scratchpad."
+msgstr "无法恢复便签本文件夹。"
+
+#. Fichero configuración disparadores de perfiles
+#: addon\globalPlugins\addonPackager\utilidades.py:740
+msgid "Restaurando el Fichero configuración disparadores de perfiles..."
+msgstr "正在恢复配置触发文件..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:754
+#: addon\globalPlugins\addonPackager\utilidades.py:756
+#: addon\globalPlugins\addonPackager\utilidades.py:758
+msgid "No se pudo restaurar el Fichero configuración disparadores de perfiles."
+msgstr "无法恢复配置触发文件。"
+
+#. Fichero configuración gestos de entrada
+#: addon\globalPlugins\addonPackager\utilidades.py:761
+msgid "Restaurando el Fichero configuración gestos de entrada..."
+msgstr "正在恢复按键与手势配置..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:775
+#: addon\globalPlugins\addonPackager\utilidades.py:777
+msgid "No se pudo restaurar el Fichero configuración de gestos de entrada."
+msgstr "无法恢复按键与手势配置。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:779
+msgid "No se pudo restaurar el Fichero configuración gestos de entrada."
+msgstr "无法恢复按键与手势配置。"
+
+#. Fichero configuración de NVDA
+#: addon\globalPlugins\addonPackager\utilidades.py:782
+msgid "Restaurando el Fichero configuración de NVDA..."
+msgstr "正在恢复 NVDA 设置..."
+
+#: addon\globalPlugins\addonPackager\utilidades.py:796
+#: addon\globalPlugins\addonPackager\utilidades.py:798
+#: addon\globalPlugins\addonPackager\utilidades.py:800
+msgid "No se pudo restaurar el Fichero configuración de NVDA."
+msgstr "无法恢复 NVDA 设置。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:808
+msgid ""
+"La restauración fue un éxito.\n"
+"\n"
+"Al restaurar la configuración de NVDA es necesario reiniciar el lector.\n"
+"\n"
+"Pulse aceptar o cerrar para reiniciar."
+msgstr ""
+"恢复成功。\n"
+"\n"
+"需重新启动 NVDA。\n"
+"\n"
+"按确定或关闭以重启。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:818
+msgid ""
+"Se produjo el siguiente error:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar toda la copia de seguridad.\n"
+"\n"
+"Pero hay elementos que si pudieron ser restaurados.\n"
+"\n"
+"Al restaurar la configuración de NVDA es necesario reiniciar el lector.\n"
+"\n"
+"Pulse cancelar o cerrar para reiniciar."
+msgstr ""
+"发生以下错误：\n"
+"\n"
+"{}\n"
+"\n"
+"无法恢复全部备份。\n"
+"\n"
+"部分内容已恢复。\n"
+"\n"
+"需重启 NVDA。\n"
+"\n"
+"按取消或关闭以重启。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:832
+msgid ""
+"Se produjo el siguiente error:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar la copia de seguridad.\n"
+"\n"
+"Pulse cancelar o cerrar para continuar."
+msgstr ""
+"发生以下错误：\n"
+"\n"
+"{}\n"
+"\n"
+"无法还原备份。\n"
+"\n"
+"按取消或关闭以继续。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:843
+msgid ""
+"Se produjeron los siguientes errores:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar toda la copia de seguridad.\n"
+"\n"
+"Pero hay elementos que si pudieron ser restaurados.\n"
+"\n"
+"Al restaurar la configuración de NVDA es necesario reiniciar el lector.\n"
+"\n"
+"Pulse cancelar o cerrar para reiniciar."
+msgstr ""
+"发生以下错误：\n"
+"\n"
+"{}\n"
+"\n"
+"无法恢复全部备份。\n"
+"\n"
+"部分内容已恢复。\n"
+"\n"
+"需重启 NVDA。\n"
+"\n"
+"按取消或关闭以重启。"
+
+#: addon\globalPlugins\addonPackager\utilidades.py:857
+msgid ""
+"Se produjeron los siguientes errores:\n"
+"\n"
+"{}\n"
+"\n"
+"No se pudo restaurar la copia de seguridad.\n"
+"\n"
+"Pulse cancelar o cerrar para continuar."
+msgstr ""
+"发生以下错误：\n"
+"\n"
+"{}\n"
+"\n"
+"无法恢复备份。\n"
+"\n"
+"单击取消或关闭以继续。"
