@@ -237,7 +237,7 @@ msgstr "配置文件夹"
 #: addon\globalPlugins\addonPackager\main.py:633
 #: addon\globalPlugins\addonPackager\main.py:866
 msgid "Directorio Scratchpad"
-msgstr "便签文件夹"
+msgstr "开发者实验文件夹"
 
 #: addon\globalPlugins\addonPackager\main.py:327
 #: addon\globalPlugins\addonPackager\main.py:593
